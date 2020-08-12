@@ -28,7 +28,7 @@ $(document).ready(function() {
             'transform': 'translate3d(-100%, 0, 0)',
             'transition': '750ms',
             'cursor': 'default'
-        })
+        });
 
         for(let i = target, length = $slide.length; i < length; i++) {
             $('.slide--' + (i + 1)).css({
@@ -129,7 +129,7 @@ $(document).ready(function() {
         _this.css({
             'transform': 'translate3d(-' + (((100 / numSlides) * (numSlides - (target - 1))) + 5) + '%, 0, 0)',
             'transition': '750ms'
-        })
+        });
 
         _this.find('.slide__text').css({
             'transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',
@@ -137,8 +137,13 @@ $(document).ready(function() {
             'opacity': '1',
             'transition': '750ms',
             '-webkit-transition': '750ms',
-            'display': 'block'
-        })
+            'display': 'block',
+            'font-size': '35px'
+        });
+
+        _this.find('.slide__text--1').css({
+            'left': '8%'
+        });
 
         for(let i = target, length = $slide.length; i < length; i++) {
             $('.slide--' + (i + 1)).css({
@@ -184,12 +189,17 @@ $(document).ready(function() {
             'opacity': '0'
         });
 
+        _this.find('.slide__text--1').css({
+            'left': '4%'
+        });
+
         $text.css({
             'transform': 'translate3d(0, -50%, 0) rotate(0.01deg)',
-            'opacity': '0',
+            'opacity': '1',
             'transition': '200ms',
             '-webkit-transition': '200ms',
-            'display': 'block'
+            'display': 'block',
+            'font-size': '30px'
         });
 
         _this.find('.slide__container-content').css({
@@ -216,10 +226,11 @@ $(document).ready(function() {
 
         $text.css({
             'transform': 'translate3d(150px, -40%, 0)',
-            'opacity': '0',
+            'opacity': '1',
             'transition': '200ms',
             '-webkit-transition': '200ms',
-            'display': 'block'
+            'display': 'block',
+            'font-size': '30px'
         });
 
         _this.find('.slide_-bg-dark').css({
