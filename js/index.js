@@ -1,10 +1,11 @@
 $(document).ready(function() {
     const $cont = $('.cont');
     const $slide = $('.slide');
-    const $closeBtn = $('.slide__close')
+    const $closeBtn = $('.slide__close');
     const $text = $('.slide__text');
     const $iconTwitter = $('.icon-link--twitter');
-    const $conteiner = $('.slide__container-content');
+    const $container = $('.slide__container-content');
+    const $bgdark = $('.slide__bg-dark');
     const numSlides = 5;
     const initialAnimDur = 3000;
     const animDelay = 1000;
@@ -69,7 +70,8 @@ $(document).ready(function() {
             $closeBtn2.addClass('box-close-active');
 
             _this.find('.box-close-active').css({
-                'display': 'block'
+                'display': 'block',
+                'transition': '2s'
             });
 
             $closeBtn.removeClass('show-close');
@@ -116,9 +118,9 @@ $(document).ready(function() {
             'display': 'none'
         });
 
-        _this.find('.slide__container-content').css({
+        $container.css({
             'display': 'flex'
-        })
+        });
     });
     /*Работа блока при наведении курсора*/
     $(document).on('mousemove', '.slide', function() {
@@ -168,9 +170,9 @@ $(document).ready(function() {
             'opacity': '.75'
         });
 
-        _this.find('.slide__container-content').css({
+        $container.css({
             'display': 'none'
-        })
+        });
     });
     /*Работа блока при уборе курсора*/
     $(document).on('mouseleave', '.slide', function() {
@@ -202,9 +204,9 @@ $(document).ready(function() {
             'font-size': '30px'
         });
 
-        _this.find('.slide__container-content').css({
+        $container.css({
             'display': 'none'
-        })
+        });
     });
     /*Работа блока при клике курсора на закрытие*/
     $(document).on('click', '.slide__close', function() {
@@ -230,14 +232,15 @@ $(document).ready(function() {
             'transition': '200ms',
             '-webkit-transition': '200ms',
             'display': 'block',
-            'font-size': '30px'
+            'font-size': '30px',
+            'left': '4%'
         });
 
-        _this.find('.slide_-bg-dark').css({
+        $bgdark.css({
             'z-index': '2'
         });
 
-        _this.find('.slide__container-content').css({
+        $container.css({
             'display': 'none'
         });
 

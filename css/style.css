@@ -396,7 +396,7 @@
 
 .slide--1 {
   z-index: 0;
-  background: url("../img/testbg1.jpg") center center no-repeat;
+  background: url("../img/testbg3.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--2 {
@@ -406,7 +406,7 @@
 
 .slide--3 {
   z-index: 2;
-  background: url("../img/testbg3.jpg") center center no-repeat;
+  background: url("../img/testbg1.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--4 {
