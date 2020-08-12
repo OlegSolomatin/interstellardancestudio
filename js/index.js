@@ -4,12 +4,20 @@ $(document).ready(function() {
     const $closeBtn = $('.slide__close')
     const $text = $('.slide__text');
     const $iconTwitter = $('.icon-link--twitter');
+    const $conteiner = $('.slide__container-content');
     const numSlides = 5;
-    const initialAnimDur = 7131;
+    const initialAnimDur = 3000;
     const animDelay = 1000;
     let initialAnim = true;
     let clickAnim = false;
+    var animation = false,
+        animDur = 1000,
+        $row = $('.box__row'),
+        $cell = $('.box__row-cell'),
+        $content = $('.box__content'),
+        $closeBtn2 = $('.box__close');
 
+    /*Работа блока при нажатии на выбранный блок*/
     $(document).on('click', '.slide__bg-dark', function() {
         if (initialAnim || clickAnim) return;
         let _this = $(this).parent();
@@ -20,11 +28,6 @@ $(document).ready(function() {
             'transform': 'translate3d(-100%, 0, 0)',
             'transition': '750ms',
             'cursor': 'default'
-        })
-
-        _this.find('.slide__img-wrapper').css({
-            'transform': 'translate3d(0, 0, 0) scale(.95, .95)',
-            'transition': '2000ms'
         })
 
         for(let i = target, length = $slide.length; i < length; i++) {
@@ -45,19 +48,79 @@ $(document).ready(function() {
             $slide.not(_this).find('.slide__bg-dark').css({
                 'opacity': '0'
             })
-        }, 750)
+        }, 750);
 
         $closeBtn.addClass('show-close');
         $iconTwitter.addClass('icon-show');
 
+        var animFalse = function() {
+            animation = false;
+        };
+
+        var active = function() {
+            if (animation) return;
+            var cellData = $(this).data('cell');
+            var $content = $('.box__content[data-content=' + cellData + ']');
+            animation = true;
+
+            $cell.addClass('cell-fade');
+            $(this).addClass('active');
+            $content.addClass('show-content');
+            $closeBtn2.addClass('box-close-active');
+
+            _this.find('.box-close-active').css({
+                'display': 'block'
+            });
+
+            $closeBtn.removeClass('show-close');
+            $iconTwitter.removeClass('icon-show');
+
+            setTimeout(animFalse, animDur);
+        };
+
+        var close = function() {
+            animation = true;
+
+            $cell.removeClass('active cell-fade');
+            $content.removeClass('show-content');
+            $(this).removeClass('box-close-active');
+
+            _this.find('.box__close').css({
+                'display': 'none'
+            });
+
+            $closeBtn.addClass('show-close');
+            $iconTwitter.addClass('icon-show');
+
+            setTimeout(animFalse, animDur);
+        };
+
+        $row.on('click', '.box__row-cell', active);
+        $closeBtn2.on('click', close);
+
+        $cell.on({
+            mouseenter: function() {
+                $cell.addClass('hover-cell');
+                $(this).removeClass('hover-cell');
+            },
+            mouseleave: function() {
+                $cell.removeClass('hover-cell');
+            }
+        });
+
+        _this.find('.slide__bg-dark').css({
+            'z-index': '1'
+        });
+
         _this.find('.slide__text').css({
-            'transform': 'translate3d(150px, -40%, 0)',
-            'opacity': '1',
-            'transition': '2000ms',
-            '-webkit-transition': '2000ms'
+            'display': 'none'
+        });
+
+        _this.find('.slide__container-content').css({
+            'display': 'flex'
         })
     });
-
+    /*Работа блока при наведении курсора*/
     $(document).on('mousemove', '.slide', function() {
         if(initialAnim || clickAnim) return;
         let _this = $(this);
@@ -73,7 +136,8 @@ $(document).ready(function() {
             '-moz-transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',
             'opacity': '1',
             'transition': '750ms',
-            '-webkit-transition': '750ms'
+            '-webkit-transition': '750ms',
+            'display': 'block'
         })
 
         for(let i = target, length = $slide.length; i < length; i++) {
@@ -90,21 +154,20 @@ $(document).ready(function() {
             })
         }
 
-        _this.find('.slide__img-wrapper').css({
-            'transform': 'translate3d(-200px, 0, 0) scale(.85, .85)',
-            'transition': '750ms'
-        })
-
         $slide.not(_this).find('.slide__img-wrapper').css({
             'transform': 'translate3d(-200px, 0, 0) scale(.90, .90)',
             'transition': '1000ms'
-        })
+        });
 
         $slide.not(_this).find('.slide__bg-dark').css({
             'opacity': '.75'
+        });
+
+        _this.find('.slide__container-content').css({
+            'display': 'none'
         })
     });
-
+    /*Работа блока при уборе курсора*/
     $(document).on('mouseleave', '.slide', function() {
         if(initialAnim || clickAnim) return;
         let _this = $(this);
@@ -117,23 +180,23 @@ $(document).ready(function() {
             })
         }
 
-        $slide.find('.slide__img-wrapper').css({
-            'transform': 'translate3d(-200px, 0, 0) scale(1, 1)',
-            'transition': '750ms'
-        })
-
         $slide.find('.slide__bg-dark').css({
             'opacity': '0'
-        })
+        });
 
         $text.css({
             'transform': 'translate3d(0, -50%, 0) rotate(0.01deg)',
             'opacity': '0',
             'transition': '200ms',
-            '-webkit-transition': '200ms'
+            '-webkit-transition': '200ms',
+            'display': 'block'
+        });
+
+        _this.find('.slide__container-content').css({
+            'display': 'none'
         })
     });
-
+    /*Работа блока при клике курсора на закрытие*/
     $(document).on('click', '.slide__close', function() {
 
         setTimeout(function() {
@@ -155,15 +218,24 @@ $(document).ready(function() {
             'transform': 'translate3d(150px, -40%, 0)',
             'opacity': '0',
             'transition': '200ms',
-            '-webkit-transition': '200ms'
-        })
+            '-webkit-transition': '200ms',
+            'display': 'block'
+        });
+
+        _this.find('.slide_-bg-dark').css({
+            'z-index': '2'
+        });
+
+        _this.find('.slide__container-content').css({
+            'display': 'none'
+        });
 
         setTimeout(function() {
             $text.css({
                 'transform': 'translate3d(0, -50%, 0)'
             })
         }, 200)
-    })
+    });
 
     setTimeout(function() {
         $cont.addClass('active');
@@ -172,5 +244,7 @@ $(document).ready(function() {
     setTimeout(function() {
         initialAnim = false;
     }, initialAnimDur + animDelay);
+
+    /*FIRST PAGE SCRIPT*/
 
 });
