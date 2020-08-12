@@ -9,6 +9,7 @@ html
                 var $preloader = $('#p_prldr')
                 $preloader.delay(200).fadeOut('slow');
             });
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
         link(rel='stylesheet', href='css/normalize.css')
         link(rel='shortcut icon', href='img/favicon.png', type='image/x-icon')
         link(rel='stylesheet', href='libs/fontawesome-free-5.12.0-web/css/all.min.css')
@@ -34,7 +35,7 @@ html
                     .slide__close
                 .slide__bg-dark
                 .slide__container-content
-                    .container
+                    .container-main
                         .box
                             .box__row
                                 .box__row-cell(data-cell='1')
@@ -225,20 +226,34 @@ html
                 .slide__img
                     .slide__close
                 .slide__bg-dark
+                .slide__container-content
+                    .comming-soon
+                        .circle
+                        .form-group
+                            p.text COMMING SOON
+                            label Get latest updates about new release
+                            .input-group
+                                input.form-control(type='text' placeholder='Email Address')
+                                .input-group-append
+                                    span#basic-addon2.input-group-text
+                                        button Notify Me
             .slide.slide--3(data-target='3')
                 .slide__text Teachers
                 .slide__img
                     .slide__close
                 .slide__bg-dark
+                .slide__container-content
             .slide.slide--4(data-target='4')
                 .slide__text Calendar
                 .slide__img
                     .slide__close
                 .slide__bg-dark
+                .slide__container-content
             .slide.slide--5(data-target='5')
                 .slide__text About US
                 .slide__img
                     .slide__close
                 .slide__bg-dark
+                .slide__container-content
         script(src='js/index.js')
         script(src='js/sliderivents.js')
