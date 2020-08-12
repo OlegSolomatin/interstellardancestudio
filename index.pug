@@ -1,0 +1,66 @@
+doctype html
+html
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport', content='initial-scale=1.0 ,width=device-width')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
+        script.
+            $(window).on('load', function () {
+                var $preloader = $('#p_prldr')
+                $preloader.delay(200).fadeOut('slow');
+            });
+        link(rel='stylesheet', href='css/normalize.css')
+        link(rel='shortcut icon', href='img/favicon.png', type='image/x-icon')
+        link(rel='stylesheet', href='libs/fontawesome-free-5.12.0-web/css/all.min.css')
+        link(rel='stylesheet', href='css/stylepreloader.css')
+        link(rel='stylesheet', href='css/style.css')
+    body
+        #p_prldr.preloader
+            svg(viewBox="0 0 600 300")
+                // Symbol
+                symbol#s-text
+                    text(text-anchor="middle", x="50%", y="50%", dy=".35em")
+                        | Interstellar
+                // Duplicate symbols
+                use.text(xlink:href="#s-text")
+                use.text(xlink:href="#s-text")
+                use.text(xlink:href="#s-text")
+                use.text(xlink:href="#s-text")
+                use.text(xlink:href="#s-text")
+        .cont
+            .slide.slide--1(data-target='1')
+                .slide__text.slide__text--1 First Page
+                .slide__bg
+                .slide__img
+                    .slide__close
+                    .slide__img-wrapper
+                .slide__bg-dark
+            .slide.slide--2(data-target='2')
+                .slide__text Events
+                .slide__bg
+                .slide__img
+                    .slide__close
+                    .slide__img-wrapper
+                .slide__bg-dark
+            .slide.slide--3(data-target='3')
+                .slide__text Teachers
+                .slide__bg
+                .slide__img
+                    .slide__close
+                    .slide__img-wrapper
+                .slide__bg-dark
+            .slide.slide--4(data-target='4')
+                .slide__text Calendar
+                .slide__bg
+                .slide__img
+                    .slide__close
+                    .slide__img-wrapper
+                .slide__bg-dark
+            .slide.slide--5(data-target='5')
+                .slide__text About US
+                .slide__bg
+                .slide__img
+                    .slide__close
+                    .slide__img-wrapper
+                .slide__bg-dark
+        script(src='js/index.js')
