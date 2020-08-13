@@ -1,10 +1,33 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Open-Sans', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
 $grayBg: #161616;
 
 $numSlides: 5;
 $imgDist: -150 * 1px;
 
-$bgSpd: 950 * 1ms;
-$imgSpd: 2000 * 1ms;
+$bgSpd: 500 * 1ms;
+$imgSpd: 1000 * 1ms;
+
+$bgPageClr: #131417;
+$bgCellClr: rgba(0, 0, 0, .5);
+$bgContentClr: #1C1E22;
+$cellHvrClr: #F25555;
+
+$rows: 2;
+$cellsInRow: 2;
+
+$cellAnSpeed: 400 * 1ms;
+$hoverDarkSpeed: 500 * 1ms;
 
 /*COMING SOON*/
 $background:#000;
@@ -19,6 +42,13 @@ $bgPics: (
         url('../img/testbg1.jpg') center center no-repeat,
         url('../img/testbg4.jpg') center center no-repeat,
         url('../img/testbg5.jpg') center center no-repeat
+);
+
+$bgFirstpage: (
+        url('../img/polina.jpg') center right no-repeat,
+        url('../img/andrey (2).png') center right no-repeat,
+        url('../img/sergey.png') center right no-repeat,
+        url('../img/andrey.jpg') center right no-repeat
 );
 
 @mixin mediaMaxW($width) {
@@ -133,36 +163,25 @@ $bgPics: (
       }
     }
 
-    $bgPageClr: #131417;
-    $bgCellClr: rgba(0, 0, 0, .5);
-    $bgContentClr: #1C1E22;
-    $cellHvrClr: #F25555;
-
-    $rows: 2;
-    $cellsInRow: 2;
-
-    $cellAnSpeed: 400 * 1ms;
-    $hoverDarkSpeed: 500 * 1ms;
-
+    /************************************************ КОНТЕНТ ПЕРВОГО СЛАЙДА ******************************************************************/
     .container-main {
       height: 100vh;
-      background-color: $bgPageClr;
-    }
+      background-color: $background;
 
-    .box {
-      display: flex;
-      justify-content: flex-end;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      overflow: hidden;
-      &__row {
+      .box {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        overflow: hidden;
+        &__row {
         &-cell {
           position: absolute;
           top: 35%;
@@ -254,20 +273,21 @@ $bgPics: (
           &-info--full {
             transform: translateX(-50px);
             opacity: 0;
-            margin: 50px 0 0 90px;
+            margin: 5vw 0 0 2vw;
             transition: 300ms;
             &-heading {
               line-height: 60px;
               width: 300px;
               color: #131313;
               font: {
-                size: 60px;
+                size: clamp(20px, 4vw, 60px);
                 weight: 900;
               }
             }
             &-par {
               padding-top: 50px;
               color: #fff;
+              font-size: clamp(20px, 4vw, 60px);
             }
           }
         }
@@ -277,97 +297,109 @@ $bgPics: (
           }
         }
       }
-      @for $i from 1 through $rows {
+        @for $i from 1 through $rows {
         &__row:nth-child(#{$i + 1}) {
           .box__row-cell {
             top: 35% + (65% / $rows) * $i;
           }
         }
       }
-      &__content {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        left: 0;
-        background-color: $bgContentClr;
-        transform: translateZ(0);
-        opacity: 0;
-        z-index: -10;
-        transition: all 400ms 600ms, z-index 0ms 0ms;
-        &-wrapper {
-          position: relative;
-          margin-left: auto;
-          width: 50%;
-          height: 100%;
-          overflow: hidden;
-        }
-        &-inner {
+        .box__content {
           position: absolute;
-          left: 18px;
-          transform: translateX(50px);
           width: 100%;
           height: 100%;
-          overflow: auto;
+          left: 0;
+          background-color: $bgContentClr;
+          transform: translateZ(0);
           opacity: 0;
-          transition: $cellAnSpeed, opacity 200ms;
-        }
-        &-text {
-          padding: 20px 0 30px 8px;
-          width: 300px;
-          max-width: 100%;
-          color: #ababab;
-          &-heading {
-            position: relative;
-            margin: 50px 0 20px 0;
-            color: #f5f5f5;
-            font: {
-              size: 16px;
-            }
-            &:after {
-              content: '';
-              position: absolute;
-              top: -15px;
-              left: 0;
-              width: 20px;
-              height: 2px;
-              background-color: #a73c3c;
-              box-shadow: 0 0 1px 0 #a73c3c;
-            }
-          }
-          &-par {
-            line-height: 22px;
-            padding-bottom: 10px;
-            font: {
-              size: 14px;
-            }
-          }
-          &-list {
-            list-style-type: none;
-          }
-          &-item {
-            padding-bottom: 3px;
-            font: {
-              size: 14px;
-            }
-          }
-          &-link {
-            text-decoration: none;
-            color: #ababab;
-            font: {
-              size: 14px;
-            }
-            &:hover {
-              text-decoration: underline;
+          z-index: -10;
+          transition: all 400ms 600ms, z-index 0ms 0ms;
+        .box__content-wrapper {
+          position: relative;
+          margin-left: auto;
+          width: 60%;
+          height: 100%;
+          overflow: hidden;
+          .box__content-inner {
+            position: absolute;
+            left: 18px;
+            transform: translateX(50px);
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            opacity: 0;
+            transition: $cellAnSpeed, opacity 200ms;
+            .box__content-text{
+              padding: 20px 0 30px 8px;
+              width: 300px;
+              max-width: 100%;
+              color: #ababab;
+              .box__content-text-heading {
+                position: relative;
+                margin: 50px 0 20px 0;
+                color: #f5f5f5;
+                font: {
+                  size: 16px;
+                }
+              }
+              .box__content-text-heading:after {
+                content: '';
+                position: absolute;
+                top: -15px;
+                left: 0;
+                width: 20px;
+                height: 2px;
+                background-color: #a73c3c;
+                box-shadow: 0 0 1px 0 #a73c3c;
+              }
+              .box__content-text-par {
+                line-height: 22px;
+                padding-bottom: 10px;
+                font: {
+                  size: 14px;
+                }
+              }
+              .box__content-text-list {
+                list-style-type: none;
+                .box__content-text-item {
+                  padding-bottom: 3px;
+                  font: {
+                    size: 14px;
+                  }
+                }
+
+              }
+              .box__content-text-link {
+                text-decoration: none;
+                color: #ababab;
+                font: {
+                  size: 14px;
+                }
+              }
+              .box__content-text-link:hover {
+                text-decoration: underline;
+              }
             }
           }
         }
       }
-      &__close {
+
+        /*Заполнение БГ ккарточек на главной странице*/
+
+        @each $item in $bgFirstpage {
+          $i: index($bgFirstpage, $item);
+          .box__content--#{$i}>.box__content-wrapper>.box__content-inner {
+            background: $item;
+            background-size: contain;
+          }
+        }
+
+        &__close {
         position: absolute;
-        top: 50px;
-        left: 100px;
-        height: 20px;
-        width: 20px;
+        top: 3vh;
+        left: 2vw;
+        height: 30px;
+        width: 30px;
         font-size: 0;
         cursor: pointer;
         z-index: 9999;
@@ -376,8 +408,8 @@ $bgPics: (
         &:before {
           content: '';
           position: absolute;
-          top: 9px;
-          left: -14px;
+          top: 14px;
+          left: -2px;
           transform: rotate(45deg);
           width: 35px;
           height: 2px;
@@ -404,7 +436,8 @@ $bgPics: (
           }
         }
       }
-      &__episodes {
+
+        &__episodes {
         position: absolute;
         top: 28%;
         right: 15px;
@@ -421,13 +454,14 @@ $bgPics: (
           background-color: #fff;
         }
       }
-      &__title {
+
+        &__title {
         position: absolute;
         top: 25%;
         left: 9%;
         &-heading {
           position: relative;
-          color: #7b2222;
+          color: $cellHvrClr;
           letter-spacing: 3px;
           line-height: 65px;
           text-transform: uppercase;
@@ -449,72 +483,72 @@ $bgPics: (
           }
         }
       }
-    }
 
-    .active {
-      left: 0 !important;
-      top: 0 !important;
-      height: 100%;
-      width: 50%;
-      background-color: $cellHvrClr;
-      z-index: 5;
-      transition: all $cellAnSpeed 400ms, width 300ms $cellAnSpeed + 400;
-      cursor: default;
-      opacity: 1 !important;
-      @for $i from 1 through 4 {
-        .box__row-cell-info:nth-child(#{$i}) {
-          transform: translateX(50px);
-          opacity: 0;
-          transition: 300ms 50ms * ($i - 1) ease-in, opacity 375ms 50ms * ($i - 1);
+        .show-content {
+          opacity: 1;
+          z-index: 2;
+          transition: all 300ms $cellAnSpeed, z-index 0ms 0ms;
+          .box__content-wrapper>.box__content-inner {
+            transform: translateX(0);
+            opacity: 1;
+            transition: 300ms 1100ms;
+          }
+        }
+
+      }
+
+      .active {
+        left: 0 !important;
+        top: 0 !important;
+        height: 100%;
+        width: 40%;
+        background-color: $cellHvrClr;
+        z-index: 5;
+        transition: all $cellAnSpeed 400ms, width 300ms $cellAnSpeed + 400;
+        cursor: default;
+        opacity: 1 !important;
+        @for $i from 1 through 4 {
+          .box__row-cell-info:nth-child(#{$i}) {
+            transform: translateX(50px);
+            opacity: 0;
+            transition: 300ms 50ms * ($i - 1) ease-in, opacity 375ms 50ms * ($i - 1);
+          }
+        }
+        .box__row-cell-info--full {
+          transform: translateX(0);
+          opacity: 1;
+          transition: 300ms 900ms;
         }
       }
-      .box__row-cell-info--full {
-        transform: translateX(0);
-        opacity: 1;
-        transition: 300ms 900ms;
-      }
-    }
 
-    .cell-fade {
-      opacity: 0;
-      transition: all $cellAnSpeed 400ms, width 300ms $cellAnSpeed + 400, opacity 200ms 300ms;
-    }
-
-    .hover-cell {
-      &:after {
-        opacity: 1;
-      }
-    }
-
-    .show-content {
-      opacity: 1;
-      z-index: 2;
-      transition: all 300ms $cellAnSpeed, z-index 0ms 0ms;
-      .box__content-inner {
-        transform: translateX(0);
-        opacity: 1;
-        transition: 300ms 1100ms;
-      }
-    }
-
-    .box-close-active {
-      &:after,
-      &:before {
-        opacity: 1;
-        transform: rotate(135deg);
-        transition: 500ms 800ms;
-      }
-      &:before {
-        transform: rotate(45deg);
-      }
-      span {
+      .cell-fade {
         opacity: 0;
-        transition: 0ms 800ms;
+        transition: all $cellAnSpeed 400ms, width 300ms $cellAnSpeed + 400, opacity 200ms 300ms;
+      }
+
+      .hover-cell {
+        &:after {
+          opacity: 1;
+        }
+      }
+
+      .box-close-active {
+        &:after,
+        &:before {
+          opacity: 1;
+          transform: rotate(135deg);
+          transition: 500ms 800ms;
+        }
+        &:before {
+          transform: rotate(45deg);
+        }
+        span {
+          opacity: 0;
+          transition: 0ms 800ms;
+        }
       }
     }
-
-
-
+    /************************************************ КОНЕЦ ПЕРВОГО СЛАЙДА ***********************************************************/
     /*COOMING SOON*/
     .comming-soon{
       display:flex;
@@ -662,17 +696,4 @@ $bgPics: (
   &:before {
     transform: rotate(-45deg) scale(1, 1);
   }
-}
-
-html {
-  box-sizing: border-box;
-  font-family: 'Open-Sans', sans-serif;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
 }
