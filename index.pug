@@ -1,3 +1,4 @@
+//Declaration
 - var time90 = "Продолжительность - 90 мин";
     -var time60 = "Продолжительность - 60 мин";
     -var titleFirstBlock = "Набор в группу Cantemporary";
@@ -8,6 +9,31 @@
         -var titleNameInvisbleThirdBlock = "Sergey Mihutkin";
     -var titleFourthBlock = "Бесплатное пробное занятие";
         -var titleNameInvisbleFourthBlock = "Запишись на бесплатное пробное занятие";
+    mixin contactform()
+        .remodal(data-remodal-id='modal' role='dialog' aria-labelledby='modal1Title' aria-describedby='modal1Desc')
+            .remodalBorder
+                p
+                    img.lazyload(data-src='https://caforward.ru/img/footer-logo-white.png' alt='Форвард: Финансовая Компания')
+                form#form(method='POST')
+                    h2#modal1Title &Ocy;&scy;&tcy;&acy;&vcy;&softcy;&tcy;&iecy; &vcy;&acy;&shcy;&icy; &kcy;&ocy;&ncy;&tcy;&acy;&kcy;&tcy;&ncy;&ycy;&iecy; &dcy;&acy;&ncy;&ncy;&ycy;&iecy; &icy; &ncy;&acy;&shcy;&acy; &scy;&lcy;&ucy;&zhcy;&bcy;&acy; &pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&kcy;&icy; &scy;&vcy;&yacy;&zhcy;&iecy;&tcy;&scy;&yacy; &scy; &vcy;&acy;&mcy;&icy;
+                    input.putName(type='text' name='name' placeholder='Ваше ФИО*' pattern='^[А-Яа-яЁё\s]+$' required='')
+                    input#phone.putPhone(name='phone' type='tel' placeholder='Ваш телефон*' required='')
+                    input.mail(name='mail' type='email' placeholder='Ваш Email' pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})')
+                    .cont_datalist
+                        input#styled.pole_datalist.pole_datalist_first(name='styledance' list='styledance' placeholder='Выберите стиль')
+                        datalist#styledance
+                            option(value='Hip-Hop 10-25 Андрей Гризодуб')
+                            option(value='Cantemporary 10-25лет Полина Гризодуб')
+                            option(value='K-Pop 10-26лет Сергей Михуткин')
+                            option(value='Bodyflex 10-35лет Альбина Константинова')
+                            option(value='Hip-Hop 7-10лет Михаил Головачук')
+                            option(value='Urban Hip-hop 7-13лет Вячеслав Родин')
+                            option(value='Kids group Таисия Константинова')
+                    textarea.textarea(name='textarea' placeholder='Ваш вопрос*' required='')
+                    .g-recaptcha(data-sitekey='6LcFHNUUAAAAAMwGfjlk1k2nbx1DcM7MrQoqB_r7' data-theme='light' data-callback='onSuccess')
+                    input#butdis.btn.main-btn-remodal(type='submit' name='submit' value='ОТПРАВИТЬ' disabled='')
+                    input.formInfo(name='formInfo' type='hidden' value='')
+                    input(type='hidden' name='formData' value='Заявка с сайта')
 doctype html
 html
     head
@@ -214,9 +240,7 @@ html
                                                 li.box__content-text-item
                                                     | Accumsan metus
                                             h2.box__content-text-heading FOLLOW
-                                            a.box__content-text-link(href='https://twitter.com/mrspok407' target='_blank') mrspok407 | @mrspok407
-                                            br
-                                            a.box__content-text-link(href='https://codepen.io/mrspok407/' target='_blank') Checkout my other pens
+                                            +contactform
                             .box__close
                                 span
                                 br
@@ -265,5 +289,12 @@ html
                     .slide__close
                 .slide__bg-dark
                 .slide__container-content
+        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+        script(src='libs/bootstrap-4.3.1-dist/js/bootstrap.min.js')
         script(src='js/index.js')
         script(src='js/sliderivents.js')
+        script(src='js/lazysizes.min.js')
+        script(src='js/script.js')
+        script(src='https://www.google.com/recaptcha/api.js')
+        script(src='js/jquery.maskedinput.min.js')
