@@ -323,4 +323,11 @@ $(document).ready(function() {
 
     <!--Mask number phone-->
     $("#phone").mask("+7 (999) 999-99-99");
+
+    <!--Contact form style-->
+    var $input = $('.form-fieldset > input');
+
+    $input.blur(function (e) {
+        $(this).toggleClass('filled', !!$(this).val());
+    });
 });

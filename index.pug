@@ -12,14 +12,14 @@
     mixin contactform()
         .remodal(data-remodal-id='modal' role='dialog' aria-labelledby='modal1Title' aria-describedby='modal1Desc')
             .remodalBorder
-                p
+                //p
                     img.lazyload(data-src='https://caforward.ru/img/footer-logo-white.png' alt='Форвард: Финансовая Компания')
                 form#form(method='POST')
-                    h2#modal1Title &Ocy;&scy;&tcy;&acy;&vcy;&softcy;&tcy;&iecy; &vcy;&acy;&shcy;&icy; &kcy;&ocy;&ncy;&tcy;&acy;&kcy;&tcy;&ncy;&ycy;&iecy; &dcy;&acy;&ncy;&ncy;&ycy;&iecy; &icy; &ncy;&acy;&shcy;&acy; &scy;&lcy;&ucy;&zhcy;&bcy;&acy; &pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&kcy;&icy; &scy;&vcy;&yacy;&zhcy;&iecy;&tcy;&scy;&yacy; &scy; &vcy;&acy;&mcy;&icy;
-                    input.putName(type='text' name='name' placeholder='Ваше ФИО*' pattern='^[А-Яа-яЁё\s]+$' required='')
-                    input#phone.putPhone(name='phone' type='tel' placeholder='Ваш телефон*' required='')
-                    input.mail(name='mail' type='email' placeholder='Ваш Email' pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})')
-                    .cont_datalist
+                    //h2#modal1Title &Ocy;&scy;&tcy;&acy;&vcy;&softcy;&tcy;&iecy; &vcy;&acy;&shcy;&icy; &kcy;&ocy;&ncy;&tcy;&acy;&kcy;&tcy;&ncy;&ycy;&iecy; &dcy;&acy;&ncy;&ncy;&ycy;&iecy; &icy; &ncy;&acy;&shcy;&acy; &scy;&lcy;&ucy;&zhcy;&bcy;&acy; &pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&kcy;&icy; &scy;&vcy;&yacy;&zhcy;&iecy;&tcy;&scy;&yacy; &scy; &vcy;&acy;&mcy;&icy;
+                    //input.putName(type='text' name='name' placeholder='Ваше ФИО*' pattern='^[А-Яа-яЁё\s]+$' required='')
+                    //input#phone.putPhone(name='phone' type='tel' placeholder='Ваш телефон*' required='')
+                    //input.mail(name='mail' type='email' placeholder='Ваш Email' pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})')
+                    //.cont_datalist
                         input#styled.pole_datalist.pole_datalist_first(name='styledance' list='styledance' placeholder='Выберите стиль')
                         datalist#styledance
                             option(value='Hip-Hop 10-25 Андрей Гризодуб')
@@ -29,8 +29,38 @@
                             option(value='Hip-Hop 7-10лет Михаил Головачук')
                             option(value='Urban Hip-hop 7-13лет Вячеслав Родин')
                             option(value='Kids group Таисия Константинова')
-                    textarea.textarea(name='textarea' placeholder='Ваш вопрос*' required='')
-                    .g-recaptcha(data-sitekey='6LcFHNUUAAAAAMwGfjlk1k2nbx1DcM7MrQoqB_r7' data-theme='light' data-callback='onSuccess')
+                    //textarea.textarea(name='textarea' placeholder='Ваш вопрос*' required='')
+
+                    fieldset.form-fieldset.ui-input.__first
+                        input#username(type='text' tabindex='0' name='name' pattern='^[А-Яа-яЁё\s]+$')
+                        label(for='username')
+                            span(data-text='Имя') Имя
+                    fieldset.form-fieldset.ui-input.__second
+                        input#email(type='email' tabindex='0' name='mail' pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})')
+                        label(for='email')
+                            span(data-text='E-mail') E-mail
+                    fieldset.form-fieldset.ui-input.__third
+                        input#phone(name='phone' type='tel')
+                        label(for='phonenumber')
+                            span(data-text='Телефон') Телефон
+                    fieldset.cont_datalist.form-fieldset.ui-input.__fourth
+                        input#styled.pole_datalist.pole_datalist_first(name='styledance' list='styledance')
+                        label(for='style')
+                            span(data-text='Направление') Направление
+                        datalist#styledance
+                            option(value='Hip-Hop 10-25 лет Андрей Гризодуб')
+                            option(value='Cantemporary 10-25 лет Полина Гризодуб')
+                            option(value='K-Pop 10-26 лет Сергей Михуткин')
+                            option(value='Bodyflex 10-35 лет Альбина Константинова')
+                            option(value='Hip-Hop 7-10 лет Михаил Головачук')
+                            option(value='Urban Hip-hop 7-13 лет Вячеслав Родин')
+                            option(value='Kids group 4-7 лет Таисия Константинова')
+                    fieldset.form-fieldset.ui-input.__fourth
+                        input#text(type='text' name='textarea')
+                        label(for='timecall')
+                            span(data-text='Удобное время для звонка') Удобное время для звонка
+
+                    //.g-recaptcha(data-sitekey='6LcFHNUUAAAAAMwGfjlk1k2nbx1DcM7MrQoqB_r7' data-theme='light' data-callback='onSuccess')
                     input#butdis.btn.main-btn-remodal(type='submit' name='submit' value='ОТПРАВИТЬ' disabled='')
                     input.formInfo(name='formInfo' type='hidden' value='')
                     input(type='hidden' name='formData' value='Заявка с сайта')
@@ -107,7 +137,7 @@ html
                                         p.box__row-cell-info--full-par
                                             | Преподаватель
                                             br
-                                            span Hip-Hop
+                                            span Hip&#8209;Hop
                             .box__row
                                 .box__row-cell(data-cell='3')
                                     .box__row-cell-info
@@ -150,7 +180,7 @@ html
                                                 | Приветствую уважаемые посетители нашего сайта. В группу по направлению Contemporary производится набор. В группу по направлению Contemporary производится набор.
                                             p.box__content-text-par
                                                 | Победитель турнира Moscow Argentine Tango Grand Prix, Финалистка чемпиона России по бальным танцам, Чемпионка России по Аргентинскому танго (Tango de pista) 2014 и 2015, Чемпионка Европы по Аргентинскому танго (Tango de pista) 2016, финалистка Чемпионата мира (Tango de pista) 2014 и 2015, финалистка Чемпионата мира (Tango de pista и Escenario) 2017.
-                                            h2.box__content-text-heading SHOW NOTES
+                                            h2.box__content-text-heading About me
                                             ul.box__content-text-list
                                                 li.box__content-text-item
                                                     | Основатель студии
@@ -173,14 +203,14 @@ html
                                                 | Приветствую уважаемые посетители нашего сайта. В группу по направлению Hip-Hop производится набор. В группу по направлению Hip-Hop производится набор.
                                             p.box__content-text-par
                                                 | преподаватель по Hip-Hop, Андрей Гризодуб. Участник проекта "Большие танцы" на телеканале Россия, а также экс танцор шоу-балета "Тодес".
-                                            h2.box__content-text-heading SHOW NOTES
+                                            h2.box__content-text-heading About me
                                             ul.box__content-text-list
                                                 li.box__content-text-item
                                                     | Сооснователь студии
                                                 li.box__content-text-item
                                                     | Профессиональный хареограф
                                                 li.box__content-text-item
-                                                    | экс танцор шоу-балета "Тодес"
+                                                    | Экс танцор шоу-балета "Тодес"
                                                 li.box__content-text-item
                                                     | Участник проекта "Большие танцы"
                                                 li.box__content-text-item
@@ -195,23 +225,19 @@ html
                                         .box__content-text
                                             h2.box__content-text-heading #{time60}
                                             p.box__content-text-par
-                                                | Suspendisse non orci porta, consectetur tellus in, gravida felis. Aenean vel posuere lacus. Quisque eget rutrum elit. In eu tortor eget velit scelerisque porttitor.
+                                                | Приветствую уважаемые посетители нашего сайта. В группу по направлению K-Pop производится набор. В группу по направлению K-Pop производится набор.
                                             p.box__content-text-par
-                                                | Morbi nisl metus, hendrerit eget ante sed, consequat egestas urna. Quisque et rutrum ligula, eu rutrum ex. Nunc neque mauris, laoreet eu auctor vitae, rutrum molestie dolor. Pellentesque vel vulputate elit, quis rhoncus sapien.
-                                            h2.box__content-text-heading SHOW NOTES
+                                                | Музыкальный жанр, возникший в Южной Корее и вобравший в себя элементы западного электропопа, хип-хопа, танцевальной музыки и современного ритм-н-блюза. Появившись изначально как музыкальный жанр, K-pop превратился в масштабную музыкальную субкультуру с миллионами поклонников во всём мире.
+                                            h2.box__content-text-heading About me
                                             ul.box__content-text-list
                                                 li.box__content-text-item
-                                                    | Vitae ultrices
+                                                    | Преподаватель K-Pop
                                                 li.box__content-text-item
-                                                    | Aenean vel
+                                                    | Администратор
                                                 li.box__content-text-item
-                                                    | Ut condimentum
+                                                    | Хареограф
                                                 li.box__content-text-item
-                                                    | Aenean metus
-                                                li.box__content-text-item
-                                                    | Quisque sodales
-                                                li.box__content-text-item
-                                                    | Accumsan metus
+                                                    | Участник шоу-балета "Беz Рамок"
                                             h2.box__content-text-heading FOLLOW
                                             a.box__content-text-link(href='https://vk.com/boombb' target='_blank') #{titleNameInvisbleThirdBlock} | #{titleNameInvisbleThirdBlock}
                                             br
@@ -220,27 +246,9 @@ html
                                 .box__content-wrapper
                                     .box__content-inner
                                         .box__content-text
-                                            h2.box__content-text-heading SYNOPSIS - 42 MIN
-                                            p.box__content-text-par
-                                                | Suspendisse non orci porta, consectetur tellus in, gravida felis. Aenean vel posuere lacus. Quisque eget rutrum elit. In eu tortor eget velit scelerisque porttitor.
-                                            p.box__content-text-par
-                                                | Morbi nisl metus, hendrerit eget ante sed, consequat egestas urna. Quisque et rutrum ligula, eu rutrum ex. Nunc neque mauris, laoreet eu auctor vitae, rutrum molestie dolor. Pellentesque vel vulputate elit, quis rhoncus sapien.
-                                            h2.box__content-text-heading SHOW NOTES
-                                            ul.box__content-text-list
-                                                li.box__content-text-item
-                                                    | Vitae ultrices
-                                                li.box__content-text-item
-                                                    | Aenean vel
-                                                li.box__content-text-item
-                                                    | Ut condimentum
-                                                li.box__content-text-item
-                                                    | Aenean metus
-                                                li.box__content-text-item
-                                                    | Quisque sodales
-                                                li.box__content-text-item
-                                                    | Accumsan metus
-                                            h2.box__content-text-heading FOLLOW
+                                            h2.box__content-text-heading
                                             +contactform
+                                            h2.box__content-text-heading
                             .box__close
                                 span
                                 br
@@ -261,6 +269,13 @@ html
                     .slide__close
                 .slide__bg-dark
                 .slide__container-content
+
+            .slide.slide--3(data-target='3')
+                .slide__text Teachers
+                .slide__img
+                    .slide__close
+                .slide__bg-dark
+                .slide__container-content
                     .comming-soon
                         .circle
                         .form-group
@@ -271,24 +286,38 @@ html
                                 .input-group-append
                                     span#basic-addon2.input-group-text
                                         button Notify Me
-            .slide.slide--3(data-target='3')
-                .slide__text Teachers
-                .slide__img
-                    .slide__close
-                .slide__bg-dark
-                .slide__container-content
             .slide.slide--4(data-target='4')
                 .slide__text Calendar
                 .slide__img
                     .slide__close
                 .slide__bg-dark
                 .slide__container-content
+                    .comming-soon
+                        .circle
+                        .form-group
+                            p.text COMMING SOON
+                            label Get latest updates about new release
+                            .input-group
+                                input.form-control(type='text' placeholder='Email Address')
+                                .input-group-append
+                                    span#basic-addon2.input-group-text
+                                        button Notify Me
             .slide.slide--5(data-target='5')
                 .slide__text About US
                 .slide__img
                     .slide__close
                 .slide__bg-dark
                 .slide__container-content
+                    .comming-soon
+                        .circle
+                        .form-group
+                            p.text COMMING SOON
+                            label Get latest updates about new release
+                            .input-group
+                                input.form-control(type='text' placeholder='Email Address')
+                                .input-group-append
+                                    span#basic-addon2.input-group-text
+                                        button Notify Me
         script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
         script(src='libs/bootstrap-4.3.1-dist/js/bootstrap.min.js')

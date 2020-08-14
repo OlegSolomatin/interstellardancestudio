@@ -157,7 +157,8 @@ html {
             background-color: #F25555; }
           .slide__container-content .container-main .box__row-cell-info {
             margin-left: 20px;
-            width: 100px;
+            width: 10vw;
+            max-width: 120px;
             color: #fff;
             transition: 400ms 850ms; }
             .slide__container-content .container-main .box__row-cell-info-ep {
@@ -171,7 +172,7 @@ html {
             .slide__container-content .container-main .box__row-cell-info-title {
               letter-spacing: 2px;
               margin-top: 15px;
-              font-size: 20px; }
+              font-size: clamp(15px, 2vw, 25px); }
               @media screen and (max-height: 692px) {
                 .slide__container-content .container-main .box__row-cell-info-title {
                   margin-top: 8px;
@@ -205,7 +206,7 @@ html {
             margin: 5vw 0 0 2vw;
             transition: 300ms; }
             .slide__container-content .container-main .box__row-cell-info--full-heading {
-              line-height: 60px;
+              line-height: clamp(20px, 4vw, 60px);
               width: 300px;
               color: #131313;
               font-size: clamp(20px, 4vw, 60px);
@@ -214,6 +215,8 @@ html {
               padding-top: 50px;
               color: #fff;
               font-size: clamp(20px, 4vw, 60px); }
+              .slide__container-content .container-main .box__row-cell-info--full-parspan {
+                white-space: nowrap; }
         .slide__container-content .container-main .box__row-cell:nth-child(2) {
           left: 75%; }
         .slide__container-content .container-main .box__row-cell:nth-child(3) {
@@ -251,7 +254,8 @@ html {
                 padding: 20px 0 30px 8px;
                 width: 300px;
                 max-width: 100%;
-                color: #ababab; }
+                color: #ababab;
+                /******************************************************** STYLE CONTACT FORM*************************/ }
                 .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .box__content-text-heading {
                   position: relative;
                   margin: 50px 0 20px 0;
@@ -281,6 +285,211 @@ html {
                   font-size: 14px; }
                 .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .box__content-text-link:hover {
                   text-decoration: underline; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input {
+                  position: relative;
+                  padding: 0;
+                  border: 0; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input {
+                  /*font-family: $base-font-family;*/
+                  border: 0;
+                  background: none;
+                  padding: 16px 0 16px 0;
+                  font-size: 24px;
+                  outline: 0;
+                  width: 100%;
+                  tap-highlight-color: rgba(0, 0, 0, 0);
+                  touch-callout: none; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea {
+                  border: 0;
+                  background: none;
+                  padding: 16px 0 16px 0;
+                  font-size: 24px;
+                  outline: 0;
+                  width: 100%;
+                  tap-highlight-color: rgba(0, 0, 0, 0);
+                  touch-callout: none; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input + label {
+                  position: relative;
+                  display: block;
+                  padding: 8px 0 8px 0;
+                  text-transform: uppercase;
+                  font-size: 14px;
+                  letter-spacing: .0875em;
+                  font-weight: 500;
+                  text-align: left; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input + label::before, .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input + label::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    width: 100%;
+                    height: 1px; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input + label::before {
+                    background-color: rgba(255, 255, 255, 0.2); }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input + label::after {
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+                    background-color: #F25555;
+                    height: 2px; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input + label span {
+                    position: relative;
+                    color: rgba(255, 255, 255, 0.2);
+                    transition: color 300ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+                    .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input + label span::after {
+                      content: attr(data-text);
+                      position: absolute;
+                      overflow: hidden;
+                      left: 0;
+                      transform: scaleX(1);
+                      white-space: nowrap;
+                      color: #fff;
+                      background-image: linear-gradient(to right, #F25555 50%, rgba(255, 255, 255, 0) 0%);
+                      background-position: 100% 50%;
+                      background-size: 200%;
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;
+                      backface-visibility: hidden;
+                      perspective: 1000;
+                      transform: translateZ(0);
+                      transition: background-position 300ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea + label {
+                  position: relative;
+                  display: block;
+                  padding: 8px 0 8px 0;
+                  text-transform: uppercase;
+                  font-size: 14px;
+                  letter-spacing: .0875em;
+                  font-weight: 500;
+                  text-align: left; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea + label::before, .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea + label::after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    width: 100%;
+                    height: 1px; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea + label::before {
+                    background-color: rgba(255, 255, 255, 0.2); }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea + label::after {
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+                    background-color: #F25555;
+                    height: 2px; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea + label span {
+                    position: relative;
+                    color: rgba(255, 255, 255, 0.2);
+                    transition: color 300ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+                    .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea + label span::after {
+                      content: attr(data-text);
+                      position: absolute;
+                      overflow: hidden;
+                      left: 0;
+                      transform: scaleX(1);
+                      white-space: nowrap;
+                      color: #fff;
+                      background-image: linear-gradient(to right, #F25555 50%, rgba(255, 255, 255, 0) 0%);
+                      background-position: 100% 50%;
+                      background-size: 200%;
+                      -webkit-background-clip: text;
+                      -webkit-text-fill-color: transparent;
+                      backface-visibility: hidden;
+                      perspective: 1000;
+                      transform: translateZ(0);
+                      transition: background-position 300ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:focus + label::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.error + label::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:invalid + label::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.filled + label::after {
+                  transform: scaleX(1);
+                  transform-origin: left; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:focus + label span::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.error + label span::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:invalid + label span::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.filled + label span::after {
+                  background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 0%);
+                  background-position: 0% 50%; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:focus + label::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.error + label::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:invalid + label::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.filled + label::after {
+                  transform: scaleX(1);
+                  transform-origin: left; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:focus + label span::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.error + label span::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:invalid + label span::after,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.filled + label span::after {
+                  background-image: linear-gradient(to right, white 50%, rgba(255, 255, 255, 0) 0%);
+                  background-position: 0% 50%; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.filled {
+                  color: #ffffff; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.filled + label::after {
+                    background-color: #ffffff; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.filled + label span::after {
+                    background-image: linear-gradient(to right, #ffffff 50%, rgba(255, 255, 255, 0) 0%);
+                    background-position: 0% 50%; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.filled {
+                  color: #ffffff; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.filled + label::after {
+                    background-color: #ffffff; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.filled + label span::after {
+                    background-image: linear-gradient(to right, #ffffff 50%, rgba(255, 255, 255, 0) 0%);
+                    background-position: 0% 50%; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:focus {
+                  color: #F25555; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:focus + label::after {
+                    background-color: #F25555; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:focus + label span::after {
+                    background-image: linear-gradient(to right, #F25555 50%, rgba(255, 255, 255, 0) 0%);
+                    background-position: 0% 50%; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:focus {
+                  color: #F25555; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:focus + label::after {
+                    background-color: #F25555; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:focus + label span::after {
+                    background-image: linear-gradient(to right, #F25555 50%, rgba(255, 255, 255, 0) 0%);
+                    background-position: 0% 50%; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.error,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:invalid {
+                  color: #4A90E2; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.error + label::after,
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:invalid + label::after {
+                    background-color: #4A90E2; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input.error + label span::after,
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input input:invalid + label span::after {
+                    background-image: linear-gradient(to right, #4A90E2 50%, rgba(255, 255, 255, 0) 0%);
+                    background-position: 0% 50%; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.error,
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:invalid {
+                  color: #4A90E2; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.error + label::after,
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:invalid + label::after {
+                    background-color: #4A90E2; }
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea.error + label span::after,
+                  .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input textarea:invalid + label span::after {
+                    background-image: linear-gradient(to right, #4A90E2 50%, rgba(255, 255, 255, 0) 0%);
+                    background-position: 0% 50%; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .__first, .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .__second, .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .__third, .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .__fourth {
+                  animation-name: fadeIn;
+                  animation-duration: 180ms;
+                  animation-fill-mode: both;
+                  animation-iteration-count: 1; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .__first {
+                  animation-delay: 0; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .__second {
+                  animation-delay: 80ms; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .__third {
+                  animation-delay: 180ms; }
+                .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .__fourth {
+                  animation-delay: 360ms; }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -25%, 0); }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0); } }
         .slide__container-content .container-main .box .box__content--1 > .box__content-wrapper > .box__content-inner {
           background: url("../img/polina.jpg") center right no-repeat;
           background-size: contain; }
@@ -358,9 +567,9 @@ html {
             position: relative;
             color: #F25555;
             letter-spacing: 3px;
-            line-height: 65px;
+            line-height: clamp(20px, 7vw, 65px);
             text-transform: uppercase;
-            font-size: 65px; }
+            font-size: clamp(20px, 7vw, 65px); }
             .slide__container-content .container-main .box__title-heading span {
               letter-spacing: 6px;
               color: #fff; }
@@ -510,27 +719,27 @@ html {
 
 .slide--1 {
   z-index: 0;
-  background: url("../img/testbg3.jpg") center center no-repeat;
+  background: url("../img/testbg4.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--2 {
   z-index: 1;
-  background: url("../img/testbg2.jpg") center center no-repeat;
+  background: url("../img/testbg3.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--3 {
   z-index: 2;
-  background: url("../img/testbg1.jpg") center center no-repeat;
+  background: url("../img/testbg5.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--4 {
   z-index: 3;
-  background: url("../img/testbg4.jpg") center center no-repeat;
+  background: url("../img/testbg2.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--5 {
   z-index: 4;
-  background: url("../img/testbg5.jpg") center center no-repeat;
+  background: url("../img/testbg1.jpg") center center no-repeat;
   background-size: cover; }
 
 .icon-show {
