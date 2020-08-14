@@ -47,8 +47,7 @@ $bgPics: (
 $bgFirstpage: (
         url('../img/polina.jpg') center right no-repeat,
         url('../img/andrey (2).png') center right no-repeat,
-        url('../img/sergey.png') center right no-repeat,
-        url('../img/andrey.jpg') center right no-repeat
+        url('../img/sergey.png') center right no-repeat
 );
 
 @mixin mediaMaxW($width) {
@@ -65,6 +64,98 @@ $bgFirstpage: (
   animation-duration: $time;
   animation-fill-mode: $fillmode;
   animation-iteration-count: $count;
+}
+
+@mixin flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@mixin flex-rowdirection {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+@mixin flex-rowrdirection {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+@mixin flex-coldirection{
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+@mixin flex-colrdirection {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+@mixin flex-nowrap {
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+}
+@mixin flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+@mixin justify-content-start {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+@mixin justify-content-end {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+@mixin justify-content-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@mixin justify-content-between{
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+@mixin justify-content-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+@mixin justfy-content-evenly {
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+}
+@mixin align-items-start {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+@mixin align-items-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+@mixin align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+@mixin align-items-stretch {
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+@mixin align-items-baseline {
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  align-items: baseline;
 }
 
 $bezier: cubic-bezier(0.215, 0.610, 0.355, 1.000);
@@ -114,8 +205,8 @@ $time: 300ms;
       background-color: #fff;
       transition: 500ms 500ms;
       @include mediaMaxW(960px) {
-        width: 75px;
-        height: 15px;
+        width: 60px;
+        height: 10px;
       }
     }
     &:after {
@@ -195,7 +286,7 @@ $time: 300ms;
         z-index: 1;
         overflow: hidden;
         &__row {
-        &-cell {
+          &-cell {
           position: absolute;
           top: 35%;
           left: 50%;
@@ -307,13 +398,21 @@ $time: 300ms;
               }
             }
           }
+            @include mediaMaxW(997.1px){
+              left: 3%;
+              width: 45%;
+              height: 30%;
+            }
         }
-        @for $i from 1 through $cellsInRow {
+          @for $i from 1 through $cellsInRow {
           &-cell:nth-child(#{$i + 1}) {
             left: 50% + ((50% / $cellsInRow) * $i);
+            @include mediaMaxW(997.1px){
+              left: 52%
+            }
           }
         }
-      }
+        }
         @for $i from 1 through $rows {
         &__row:nth-child(#{$i + 1}) {
           .box__row-cell {
@@ -811,14 +910,21 @@ $time: 300ms;
         position: absolute;
         top: 25%;
         left: 9%;
+          @include mediaMaxW(997.1px){
+            position: initial;
+            margin: 20% auto;
+          }
         &-heading {
           position: relative;
           color: $cellHvrClr;
           letter-spacing: 3px;
-          line-height: clamp(20px, 7vw, 65px);;
+          line-height: clamp(35px, 7vw, 65px);
           text-transform: uppercase;
           font: {
-            size: clamp(20px, 7vw, 65px);;
+            size: clamp(35px, 7vw, 65px);
+          }
+          @include mediaMaxW(997.1px){
+            @include flex();
           }
           span {
             letter-spacing: 6px;

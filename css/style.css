@@ -54,8 +54,8 @@ html {
       transition: 500ms 500ms; }
       @media screen and (max-width: 960px) {
         .slide__close:after, .slide__close:before {
-          width: 75px;
-          height: 15px; } }
+          width: 60px;
+          height: 10px; } }
     .slide__close:after {
       transform-origin: center left;
       transform: rotate(45deg) scale(0, 0); }
@@ -99,8 +99,8 @@ html {
     width: 100%;
     height: 100%;
     display: none;
-    /************************************************ ╨Ъ╨Ю╨Э╨в╨Х╨Э╨в ╨Я╨Х╨а╨Т╨Ю╨У╨Ю ╨б╨Ы╨Р╨Щ╨Ф╨Р ******************************************************************/
-    /************************************************ ╨Ъ╨Ю╨Э╨Х╨ж ╨Я╨Х╨а╨Т╨Ю╨У╨Ю ╨б╨Ы╨Р╨Щ╨Ф╨Р ***********************************************************/
+    /************************************************ КОНТЕНТ ПЕРВОГО СЛАЙДА ******************************************************************/
+    /************************************************ КОНЕЦ ПЕРВОГО СЛАЙДА ***********************************************************/
     /*COOMING SOON*/
     /**************************************************************************************/ }
     .slide__container-content .container-main {
@@ -119,7 +119,7 @@ html {
         height: 100%;
         z-index: 1;
         overflow: hidden;
-        /*╨Ч╨░╨┐╨╛╨╗╨╜╨╡╨╜╨╕╨╡ ╨С╨У ╨║╨║╨░╤А╤В╨╛╤З╨╡╨║ ╨╜╨░ ╨│╨╗╨░╨▓╨╜╨╛╨╣ ╤Б╤В╤А╨░╨╜╨╕╤Ж╨╡*/ }
+        /*Заполнение БГ ккарточек на главной странице*/ }
         .slide__container-content .container-main .box__row-cell {
           position: absolute;
           top: 35%;
@@ -217,10 +217,21 @@ html {
               font-size: clamp(20px, 4vw, 60px); }
               .slide__container-content .container-main .box__row-cell-info--full-parspan {
                 white-space: nowrap; }
+          @media screen and (max-width: 997.1px) {
+            .slide__container-content .container-main .box__row-cell {
+              left: 3%;
+              width: 45%;
+              height: 30%; } }
         .slide__container-content .container-main .box__row-cell:nth-child(2) {
           left: 75%; }
+          @media screen and (max-width: 997.1px) {
+            .slide__container-content .container-main .box__row-cell:nth-child(2) {
+              left: 52%; } }
         .slide__container-content .container-main .box__row-cell:nth-child(3) {
           left: 100%; }
+          @media screen and (max-width: 997.1px) {
+            .slide__container-content .container-main .box__row-cell:nth-child(3) {
+              left: 52%; } }
         .slide__container-content .container-main .box__row:nth-child(2) .box__row-cell {
           top: 67.5%; }
         .slide__container-content .container-main .box__row:nth-child(3) .box__row-cell {
@@ -499,9 +510,6 @@ html {
         .slide__container-content .container-main .box .box__content--3 > .box__content-wrapper > .box__content-inner {
           background: url("../img/sergey.png") center right no-repeat;
           background-size: contain; }
-        .slide__container-content .container-main .box .box__content--4 > .box__content-wrapper > .box__content-inner {
-          background: url("../img/andrey.jpg") center right no-repeat;
-          background-size: contain; }
         .slide__container-content .container-main .box__close {
           position: absolute;
           top: 3vh;
@@ -563,13 +571,22 @@ html {
           position: absolute;
           top: 25%;
           left: 9%; }
+          @media screen and (max-width: 997.1px) {
+            .slide__container-content .container-main .box__title {
+              position: initial;
+              margin: 20% auto; } }
           .slide__container-content .container-main .box__title-heading {
             position: relative;
             color: #F25555;
             letter-spacing: 3px;
-            line-height: clamp(20px, 7vw, 65px);
+            line-height: clamp(35px, 7vw, 65px);
             text-transform: uppercase;
-            font-size: clamp(20px, 7vw, 65px); }
+            font-size: clamp(35px, 7vw, 65px); }
+            @media screen and (max-width: 997.1px) {
+              .slide__container-content .container-main .box__title-heading {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex; } }
             .slide__container-content .container-main .box__title-heading span {
               letter-spacing: 6px;
               color: #fff; }
