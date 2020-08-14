@@ -205,6 +205,11 @@ html {
             opacity: 0;
             margin: 5vw 0 0 2vw;
             transition: 300ms; }
+            @media screen and (max-width: 576px) {
+              .slide__container-content .container-main .box__row-cell-info--full {
+                margin: 0px 0px 0px 5vw;
+                position: absolute;
+                top: 30%; } }
             .slide__container-content .container-main .box__row-cell-info--full-heading {
               line-height: clamp(20px, 4vw, 60px);
               width: 300px;
@@ -252,6 +257,12 @@ html {
             width: 60%;
             height: 100%;
             overflow: hidden; }
+            @media screen and (max-width: 576px) {
+              .slide__container-content .container-main .box .box__content .box__content-wrapper {
+                position: relative;
+                margin-top: 50%;
+                width: 100%;
+                height: 75vh; } }
             .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner {
               position: absolute;
               left: 18px;
@@ -614,6 +625,10 @@ html {
         transition: all 400ms 400ms, width 300ms 800ms;
         cursor: default;
         opacity: 1 !important; }
+        @media screen and (max-width: 576px) {
+          .slide__container-content .container-main .active {
+            height: 30%;
+            width: 100%; } }
         .slide__container-content .container-main .active .box__row-cell-info:nth-child(1) {
           transform: translateX(50px);
           opacity: 0;
