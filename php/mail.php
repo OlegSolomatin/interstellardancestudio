@@ -16,26 +16,25 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     if (isset($_POST['name'])) {$name = $_POST['name'];}
     if (isset($_POST['phone'])) {$phone = $_POST['phone'];}
     if (isset($_POST['mail'])) {$mail = $_POST['mail'];}
-    if (isset($_POST['styledance']) {$style = $_POST['styledance'];}
     if (isset($_POST['textarea'])) {$textarea = $_POST['textarea'];}
     if (isset($_POST['formData'])) {$formData = $_POST['formData'];}
 
-    $to = "c.centr@caforward.ru"; /*Укажите адрес, на который должно приходить письмо*/
+    $to = "olegsolomatin2018@yandex.ru"; /*Укажите адрес, на который должно приходить письмо*/
     $sendfrom   = " zayvkasite@caforward.ru"; /*Укажите адрес, с которого будет приходить письмо, можно не настоящий, нужно для формирования заголовка письма*/
     $headers  = "From: " . strip_tags($sendfrom) . "\r\n";
     $headers .= "Reply-To: ". strip_tags($sendfrom) . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html;charset=utf-8 \r\n";
     $subject = "$formData";
-    $message = "$formData<br> <b>Имя пославшего:</b> $name <br><b>Телефон:</b> $phone <br><b>Email:</b> $mail <br><b>Style:</b> $style <br><b>Текст сообщения:</b> $textarea";
+    $message = "$formData<br> <b>Имя пославшего:</b> $name <br><b>Телефон:</b> $phone <br><b>Email:</b> $mail <br><b>Style:</b> $textarea";
     $send = mail ($to, $subject, $message, $headers);
     if ($send == 'true')
     {
-    echo '<center><p class="success">Спасибо за обращение. Наша служба поддержки свяжется с Вами.</p></center>';
+    echo '<center><p class="success" style="text-align: left; font-size: clamp(20px, 4vw, 60px);  line-height: clamp(20px, 4vw, 60px); position: absolute; top: 16%; margin-block-start: 0.67em; width: min-content;">Мы свяжемся с вами в ближайшее время</p></center>';
     }
     else
     {
-    echo '<center><p class="fail"><b>Ошибка. Сообщение не отправлено!</b></p></center>';
+    echo '<center><p class="fail" style="text-align: left; font-size: clamp(20px, 4vw, 60px); line-height: clamp(20px, 4vw, 60px); position: absolute; top: 16%;><b>Ошибка. Сообщение не отправлено!</b></p></center>';
     }
 } else {
     http_response_code(403);

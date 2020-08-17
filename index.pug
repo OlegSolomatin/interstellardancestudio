@@ -12,25 +12,7 @@
     mixin contactform()
         .remodal(data-remodal-id='modal' role='dialog' aria-labelledby='modal1Title' aria-describedby='modal1Desc')
             .remodalBorder
-                //p
-                    img.lazyload(data-src='https://caforward.ru/img/footer-logo-white.png' alt='Форвард: Финансовая Компания')
                 form#form(method='POST')
-                    //h2#modal1Title &Ocy;&scy;&tcy;&acy;&vcy;&softcy;&tcy;&iecy; &vcy;&acy;&shcy;&icy; &kcy;&ocy;&ncy;&tcy;&acy;&kcy;&tcy;&ncy;&ycy;&iecy; &dcy;&acy;&ncy;&ncy;&ycy;&iecy; &icy; &ncy;&acy;&shcy;&acy; &scy;&lcy;&ucy;&zhcy;&bcy;&acy; &pcy;&ocy;&dcy;&dcy;&iecy;&rcy;&zhcy;&kcy;&icy; &scy;&vcy;&yacy;&zhcy;&iecy;&tcy;&scy;&yacy; &scy; &vcy;&acy;&mcy;&icy;
-                    //input.putName(type='text' name='name' placeholder='Ваше ФИО*' pattern='^[А-Яа-яЁё\s]+$' required='')
-                    //input#phone.putPhone(name='phone' type='tel' placeholder='Ваш телефон*' required='')
-                    //input.mail(name='mail' type='email' placeholder='Ваш Email' pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})')
-                    //.cont_datalist
-                        input#styled.pole_datalist.pole_datalist_first(name='styledance' list='styledance' placeholder='Выберите стиль')
-                        datalist#styledance
-                            option(value='Hip-Hop 10-25 Андрей Гризодуб')
-                            option(value='Cantemporary 10-25лет Полина Гризодуб')
-                            option(value='K-Pop 10-26лет Сергей Михуткин')
-                            option(value='Bodyflex 10-35лет Альбина Константинова')
-                            option(value='Hip-Hop 7-10лет Михаил Головачук')
-                            option(value='Urban Hip-hop 7-13лет Вячеслав Родин')
-                            option(value='Kids group Таисия Константинова')
-                    //textarea.textarea(name='textarea' placeholder='Ваш вопрос*' required='')
-
                     fieldset.form-fieldset.ui-input.__first
                         input#username(type='text' tabindex='0' name='name' pattern='^[А-Яа-яЁё\s]+$')
                         label(for='username')
@@ -43,9 +25,9 @@
                         input#phone(name='phone' type='tel')
                         label(for='phonenumber')
                             span(data-text='Телефон') Телефон
-                    fieldset.cont_datalist.form-fieldset.ui-input.__fourth
-                        input#styled.pole_datalist.pole_datalist_first(name='styledance' list='styledance')
-                        label(for='style')
+                    fieldset.form-fieldset.ui-input.__fourth
+                        input#text(type='text' name='textarea' list='styledance')
+                        label(for='timecall')
                             span(data-text='Направление') Направление
                         datalist#styledance
                             option(value='Hip-Hop 10-25 лет Андрей Гризодуб')
@@ -55,13 +37,9 @@
                             option(value='Hip-Hop 7-10 лет Михаил Головачук')
                             option(value='Urban Hip-hop 7-13 лет Вячеслав Родин')
                             option(value='Kids group 4-7 лет Таисия Константинова')
-                    fieldset.form-fieldset.ui-input.__fourth
-                        input#text(type='text' name='textarea')
-                        label(for='timecall')
-                            span(data-text='Удобное время для звонка') Удобное время для звонка
 
-                    //.g-recaptcha(data-sitekey='6LcFHNUUAAAAAMwGfjlk1k2nbx1DcM7MrQoqB_r7' data-theme='light' data-callback='onSuccess')
-                    input#butdis.btn.main-btn-remodal(type='submit' name='submit' value='ОТПРАВИТЬ' disabled='')
+                    //.g-recaptcha(data-sitekey='6LfLtcEUAAAAAF6j8advaCJePcbhHUlRMLoptDu6' data-theme='light' data-callback='onSuccess')
+                    input#butdis.btn.main-btn-remodal(type='submit' name='submit' value='ОТПРАВИТЬ')
                     input.formInfo(name='formInfo' type='hidden' value='')
                     input(type='hidden' name='formData' value='Заявка с сайта')
 doctype html
@@ -69,16 +47,10 @@ html
     head
         meta(charset='UTF-8')
         meta(name='viewport', content='initial-scale=1.0 ,width=device-width')
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js')
-        script.
-            $(window).on('load', function () {
-                var $preloader = $('#p_prldr')
-                $preloader.delay(200).fadeOut('slow');
-            });
         link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
         link(rel='stylesheet', href='css/normalize.css')
         link(rel='shortcut icon', href='img/favicon.png', type='image/x-icon')
-        link(rel='stylesheet', href='libs/fontawesome-free-5.12.0-web/css/all.min.css')
+        //link(rel='stylesheet', href='libs/fontawesome-free-5.12.0-web/css/all.min.css')
         link(rel='stylesheet', href='css/stylepreloader.css')
         link(rel='stylesheet', href='css/style.css')
     body
@@ -318,11 +290,17 @@ html
                                 .input-group-append
                                     span#basic-addon2.input-group-text
                                         button Notify Me
-        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
-        script(src='libs/bootstrap-4.3.1-dist/js/bootstrap.min.js')
+
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+        script.
+            jQuery(window).on('load', function () {
+                    jQuery('#p_prldr').delay(400).fadeOut('slow');
+                });
+        //script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+        //script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+        //script(src='libs/bootstrap-4.3.1-dist/js/bootstrap.min.js')
         script(src='js/index.js')
-        script(src='js/sliderivents.js')
+        //script(src='js/sliderivents.js')
         script(src='js/lazysizes.min.js')
         script(src='js/script.js')
         script(src='https://www.google.com/recaptcha/api.js')

@@ -99,9 +99,9 @@ html {
     width: 100%;
     height: 100%;
     display: none;
-    /************************************************ КОНТЕНТ ПЕРВОГО СЛАЙДА ******************************************************************/
-    /************************************************ КОНЕЦ ПЕРВОГО СЛАЙДА ***********************************************************/
-    /*COOMING SOON*/
+    /************************************************ ╨Ъ╨Ю╨Э╨в╨Х╨Э╨в ╨Я╨Х╨а╨Т╨Ю╨У╨Ю ╨б╨Ы╨Р╨Щ╨Ф╨Р ******************************************************************/
+    /************************************************ ╨Ъ╨Ю╨Э╨Х╨ж ╨Я╨Х╨а╨Т╨Ю╨У╨Ю ╨б╨Ы╨Р╨Щ╨Ф╨Р ***********************************************************/
+    /*************************************************COOMING SOON**********************************************************************************/
     /**************************************************************************************/ }
     .slide__container-content .container-main {
       height: 100vh;
@@ -119,7 +119,7 @@ html {
         height: 100%;
         z-index: 1;
         overflow: hidden;
-        /*Заполнение БГ ккарточек на главной странице*/ }
+        /*╨Ч╨░╨┐╨╛╨╗╨╜╨╡╨╜╨╕╨╡ ╨С╨У ╨║╨║╨░╤А╤В╨╛╤З╨╡╨║ ╨╜╨░ ╨│╨╗╨░╨▓╨╜╨╛╨╣ ╤Б╤В╤А╨░╨╜╨╕╤Ж╨╡*/ }
         .slide__container-content .container-main .box__row-cell {
           position: absolute;
           top: 35%;
@@ -203,25 +203,28 @@ html {
           .slide__container-content .container-main .box__row-cell-info--full {
             transform: translateX(-50px);
             opacity: 0;
-            margin: 5vw 0 0 2vw;
+            margin-left: 2vw;
             transition: 300ms; }
             @media screen and (max-width: 576px) {
               .slide__container-content .container-main .box__row-cell-info--full {
                 margin: 0px 0px 0px 5vw;
                 position: absolute;
-                top: 30%; } }
+                top: 30% !important; } }
             .slide__container-content .container-main .box__row-cell-info--full-heading {
               line-height: clamp(20px, 4vw, 60px);
-              width: 300px;
+              width: 90%;
               color: #131313;
               font-size: clamp(20px, 4vw, 60px);
               font-weight: 900; }
             .slide__container-content .container-main .box__row-cell-info--full-par {
-              padding-top: 50px;
+              padding-top: 5vw;
               color: #fff;
               font-size: clamp(20px, 4vw, 60px); }
               .slide__container-content .container-main .box__row-cell-info--full-parspan {
                 white-space: nowrap; }
+              @media screen and (max-height: 600px) {
+                .slide__container-content .container-main .box__row-cell-info--full-par {
+                  display: none; } }
           @media screen and (max-width: 997.1px) {
             .slide__container-content .container-main .box__row-cell {
               left: 3%;
@@ -260,9 +263,9 @@ html {
             @media screen and (max-width: 576px) {
               .slide__container-content .container-main .box .box__content .box__content-wrapper {
                 position: relative;
-                margin-top: 50%;
                 width: 100%;
-                height: 75vh; } }
+                height: 100vh;
+                top: 30%; } }
             .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner {
               position: absolute;
               left: 18px;
@@ -513,13 +516,13 @@ html {
     opacity: 1;
     transform: translate3d(0, 0, 0); } }
         .slide__container-content .container-main .box .box__content--1 > .box__content-wrapper > .box__content-inner {
-          background: url("../img/polina.jpg") center right no-repeat;
+          background: url("../img/images/polina.png") center right no-repeat;
           background-size: contain; }
         .slide__container-content .container-main .box .box__content--2 > .box__content-wrapper > .box__content-inner {
-          background: url("../img/andrey (2).png") center right no-repeat;
+          background: url("../img/images/andrey.png") center right no-repeat;
           background-size: contain; }
         .slide__container-content .container-main .box .box__content--3 > .box__content-wrapper > .box__content-inner {
-          background: url("../img/sergey.png") center right no-repeat;
+          background: url("../img/images/sergey.png") center right no-repeat;
           background-size: contain; }
         .slide__container-content .container-main .box__close {
           position: absolute;
@@ -648,7 +651,9 @@ html {
         .slide__container-content .container-main .active .box__row-cell-info--full {
           transform: translateX(0);
           opacity: 1;
-          transition: 300ms 900ms; }
+          transition: 300ms 900ms;
+          position: absolute;
+          top: 16%; }
       .slide__container-content .container-main .cell-fade {
         opacity: 0;
         transition: all 400ms 400ms, width 300ms 800ms, opacity 200ms 300ms; }
@@ -751,27 +756,27 @@ html {
 
 .slide--1 {
   z-index: 0;
-  background: url("../img/testbg4.jpg") center center no-repeat;
+  background: url("../img/images/testbg4.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--2 {
   z-index: 1;
-  background: url("../img/testbg3.jpg") center center no-repeat;
+  background: url("../img/images/testbg3.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--3 {
   z-index: 2;
-  background: url("../img/testbg5.jpg") center center no-repeat;
+  background: url("../img/images/testbg5.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--4 {
   z-index: 3;
-  background: url("../img/testbg2.jpg") center center no-repeat;
+  background: url("../img/images/testbg2.jpg") center center no-repeat;
   background-size: cover; }
 
 .slide--5 {
   z-index: 4;
-  background: url("../img/testbg1.jpg") center center no-repeat;
+  background: url("../img/images/testbg1.jpg") center center no-repeat;
   background-size: cover; }
 
 .icon-show {
