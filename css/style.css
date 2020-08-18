@@ -91,10 +91,21 @@ html {
     will-change: transform, opacity;
     transition: 750ms;
     opacity: 1;
-    z-index: 1; }
+    z-index: 1;
+    /*@include mediaMaxW(576px){
+      top: 10%;
+      left: 33%;
+      width: 50%;
+    }*/ }
     @media screen and (max-width: 960px) {
       .slide__text {
         font-size: 30px; } }
+    @media screen and (max-width: 576px) {
+      .slide__text {
+        font-size: 30px;
+        left: -14%;
+        width: 50%;
+        transform: rotate(90deg); } }
   .slide__container-content {
     width: 100%;
     height: 100%;
@@ -262,13 +273,12 @@ html {
             overflow: hidden; }
             @media screen and (max-width: 576px) {
               .slide__container-content .container-main .box .box__content .box__content-wrapper {
-                position: relative;
                 width: 100%;
-                height: 100vh;
-                top: 30%; } }
+                height: 70vh;
+                margin-top: 30vh; } }
             .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner {
               position: absolute;
-              left: 18px;
+              left: 5vw;
               transform: translateX(50px);
               width: 100%;
               height: 100%;
@@ -280,6 +290,13 @@ html {
                 width: 300px;
                 max-width: 100%;
                 color: #ababab;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                flex-direction: column;
                 /******************************************************** STYLE CONTACT FORM*************************/ }
                 .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .box__content-text-heading {
                   position: relative;
@@ -307,7 +324,9 @@ html {
                 .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .box__content-text-link {
                   text-decoration: none;
                   color: #ababab;
-                  font-size: 14px; }
+                  font-size: 14px;
+                  line-height: 20px;
+                  white-space: nowrap; }
                 .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .box__content-text-link:hover {
                   text-decoration: underline; }
                 .slide__container-content .container-main .box .box__content .box__content-wrapper .box__content-inner .box__content-text .remodal .remodalBorder .ui-input {

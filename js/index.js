@@ -133,7 +133,34 @@ $(document).ready(function() {
             'transition': '750ms'
         });
 
-        _this.find('.slide__text').css({
+        function windowSize(){
+            if ($(window).width() > '576'){
+                _this.find('.slide__text').css({
+                    'transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',
+                    '-moz-transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',
+                    'opacity': '1',
+                    'transition': '750ms',
+                    '-webkit-transition': '750ms',
+                    'display': 'block',
+                    'font-size': '35px'
+                });
+            } else {
+                _this.find('.slide__text').css({
+                    /*'transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',
+                    '-moz-transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',*/
+                    'opacity': '1',
+                    'transition': '750ms',
+                    '-webkit-transition': '750ms',
+                    'display': 'block',
+                    'font-size': '35px',
+                    'transform': 'ratate(90deg)',
+                    'left': '-14%',
+                    'width': '50%',
+                });
+            }
+        }
+        $(window).load(windowSize);
+        /*_this.find('.slide__text').css({
             'transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',
             '-moz-transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',
             'opacity': '1',
@@ -141,7 +168,7 @@ $(document).ready(function() {
             '-webkit-transition': '750ms',
             'display': 'block',
             'font-size': '35px'
-        });
+        });*/
 
         _this.find('.slide__text--1').css({
             'left': '8%'
@@ -191,18 +218,47 @@ $(document).ready(function() {
             'opacity': '0'
         });
 
-        _this.find('.slide__text--1').css({
+        /*_this.find('.slide__text--1').css({
             'left': '4%'
-        });
+        });*/
 
-        $text.css({
+        function windowSize(){
+            if ($(window).width() > '576'){
+                _this.find('.slide__text').css({
+                    'transform': 'translate3d(0, -50%, 0) rotate(0.01deg)',
+                    'opacity': '1',
+                    'transition': '200ms',
+                    '-webkit-transition': '200ms',
+                    'display': 'block',
+                    'font-size': '30px'
+                });
+                _this.find('.slide__text--1').css({
+                    'left': '4%'
+                });
+            } else {
+                _this.find('.slide__text').css({
+                    /*'transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',
+                    '-moz-transform': 'translate3d(0, -40%, 0) rotate(0.01deg)',*/
+                    'opacity': '1',
+                    'transition': '750ms',
+                    '-webkit-transition': '750ms',
+                    'display': 'block',
+                    'font-size': '30px',
+                    'transform': 'ratate(90deg)',
+                    'left': '-14%',
+                    'width': '50%',
+                });
+            }
+        }
+        $(window).load(windowSize);
+        /*$text.css({
             'transform': 'translate3d(0, -50%, 0) rotate(0.01deg)',
             'opacity': '1',
             'transition': '200ms',
             '-webkit-transition': '200ms',
             'display': 'block',
             'font-size': '30px'
-        });
+        });*/
 
         $container.css({
             'display': 'none'
@@ -233,7 +289,7 @@ $(document).ready(function() {
             '-webkit-transition': '200ms',
             'display': 'block',
             'font-size': '30px',
-            'left': '4%'
+            'left': '4%',
         });
 
         $bgdark.css({
