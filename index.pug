@@ -1,304 +1,324 @@
 //Declaration
 - var time90 = "Продолжительность - 90 мин";
-    -var time60 = "Продолжительность - 60 мин";
-    -var titleFirstBlock = "Набор в группу Cantemporary";
-        -var titleNameInvisbleFirstBlock = "Polina Grizodub";
-    -var titleSecondBlock = "Набор в группу Hip-Hop";
-        -var titleNameInvisbleSecondBlock = "Andrey Grizodub";
-    -var titleThirdBlock = "Набор в группу K-Pop";
-        -var titleNameInvisbleThirdBlock = "Sergey Mihutkin";
-    -var titleFourthBlock = "Бесплатное пробное занятие";
-        -var titleNameInvisbleFourthBlock = "Запишись на бесплатное пробное занятие";
-    mixin contactform()
-        .remodal(data-remodal-id='modal' role='dialog' aria-labelledby='modal1Title' aria-describedby='modal1Desc')
-            .remodalBorder
-                form#form(method='POST')
-                    fieldset.form-fieldset.ui-input.__first
-                        input#username(type='text' tabindex='0' name='name' pattern='^[А-Яа-яЁё\s]+$')
-                        label(for='username')
-                            span(data-text='Имя') Имя
-                    fieldset.form-fieldset.ui-input.__second
-                        input#email(type='email' tabindex='0' name='mail' pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})')
-                        label(for='email')
-                            span(data-text='E-mail') E-mail
-                    fieldset.form-fieldset.ui-input.__third
-                        input#phone(name='phone' type='tel')
-                        label(for='phonenumber')
-                            span(data-text='Телефон') Телефон
-                    fieldset.form-fieldset.ui-input.__fourth
-                        input#text(type='text' name='textarea' list='styledance')
-                        label(for='timecall')
-                            span(data-text='Направление') Направление
-                        datalist#styledance
-                            option(value='Hip-Hop 10-25 лет Андрей Гризодуб')
-                            option(value='Cantemporary 10-25 лет Полина Гризодуб')
-                            option(value='K-Pop 10-26 лет Сергей Михуткин')
-                            option(value='Bodyflex 10-35 лет Альбина Константинова')
-                            option(value='Hip-Hop 7-10 лет Михаил Головачук')
-                            option(value='Urban Hip-hop 7-13 лет Вячеслав Родин')
-                            option(value='Kids group 4-7 лет Таисия Константинова')
+	-var time60 = "Продолжительность - 60 мин";
+	-var titleFirstBlock = "Набор в группу Cantemporary";
+	-var titleNameInvisbleFirstBlock = "Polina Grizodub";
+	-var titleSecondBlock = "Набор в группу Hip-Hop";
+	-var titleNameInvisbleSecondBlock = "Andrey Grizodub";
+	-var titleThirdBlock = "Набор в группу K-Pop";
+	-var titleNameInvisbleThirdBlock = "Sergey Mihutkin";
+	-var titleFourthBlock = "Бесплатное пробное занятие";
+	-var titleNameInvisbleFourthBlock = "Запишись на бесплатное пробное занятие";
+	mixin contactform()
+		.remodal(data-remodal-id='modal' role='dialog' aria-labelledby='modal1Title' aria-describedby='modal1Desc')
+			.remodalBorder
+				form#form(method='POST')
+					fieldset.form-fieldset.ui-input.__first
+						input#username(type='text' tabindex='0' name='name' pattern='^[А-Яа-яЁё\s]+$')
+						label(for='username')
+							span(data-text='Имя') Имя
+					fieldset.form-fieldset.ui-input.__second
+						input#email(type='email' tabindex='0' name='mail' pattern='([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})')
+						label(for='email')
+							span(data-text='E-mail') E-mail
+					fieldset.form-fieldset.ui-input.__third
+						input#phone(name='phone' type='tel')
+						label(for='phonenumber')
+							span(data-text='Телефон') Телефон
+					fieldset.form-fieldset.ui-input.__fourth
+						input#text(type='text' name='textarea' list='styledance')
+						label(for='timecall')
+							span(data-text='Направление') Направление
+						datalist#styledance
+							option(value='Hip-Hop 10-25 лет Андрей Гризодуб')
+							option(value='Cantemporary 10-25 лет Полина Гризодуб')
+							option(value='K-Pop 10-26 лет Сергей Михуткин')
+							option(value='Bodyflex 10-35 лет Альбина Константинова')
+							option(value='Hip-Hop 7-10 лет Михаил Головачук')
+							option(value='Urban Hip-hop 7-13 лет Вячеслав Родин')
+							option(value='Kids group 4-7 лет Таисия Константинова')
 
-                    //.g-recaptcha(data-sitekey='6LfLtcEUAAAAAF6j8advaCJePcbhHUlRMLoptDu6' data-theme='light' data-callback='onSuccess')
-                    input#butdis.btn.main-btn-remodal(type='submit' name='submit' value='ОТПРАВИТЬ')
-                    input.formInfo(name='formInfo' type='hidden' value='')
-                    input(type='hidden' name='formData' value='Заявка с сайта')
+					//.g-recaptcha(data-sitekey='6LfLtcEUAAAAAF6j8advaCJePcbhHUlRMLoptDu6' data-theme='light' data-callback='onSuccess')
+					input#butdis.btn.main-btn-remodal(type='submit' name='submit' value='ОТПРАВИТЬ')
+					input.formInfo(name='formInfo' type='hidden' value='')
+					input(type='hidden' name='formData' value='Заявка с сайта')
 doctype html
 html
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport', content='initial-scale=1.0 ,width=device-width')
-        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
-        link(rel='stylesheet', href='css/normalize.css')
-        link(rel='shortcut icon', href='img/favicon.png', type='image/x-icon')
-        //link(rel='stylesheet', href='libs/fontawesome-free-5.12.0-web/css/all.min.css')
-        link(rel='stylesheet', href='css/stylepreloader.css')
-        link(rel='stylesheet', href='css/style.css')
-    body
-        #p_prldr.preloader
-            svg(viewBox="0 0 600 300")
-                // Symbol
-                symbol#s-text
-                    text(text-anchor="middle", x="50%", y="50%", dy=".35em")
-                        | Interstellar
-                // Duplicate symbols
-                use.text(xlink:href="#s-text")
-                use.text(xlink:href="#s-text")
-                use.text(xlink:href="#s-text")
-                use.text(xlink:href="#s-text")
-                use.text(xlink:href="#s-text")
-        .cont
-            .slide.slide--1(data-target='1')
-                .slide__text.slide__text--1 First Page
-                .slide__img
-                    .slide__close
-                .slide__bg-dark
-                .slide__container-content
-                    .container-main
-                        .box
-                            .box__row
-                                .box__row-cell(data-cell='1')
-                                    .box__row-cell-info
-                                        p.box__row-cell-info-ep
-                                            | 10
-                                            span 08
-                                    .box__row-cell-info
-                                        p.box__row-cell-info-title #{titleFirstBlock}
-                                    .box__row-cell-info
-                                        .box__row-cell-info-sign
-                                    .box__row-cell-info.box__row-cell-info--time
-                                        p 10 августа 2020
-                                    .box__row-cell-info--full
-                                        h1.box__row-cell-info--full-heading #{titleNameInvisbleFirstBlock}
-                                        p.box__row-cell-info--full-par
-                                            | Преподаватель
-                                            br
-                                            span Cantemporary
-                                .box__row-cell(data-cell='2')
-                                    .box__row-cell-info
-                                        p.box__row-cell-info-ep
-                                            | 08
-                                            span 08
-                                    .box__row-cell-info
-                                        p.box__row-cell-info-title #{titleSecondBlock}
-                                    .box__row-cell-info
-                                        .box__row-cell-info-sign
-                                    .box__row-cell-info.box__row-cell-info--time
-                                        p 8 августа 2020
-                                    .box__row-cell-info--full
-                                        h1.box__row-cell-info--full-heading #{titleNameInvisbleSecondBlock}
-                                        p.box__row-cell-info--full-par
-                                            | Преподаватель
-                                            br
-                                            span Hip&#8209;Hop
-                            .box__row
-                                .box__row-cell(data-cell='3')
-                                    .box__row-cell-info
-                                        p.box__row-cell-info-ep
-                                            | 07
-                                            span 08
-                                    .box__row-cell-info
-                                        p.box__row-cell-info-title #{titleThirdBlock}
-                                    .box__row-cell-info
-                                        .box__row-cell-info-sign
-                                    .box__row-cell-info.box__row-cell-info--time
-                                        p 07 августа 2020
-                                    .box__row-cell-info--full
-                                        h1.box__row-cell-info--full-heading #{titleNameInvisbleThirdBlock}
-                                        p.box__row-cell-info--full-par
-                                            | Преподаватель
-                                            br
-                                            span K-Pop
-                                .box__row-cell(data-cell='4')
-                                    .box__row-cell-info
-                                        p.box__row-cell-info-ep
-                                            | 29
-                                            span 07
-                                    .box__row-cell-info
-                                        p.box__row-cell-info-title #{titleFourthBlock}
-                                    .box__row-cell-info
-                                        .box__row-cell-info-sign
-                                    .box__row-cell-info.box__row-cell-info--time
-                                        p 29 августа 2020
-                                    .box__row-cell-info--full
-                                        h1.box__row-cell-info--full-heading #{titleNameInvisbleFourthBlock}
-                                        p.box__row-cell-info--full-par
-                                            | Выбирай любое направление и танцуй в месте с нами
-                            .box__content.box__content--1(data-content='1')
-                                .box__content-wrapper
-                                    .box__content-inner
-                                        .box__content-text
-                                            h2.box__content-text-heading #{time90}
-                                            p.box__content-text-par
-                                                | Приветствую уважаемые посетители нашего сайта. В группу по направлению Contemporary производится набор. В группу по направлению Contemporary производится набор.
-                                            p.box__content-text-par
-                                                | Победитель турнира Moscow Argentine Tango Grand Prix, Финалистка чемпиона России по бальным танцам, Чемпионка России по Аргентинскому танго (Tango de pista) 2014 и 2015, Чемпионка Европы по Аргентинскому танго (Tango de pista) 2016, финалистка Чемпионата мира (Tango de pista) 2014 и 2015, финалистка Чемпионата мира (Tango de pista и Escenario) 2017.
-                                            h2.box__content-text-heading About me
-                                            ul.box__content-text-list
-                                                li.box__content-text-item
-                                                    | Основатель студии
-                                                li.box__content-text-item
-                                                    | Профессиональный хареограф
-                                                li.box__content-text-item
-                                                    | Contemporary Dance
-                                                li.box__content-text-item
-                                                    | Swing Dance
-                                            h2.box__content-text-heading FOLLOW
-                                            a.box__content-text-link(href="https://vk.com/dancepollyinterstellar", target='_blank') #{titleNameInvisbleFirstBlock} | #{titleNameInvisbleFirstBlock}
-                                            a.box__content-text-link(href="https://www.instagram.com/polinagrizodub/", target='_blank') Checkout my Instagram
-                            .box__content.box__content--2(data-content='2')
-                                .box__content-wrapper
-                                    .box__content-inner
-                                        .box__content-text
-                                            h2.box__content-text-heading #{time90}
-                                            p.box__content-text-par
-                                                | Приветствую уважаемые посетители нашего сайта. В группу по направлению Hip-Hop производится набор. В группу по направлению Hip-Hop производится набор.
-                                            p.box__content-text-par
-                                                | преподаватель по Hip-Hop, Андрей Гризодуб. Участник проекта "Большие танцы" на телеканале Россия, а также экс танцор шоу-балета "Тодес".
-                                            h2.box__content-text-heading About me
-                                            ul.box__content-text-list
-                                                li.box__content-text-item
-                                                    | Сооснователь студии
-                                                li.box__content-text-item
-                                                    | Профессиональный хареограф
-                                                li.box__content-text-item
-                                                    | Экс танцор шоу-балета "Тодес"
-                                                li.box__content-text-item
-                                                    | Участник проекта "Большие танцы"
-                                                li.box__content-text-item
-                                                    | Hip-Hop Dance
-                                            h2.box__content-text-heading FOLLOW
-                                            a.box__content-text-link(href='https://vk.com/id34453980' target='_blank') Andrey Grizodub | Andrey Grizodub
-                                            a.box__content-text-link(href='https://www.instagram.com/andreygrizodub/' target='_blank') Checkout my Instagram
-                            .box__content.box__content--3(data-content='3')
-                                .box__content-wrapper
-                                    .box__content-inner
-                                        .box__content-text
-                                            h2.box__content-text-heading #{time60}
-                                            p.box__content-text-par
-                                                | Приветствую уважаемые посетители нашего сайта. В группу по направлению K-Pop производится набор. В группу по направлению K-Pop производится набор.
-                                            p.box__content-text-par
-                                                | Музыкальный жанр, возникший в Южной Корее и вобравший в себя элементы западного электропопа, хип-хопа, танцевальной музыки и современного ритм-н-блюза. Появившись изначально как музыкальный жанр, K-pop превратился в масштабную музыкальную субкультуру с миллионами поклонников во всём мире.
-                                            h2.box__content-text-heading About me
-                                            ul.box__content-text-list
-                                                li.box__content-text-item
-                                                    | Преподаватель K-Pop
-                                                li.box__content-text-item
-                                                    | Администратор
-                                                li.box__content-text-item
-                                                    | Хареограф
-                                                li.box__content-text-item
-                                                    | Участник шоу-балета "Беz Рамок"
-                                            h2.box__content-text-heading FOLLOW
-                                            a.box__content-text-link(href='https://vk.com/boombb' target='_blank') #{titleNameInvisbleThirdBlock} | #{titleNameInvisbleThirdBlock}
-                                            a.box__content-text-link(href='https://www.instagram.com/sergfd/' target='_blank') Checkout my Instagram
-                            .box__content.box__content--4(data-content='4')
-                                .box__content-wrapper
-                                    .box__content-inner
-                                        .box__content-text
-                                            h2.box__content-text-heading
-                                            +contactform
-                                            h2.box__content-text-heading
-                            .box__close
-                                span
-                                br
-                                span
-                                span
-                                br
-                                span
-                                span
-                                span
-                            .box__title
-                                h1.box__title-heading
-                                    | INTER
-                                    br
-                                    span Stellar
-            .slide.slide--2(data-target='2')
-                .slide__text Events
-                .slide__img
-                    .slide__close
-                .slide__bg-dark
-                .slide__container-content
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='initial-scale=1.0 ,width=device-width')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
+		link(rel='stylesheet', href='css/normalize.css')
+		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
+		//link(rel='stylesheet', href='libs/fontawesome-free-5.12.0-web/css/all.min.css')
+		link(rel='stylesheet', href='css/stylepreloader.css')
+		link(rel='stylesheet', href='css/style.css')
+	body
+		#p_prldr.preloader
+			svg(viewBox="0 0 600 300")
+				// Symbol
+				symbol#s-text
+					text(text-anchor="middle", x="50%", y="50%", dy=".35em")
+						| Interstellar
+				// Duplicate symbols
+				use.text(xlink:href="#s-text")
+				use.text(xlink:href="#s-text")
+				use.text(xlink:href="#s-text")
+				use.text(xlink:href="#s-text")
+				use.text(xlink:href="#s-text")
+		.cont
+			.slide.slide--1(data-target='1')
+				.slide__text.slide__text--1 First Page
+				.slide__img
+					.slide__close
+				.slide__bg-dark
+				.slide__container-content
+					.container-main
+						.box
+							.box__row
+								.box__row-cell(data-cell='1')
+									.box__row-cell-info
+										p.box__row-cell-info-ep
+											| 10
+											span 08
+									.box__row-cell-info
+										p.box__row-cell-info-title #{titleFirstBlock}
+									.box__row-cell-info
+										.box__row-cell-info-sign
+									.box__row-cell-info.box__row-cell-info--time
+										p 10 августа 2020
+									.box__row-cell-info--full
+										h1.box__row-cell-info--full-heading #{titleNameInvisbleFirstBlock}
+										p.box__row-cell-info--full-par
+											| Преподаватель
+											br
+											span Cantemporary
+								.box__row-cell(data-cell='2')
+									.box__row-cell-info
+										p.box__row-cell-info-ep
+											| 08
+											span 08
+									.box__row-cell-info
+										p.box__row-cell-info-title #{titleSecondBlock}
+									.box__row-cell-info
+										.box__row-cell-info-sign
+									.box__row-cell-info.box__row-cell-info--time
+										p 8 августа 2020
+									.box__row-cell-info--full
+										h1.box__row-cell-info--full-heading #{titleNameInvisbleSecondBlock}
+										p.box__row-cell-info--full-par
+											| Преподаватель
+											br
+											span Hip&#8209;Hop
+							.box__row
+								.box__row-cell(data-cell='3')
+									.box__row-cell-info
+										p.box__row-cell-info-ep
+											| 07
+											span 08
+									.box__row-cell-info
+										p.box__row-cell-info-title #{titleThirdBlock}
+									.box__row-cell-info
+										.box__row-cell-info-sign
+									.box__row-cell-info.box__row-cell-info--time
+										p 07 августа 2020
+									.box__row-cell-info--full
+										h1.box__row-cell-info--full-heading #{titleNameInvisbleThirdBlock}
+										p.box__row-cell-info--full-par
+											| Преподаватель
+											br
+											span K-Pop
+								.box__row-cell(data-cell='4')
+									.box__row-cell-info
+										p.box__row-cell-info-ep
+											| 29
+											span 07
+									.box__row-cell-info
+										p.box__row-cell-info-title #{titleFourthBlock}
+									.box__row-cell-info
+										.box__row-cell-info-sign
+									.box__row-cell-info.box__row-cell-info--time
+										p 29 августа 2020
+									.box__row-cell-info--full
+										h1.box__row-cell-info--full-heading #{titleNameInvisbleFourthBlock}
+										p.box__row-cell-info--full-par
+											| Выбирай любое направление и танцуй в месте с нами
+							.box__content.box__content--1(data-content='1')
+								.box__content-wrapper
+									.box__content-inner
+										.box__content-text
+											h2.box__content-text-heading #{time90}
+											p.box__content-text-par
+												| Приветствую уважаемые посетители нашего сайта. В группу по направлению Contemporary производится набор. В группу по направлению Contemporary производится набор.
+											p.box__content-text-par
+												| Победитель турнира Moscow Argentine Tango Grand Prix, Финалистка чемпиона России по бальным танцам, Чемпионка России по Аргентинскому танго (Tango de pista) 2014 и 2015, Чемпионка Европы по Аргентинскому танго (Tango de pista) 2016, финалистка Чемпионата мира (Tango de pista) 2014 и 2015, финалистка Чемпионата мира (Tango de pista и Escenario) 2017.
+											h2.box__content-text-heading About me
+											ul.box__content-text-list
+												li.box__content-text-item
+													| Основатель студии
+												li.box__content-text-item
+													| Профессиональный хареограф
+												li.box__content-text-item
+													| Contemporary Dance
+												li.box__content-text-item
+													| Swing Dance
+											h2.box__content-text-heading FOLLOW
+											a.box__content-text-link(href="https://vk.com/dancepollyinterstellar", target='_blank') #{titleNameInvisbleFirstBlock} | #{titleNameInvisbleFirstBlock}
+											a.box__content-text-link(href="https://www.instagram.com/polinagrizodub/", target='_blank') Checkout my Instagram
+							.box__content.box__content--2(data-content='2')
+								.box__content-wrapper
+									.box__content-inner
+										.box__content-text
+											h2.box__content-text-heading #{time90}
+											p.box__content-text-par
+												| Приветствую уважаемые посетители нашего сайта. В группу по направлению Hip-Hop производится набор. В группу по направлению Hip-Hop производится набор.
+											p.box__content-text-par
+												| преподаватель по Hip-Hop, Андрей Гризодуб. Участник проекта "Большие танцы" на телеканале Россия, а также экс танцор шоу-балета "Тодес".
+											h2.box__content-text-heading About me
+											ul.box__content-text-list
+												li.box__content-text-item
+													| Сооснователь студии
+												li.box__content-text-item
+													| Профессиональный хареограф
+												li.box__content-text-item
+													| Экс танцор шоу-балета "Тодес"
+												li.box__content-text-item
+													| Участник проекта "Большие танцы"
+												li.box__content-text-item
+													| Hip-Hop Dance
+											h2.box__content-text-heading FOLLOW
+											a.box__content-text-link(href='https://vk.com/id34453980' target='_blank') Andrey Grizodub | Andrey Grizodub
+											a.box__content-text-link(href='https://www.instagram.com/andreygrizodub/' target='_blank') Checkout my Instagram
+							.box__content.box__content--3(data-content='3')
+								.box__content-wrapper
+									.box__content-inner
+										.box__content-text
+											h2.box__content-text-heading #{time60}
+											p.box__content-text-par
+												| Приветствую уважаемые посетители нашего сайта. В группу по направлению K-Pop производится набор. В группу по направлению K-Pop производится набор.
+											p.box__content-text-par
+												| Музыкальный жанр, возникший в Южной Корее и вобравший в себя элементы западного электропопа, хип-хопа, танцевальной музыки и современного ритм-н-блюза. Появившись изначально как музыкальный жанр, K-pop превратился в масштабную музыкальную субкультуру с миллионами поклонников во всём мире.
+											h2.box__content-text-heading About me
+											ul.box__content-text-list
+												li.box__content-text-item
+													| Преподаватель K-Pop
+												li.box__content-text-item
+													| Администратор
+												li.box__content-text-item
+													| Хареограф
+												li.box__content-text-item
+													| Участник шоу-балета "Беz Рамок"
+											h2.box__content-text-heading FOLLOW
+											a.box__content-text-link(href='https://vk.com/boombb' target='_blank') #{titleNameInvisbleThirdBlock} | #{titleNameInvisbleThirdBlock}
+											a.box__content-text-link(href='https://www.instagram.com/sergfd/' target='_blank') Checkout my Instagram
+							.box__content.box__content--4(data-content='4')
+								.box__content-wrapper
+									.box__content-inner
+										.box__content-text
+											h2.box__content-text-heading
+											+contactform
+											h2.box__content-text-heading
+							.box__close
+								span
+								br
+								span
+								span
+								br
+								span
+								span
+								span
+							.box__title
+								h1.box__title-heading
+									| INTER
+									br
+									span Stellar
+			.slide.slide--2(data-target='2')
+				.slide__text Events
+				.slide__img
+					.slide__close
+				.slide__bg-dark
+				.slide__container-content
+					.container-main-second
 
-            .slide.slide--3(data-target='3')
-                .slide__text Teachers
-                .slide__img
-                    .slide__close
-                .slide__bg-dark
-                .slide__container-content
-                    .comming-soon
-                        .circle
-                        .form-group
-                            p.text COMMING SOON
-                            label Get latest updates about new release
-                            .input-group
-                                input.form-control(type='text' placeholder='Email Address')
-                                .input-group-append
-                                    span#basic-addon2.input-group-text
-                                        button Notify Me
-            .slide.slide--4(data-target='4')
-                .slide__text Calendar
-                .slide__img
-                    .slide__close
-                .slide__bg-dark
-                .slide__container-content
-                    .comming-soon
-                        .circle
-                        .form-group
-                            p.text COMMING SOON
-                            label Get latest updates about new release
-                            .input-group
-                                input.form-control(type='text' placeholder='Email Address')
-                                .input-group-append
-                                    span#basic-addon2.input-group-text
-                                        button Notify Me
-            .slide.slide--5(data-target='5')
-                .slide__text About US
-                .slide__img
-                    .slide__close
-                .slide__bg-dark
-                .slide__container-content
-                    .comming-soon
-                        .circle
-                        .form-group
-                            p.text COMMING SOON
-                            label Get latest updates about new release
-                            .input-group
-                                input.form-control(type='text' placeholder='Email Address')
-                                .input-group-append
-                                    span#basic-addon2.input-group-text
-                                        button Notify Me
+			.slide.slide--3(data-target='3')
+				.slide__text Teachers
+				.slide__img
+					.slide__close
+				.slide__bg-dark
+				.slide__container-content
+					.container-main-third
+						#app(:class="['container-main-third-content', isSelected ? 'container-selected':'', isReady ? 'container-ready':'']")
+							.team-container
+								.header
+									h2.header-title Teachers
+								.person-list
+									.person(v-for='(person,index) in persons' @click='selectPerson(index,$event)')
+										img.person-img(:src='person.photo')
+										.person-details
+											h2.person-title {{person.name}}
+											p.person-desc {{person.title}}
+							.team-detail
+								.team-detail-inner(v-if='isOk')
+									.team-detail-left(:style='`background-image:url(${selectedPersonData.photo})`')
+										.team-detail-photo
+											img(:src='selectedPersonData.photo' alt='')
+									.team-detail-right
+										.team-detail-bio
+											.team-detail-header
+												h2.person-title {{selectedPersonData.name}}
+												p.person-desc {{selectedPersonData.title}}
+												.social
+													a.ion-social-facebook(:href='selectedPersonData.social.facebook' target='_blank')
+													a.ion-social-twitter(:href='selectedPersonData.social.twitter' target='_blank')
+													a.ion-social-linkedin(href='selectedPersonData.social.linkedin' target='_blank')
+											.team-detail-bio-content(v-html='selectedPersonData.bio')
 
-        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
-        script.
-            jQuery(window).on('load', function () {
-                    jQuery('#p_prldr').delay(400).fadeOut('slow');
-                });
-        //script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
-        //script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
-        //script(src='libs/bootstrap-4.3.1-dist/js/bootstrap.min.js')
-        script(src='js/index.js')
-        //script(src='js/sliderivents.js')
-        script(src='js/lazysizes.min.js')
-        script(src='js/script.js')
-        script(src='https://www.google.com/recaptcha/api.js')
-        script(src='js/jquery.maskedinput.min.js')
+			.slide.slide--4(data-target='4')
+				.slide__text Calendar
+				.slide__img
+					.slide__close
+				.slide__bg-dark
+				.slide__container-content
+					.comming-soon
+						.circle
+						.form-group
+							p.text COMMING SOON
+							label Get latest updates about new release
+							.input-group
+								input.form-control(type='text' placeholder='Email Address')
+								.input-group-append
+									span#basic-addon2.input-group-text
+										button Notify Me
+			.slide.slide--5(data-target='5')
+				.slide__text About US
+				.slide__img
+					.slide__close
+				.slide__bg-dark
+				.slide__container-content
+					.comming-soon
+						.circle
+						.form-group
+							p.text COMMING SOON
+							label Get latest updates about new release
+							.input-group
+								input.form-control(type='text' placeholder='Email Address')
+								.input-group-append
+									span#basic-addon2.input-group-text
+										button Notify Me
+
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
+		script.
+			jQuery(window).on('load', function () {
+				jQuery('#p_prldr').delay(400).fadeOut('slow');
+			});
+		//script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
+		//script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
+		//script(src='libs/bootstrap-4.3.1-dist/js/bootstrap.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js')
+		script(src='js/index.js')
+		script(src='js/lazysizes.min.js')
+		script(src='js/script.js')
+		script(src='https://www.google.com/recaptcha/api.js')
+		script(src='js/jquery.maskedinput.min.js')
