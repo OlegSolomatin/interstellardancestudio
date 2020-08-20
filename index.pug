@@ -51,7 +51,7 @@ html
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
 		link(rel='stylesheet', href='css/normalize.css')
 		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
-		//link(rel='stylesheet', href='libs/fontawesome-free-5.12.0-web/css/all.min.css')
+		link(rel='stylesheet', href='libs/fontawesome-free-5.12.0-web/css/all.min.css')
 		link(rel='stylesheet', href='css/stylepreloader.css')
 		link(rel='stylesheet', href='css/style.css')
 	body
@@ -269,9 +269,9 @@ html
 												h2.person-title {{selectedPersonData.name}}
 												p.person-desc {{selectedPersonData.title}}
 												.social
-													a.ion-social-facebook(:href='selectedPersonData.social.facebook' target='_blank')
-													a.ion-social-twitter(:href='selectedPersonData.social.twitter' target='_blank')
-													a.ion-social-linkedin(href='selectedPersonData.social.linkedin' target='_blank')
+													a.fab.fa-vk(:href='selectedPersonData.social.vk' target='_blank')
+													a.ion-social-youtube(:href='selectedPersonData.social.youtube' target='_blank')
+													a.ion-social-instagram(href='selectedPersonData.social.instagram' target='_blank')
 											.team-detail-bio-content(v-html='selectedPersonData.bio')
 
 			.slide.slide--4(data-target='4')

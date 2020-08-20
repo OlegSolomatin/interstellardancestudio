@@ -57,6 +57,11 @@ $bgFirstpage: (
     @content;
   }
 }
+@mixin mediaMaxH($height) {
+  @media screen and (max-height: $height) {
+    @content;
+  }
+}
 
 @mixin animated(
   $time: 300ms,
@@ -210,6 +215,10 @@ $time: 300ms;
         width: 50px;
         height: 10px;
       }
+      @include mediaMaxH(970px){
+        width: 50px;
+        height: 10px;
+      }
     }
     &:after {
       transform-origin: center left;
@@ -221,6 +230,9 @@ $time: 300ms;
       transform: rotate(-45deg) scale(0, 0);
       transition: 500ms 650ms;
       @include mediaMaxW(970px) {
+        left: -16px;
+      }
+      @include mediaMaxH(970px){
         left: -16px;
       }
     }
@@ -262,8 +274,8 @@ $time: 300ms;
       font: {
         size: 30px;
       }
-      left: -14% !important;
-      width: 50% !important;
+      left: -20% !important;
+      width: 60% !important;
       transform: rotate(90deg) !important;
     }
   }
@@ -271,12 +283,6 @@ $time: 300ms;
     width: 100%;
     height: 100%;
     display: none;
-    @mixin mediaMaxH($height) {
-      @media screen and (max-height: $height) {
-        @content;
-      }
-    }
-
 
     .container-main {
       height: 100vh;
@@ -1066,8 +1072,23 @@ $time: 300ms;
         &-title {
           width: 100%;
           font-size: clamp(35px, 7vw, 65px);;
-          color: #fbf9bd;
+          /*color: #fbf9bd;*/
           margin-bottom: 15px;
+          background: linear-gradient(90deg, rgba(242,85,85,1) 20%, rgba(0,0,0,1) 55%, rgba(255,255,255,1) 80%, rgba(242,85,85,1) 100%);
+          background-size: 200% auto;
+
+          color: #000;
+          background-clip: text;
+          text-fill-color: transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: grad 5s linear infinite;
+
+          @keyframes grad {
+            to {
+              background-position: 200% center;
+            }
+          }
         }
       }
 
@@ -1082,6 +1103,14 @@ $time: 300ms;
         height: auto;
         position: relative;
         z-index: 4;
+        @include mediaMaxW(970px){
+          width: 85vw;
+          padding: 0px;
+        }
+        @include mediaMaxH(970px){
+          width: 85vw;
+          padding: 0px;
+        }
       }
       .person {
         width: calc(25% - 30px);
@@ -1102,7 +1131,11 @@ $time: 300ms;
           filter: grayscale(100%);
           z-index: 1;
           position: relative;
-          max-height: 210px;
+          max-height: 250px;
+          height: calc(33vw - 4vh);
+          @include mediaMaxW(480px){
+            height: calc(33vw - 4vh) !important;
+          }
         }
         &-title {
           color: #fff;
@@ -1113,7 +1146,7 @@ $time: 300ms;
           color: rgba(#fff, 0.7);
           margin-top: 10px;
           text-transform: uppercase;
-          font-size: clamp(10px, 1vw, 25px);
+          font-size: clamp(14px, 1vw, 25px);
           letter-spacing: 2px;
           font-family: $fontteacher;
         }
@@ -1139,7 +1172,7 @@ $time: 300ms;
           left: 0;
           bottom: 0;
           width: 100%;
-          background: #fbf9bd;
+          background: $cellHvrClr;
           content: "";
           height: 0px;
           transition: 0.45s;
@@ -1205,14 +1238,15 @@ $time: 300ms;
           @include flex();
           @include justify-content-center();
           @include flex-coldirection();
-          padding-left: 5vw;
+          padding-left: 2vw;
           padding-right: 5vw;
           height: 100vh;
           &-content {
             p {
               margin-bottom: 15px;
-              line-height: 25px;
-              font-size: clamp(10px, 1vw, 16px) !important;
+              line-height: clamp(14px, 2vw, 25px) !important;
+              font-size: clamp(14px, 2vw, 18px) !important;
+              font-family: "Karla", sans-serif;
             }
           }
         }
@@ -1230,6 +1264,7 @@ $time: 300ms;
           background-size: cover;
           background-repeat: no-repeat;
           background-position: top;
+          padding: 5vw;
           @include flex();
           @include flex-wrap();
           @include align-items-center();
@@ -1282,7 +1317,7 @@ $time: 300ms;
           right: 0;
           @include flex-wrap();
           .person-title {
-            font-size: clamp(12px, 2vw, 45px) !important;
+            font-size: clamp(20px, 2vw, 45px) !important;
           }
         }
       }
@@ -1294,7 +1329,7 @@ $time: 300ms;
           right: 0;
           visibility: visible;
           img {
-            width: 75%;
+            width: 100%;
           }
         }
         .team-container {
@@ -1329,15 +1364,23 @@ $time: 300ms;
       .social {
         margin-top: 15px;
         a {
-          color: #fbf9bd;
-          font-size: 20px;
+          color: $cellHvrClr;
+          font-size: 25px;
           margin-right: 8px;
+          text-decoration: none;
           &:last-child {
             margin-right: 0;
           }
         }
+        @include mediaMaxW(970px){
+          margin-top: 15px;
+          height: 35px;
+          @include flex();
+          @include align-items-center();
+          @include justify-content-center();
+        }
       }
-      @media (max-width: 1200px) {
+      @include mediaMaxW(1200px) {
         .team-detail-left {
           width: 400px;
           padding: 0 40px;
@@ -1345,17 +1388,18 @@ $time: 300ms;
         }
         .team-detail-right {
           padding-right: 0;
-          width: calc(100% - 440px);
+          width: calc(100% - 400px);
         }
         .person-details {
           padding: 0 10px;
         }
       }
 
-      @media (max-width: 970px) {
+      @include mediaMaxW(970px) {
         .team-detail-left {
           width: 100%;
-          padding: 50px 50px 30px 50px;
+          padding: 50px 2vw;
+          max-width: 40vw;
           &:after {
             background: linear-gradient(
                     to bottom,
@@ -1378,16 +1422,36 @@ $time: 300ms;
           width: calc(100% - 50px);
         }
         .person {
-          width: calc(33% - 20px);
+          width: calc(25% - 20px);
+          &-img{
+            max-height: none;
+            height: calc(25vw - 10vh);
+          }
         }
       }
-      @media (max-width: 480px) {
+      @include mediaMaxH(970px) {
         .person {
-          width: 100%;
-          margin-bottom: 50px;
+          width: calc(25% - 20px);
+          &-img{
+            max-height: none;
+            height: calc(20vw - 5vh);
+          }
+        }
+      }
+      @include mediaMaxW(480px){
+        .person {
+          width: calc(33% - 5px);
+          margin-bottom: 10px;
         }
         .header {
           margin-top: 50px;
+        }
+      }
+
+      @include mediaMaxH(625px){
+        .team-container{
+          padding: 0px;
+          max-width: calc(100vw - 80px);
         }
       }
     }

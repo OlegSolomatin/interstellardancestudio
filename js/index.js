@@ -380,99 +380,91 @@ $(document).ready(function() {
     <!-- CONTENT SLIDE TEACHERS-->
     const persons = [
         {
-            name: "Amber Gibs",
-            photo: "https://serving.photos.photobox.com/53464066dc132288128cb11531bb767f0082dcde75f3b845cd905d38c4223e95e0dc7bc9.jpg",
-            title: "Developer",
+            name: "Esenia Astra",
+            photo: "https://sun1-85.userapi.com/c854020/v854020657/1680ea/lGl4DMuNWbk.jpg",
+            alt: 'Здесь было фото преподавателя',
+            title: "Juzz-Funk",
             bio:
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
-                facebook: "#",
-                twitter: "https://twitter.com/knyttneve",
-                linkedin: "#"
+                vk: "https://vk.com/danceastra",
+                youtube: "https://www.youtube.com/channel/UCz6arMUrptoeLtghbb2YszQ",
+                linstagram: "https://www.instagram.com/eseniastra/"
             }
         },
         {
             name: "Andrey Grizodub",
             photo: "https://sun9-21.userapi.com/c849232/v849232101/1d6f2f/nilWa9vgT7Y.jpg",
+            alt: 'Здесь было фото преподавателя',
             title: "Hip-Hop",
             bio:
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
-                facebook: "#",
-                twitter: "https://twitter.com/knyttneve",
-                linkedin: "#"
+                vk: "https://vk.com/id34453980",
+                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                linstagram: "https://www.instagram.com/andreygrizodub/"
             }
         },
         {
             name: "Sergey Mihutkin",
             photo: "https://sun9-76.userapi.com/c850624/v850624965/18ab92/qUoaHK6IgCg.jpg",
+            alt: 'Здесь было фото преподавателя',
             title: "K-Pop",
             bio:
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
-                facebook: "#",
-                twitter: "https://twitter.com/knyttneve",
-                linkedin: "#"
+                vk: "https://vk.com/boombb",
+                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                linstagram: "https://www.instagram.com/sergfd/"
             }
         },
         {
             name: "Alice Jenkins",
             photo: "https://serving.photos.photobox.com/52898788b03c8a0e32a8cb52b4d43d7525f119daa2629569dbda0a8d827192217fb64c22.jpg",
+            alt: 'Здесь было фото преподавателя',
             title: "QA Engineer",
             bio:
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
-                facebook: "#",
-                twitter: "https://twitter.com/knyttneve",
-                linkedin: "#"
+                vk: "https://vk.com/interstellar_dance_studio",
+                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                linstagram: "https://www.instagram.com/interstellar_dance_studio_/?igshi"
             }
         },
         {
-            name: "Amber Gibs",
-            photo: "https://serving.photos.photobox.com/53464066dc132288128cb11531bb767f0082dcde75f3b845cd905d38c4223e95e0dc7bc9.jpg",
-            title: "Developer",
+            name: "Polina Grizodub",
+            photo: "https://sun9-64.userapi.com/c836736/v836736584/36be7/155uDD3TkJo.jpg",
+            title: "Cantemporary",
             bio:
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
-                facebook: "#",
-                twitter: "https://twitter.com/knyttneve",
-                linkedin: "#"
+                vk: "https://vk.com/dancepollyinterstellar",
+                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                linstagram: "https://www.instagram.com/polinagrizodub/"
             }
         },
         {
-            name: "Andrey Grizodub",
-            photo: "https://sun9-21.userapi.com/c849232/v849232101/1d6f2f/nilWa9vgT7Y.jpg",
-            title: "Hip-Hop",
+            name: "Vyacheslav Rodin",
+            photo: "https://sun9-36.userapi.com/c850136/v850136939/18f5c3/uJ_HtA0TLQE.jpg",
+            title: "Urban Hip-Hop",
             bio:
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
-                facebook: "#",
-                twitter: "https://twitter.com/knyttneve",
-                linkedin: "#"
+                vk: "https://vk.com/pushkadancer",
+                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                linstagram: "https://www.instagram.com/rodin_dancer/"
             }
         },
         {
-            name: "Sergey Mihutkin",
-            photo: "https://sun9-76.userapi.com/c850624/v850624965/18ab92/qUoaHK6IgCg.jpg",
-            title: "K-Pop",
+            name: "Al'bina Konstantinova",
+            photo: "https://sun9-64.userapi.com/c845019/v845019794/14eb6b/1ivH2KMZfhs.jpg",
+            title: "BodyFlex",
             bio:
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
-                facebook: "#",
-                twitter: "https://twitter.com/knyttneve",
-                linkedin: "#"
-            }
-        },
-        {
-            name: "Alice Jenkins",
-            photo: "https://serving.photos.photobox.com/52898788b03c8a0e32a8cb52b4d43d7525f119daa2629569dbda0a8d827192217fb64c22.jpg",
-            title: "QA Engineer",
-            bio:
-              "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
-            social: {
-                facebook: "#",
-                twitter: "https://twitter.com/knyttneve",
-                linkedin: "#"
+                vk: "https://vk.com/id34032898",
+                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                linstagram: "https://www.instagram.com/albinakonstanti/"
             }
         }
     ];
