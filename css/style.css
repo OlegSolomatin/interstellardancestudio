@@ -30,8 +30,8 @@ html {
     position: relative; }
   .slide__close {
     position: fixed;
-    top: 3%;
-    left: 3%;
+    top: 3vw;
+    left: 3vw;
     width: 10vw;
     height: 10vw;
     max-width: 100px;
@@ -755,6 +755,9 @@ html {
           transition: 0.3s;
           z-index: 2;
           position: relative; }
+          @media screen and (max-width: 370px) {
+            .slide__container-content .container-main-third .person-details {
+              display: none; } }
         .slide__container-content .container-main-third .person-img {
           width: 100%;
           filter: grayscale(100%);
@@ -785,8 +788,10 @@ html {
           margin-top: 10px;
           text-transform: uppercase;
           font-size: clamp(14px, 1vw, 25px);
-          letter-spacing: 2px;
           font-family: "Karla", sans-serif; }
+          @media screen and (max-width: 625px) {
+            .slide__container-content .container-main-third .person-desc {
+              margin-bottom: 0; } }
         .slide__container-content .container-main-third .person-list {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -882,13 +887,19 @@ html {
           padding-left: 2vw;
           padding-right: 5vw;
           height: 100vh; }
+          @media screen and (max-width: 370px) {
+            .slide__container-content .container-main-third .team-detail-bio {
+              height: 100%;
+              overflow: auto;
+              position: absolute;
+              display: block; } }
           .slide__container-content .container-main-third .team-detail-bio-content p {
             margin-bottom: 15px;
             line-height: clamp(11px, 2vw, 20px) !important;
             font-size: clamp(11px, 2vw, 20px) !important;
             font-family: "Karla", sans-serif; }
         .slide__container-content .container-main-third .team-detail-header {
-          margin-bottom: 30px; }
+          margin-bottom: 3vw; }
         .slide__container-content .container-main-third .team-detail-inner {
           min-height: 100%;
           display: -webkit-box;
@@ -952,6 +963,9 @@ html {
           right: 0;
           -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
+          @media screen and (max-width: 370px) {
+            .slide__container-content .container-main-third .team-detail-right {
+              overflow: hidden; } }
           .slide__container-content .container-main-third .team-detail-right .person-title {
             font-size: clamp(20px, 2vw, 45px) !important; }
       .slide__container-content .container-main-third .container-ready .team-detail {
@@ -987,6 +1001,9 @@ html {
           font-size: 25px;
           margin-right: 8px;
           text-decoration: none; }
+          @media screen and (max-width: 370px) {
+            .slide__container-content .container-main-third .social a {
+              font-size: 20px; } }
           .slide__container-content .container-main-third .social a:last-child {
             margin-right: 0; }
         @media screen and (max-width: 970px) {
@@ -1222,5 +1239,14 @@ html {
     transform: rotate(45deg) scale(1, 1); }
   .show-close:before {
     transform: rotate(-45deg) scale(1, 1); }
+
+/*@media screen and (orientation: landscape) {
+  .cont {
+    display: none;
+  }
+  @media screen and (orientation: portrait) {
+
+}
+}*/
 
 /*# sourceMappingURL=style.css.map */

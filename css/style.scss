@@ -189,8 +189,8 @@ $time: 300ms;
   }
   &__close {
     position: fixed;
-    top: 3%;
-    left: 3%;
+    top: 3vw;
+    left: 3vw;
     width: 10vw;
     height: 10vw;
     max-width: 100px;
@@ -305,147 +305,147 @@ $time: 300ms;
         overflow: hidden;
         &__row {
           &-cell {
-          position: absolute;
-          top: 35%;
-          left: 50%;
-          width: (50% - 2%) / $cellsInRow;
-          height: (60% - 2%) / $rows;
-          background-color: $bgCellClr;
-          transform: translateZ(0);
-          transition: all $cellAnSpeed 600ms, width 300ms 300ms, background-color 300ms 600ms;
-          cursor: pointer;
-          overflow: hidden;
-          z-index: 2;
-          &:after {
-            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: $hoverDarkSpeed;
-          }
-          &:before {
-            content: '';
-            position: absolute;
-            top: -5%;
-            left: -5%;
-            width: 110%;
-            height: 110%;
-            background-color: rgba(0, 0, 0, 0);
-            opacity: 1;
-            transition: 300ms;
-            z-index: -3;
-          }
-          &:hover:before {
-            background-color: $cellHvrClr;
-          }
-          &-info {
-            margin-left: 20px;
-            width: 10vw;
-            max-width: 120px;
-            color: #fff;
-            transition: $cellAnSpeed $cellAnSpeed + 450;
-            &-ep {
-              margin-top: 25px;
-              font-size: 10px;
-              span {
-                padding-left: 10px;
-              }
-              @include mediaMaxH(915px) {
-                margin-top: 10px;
-              }
-            }
-            &-title {
-              letter-spacing: 2px;
-              margin-top: 15px;
-              font-size: clamp(15px, 2vw, 25px);
-              @include mediaMaxH(692px) {
-                margin-top: 8px;
-                font-size: 18px;
-              }
-              @include mediaMaxH(692px) {
-                font-size: 16px;
-                margin-top: 4px;
-              }
-            }
-            &-sign {
-              margin: 15px 0 0 2px;
-              height: 3px;
-              width: 20px;
-              background-color: #fff;
-              border-radius: 1px;
-              transition: 200ms;
-              z-index: 10;
-              @include mediaMaxH(800px) {
-                margin-top: 10px;
-              }
-            }
-          }
-          &-info--time {
-            position: absolute;
-            bottom: 18px;
-            font-size: 10px;
-            @include mediaMaxH(650px) {
-              right: 20px;
-              text-align: right;
-            }
-          }
-          &-info--full {
-            transform: translateX(-50px);
-            opacity: 0;
-            margin-left: 2vw;
-            transition: 300ms;
-            @include mediaMaxW(576px){
-              margin: 0px 0px 0px 5vw;
+            top: 35%;
+            left: 50%;
+            width: (50% - 2%) / $cellsInRow;
+            height: (60% - 2%) / $rows;
+            background-color: $bgCellClr;
+            transform: translateZ(0);
+            transition: all $cellAnSpeed 600ms, width 300ms 300ms, background-color 300ms 600ms;
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 2;
+            &:after {
+              content: '';
               position: absolute;
-              top: 30% !important;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.5);
+              opacity: 0;
+              transition: $hoverDarkSpeed;
             }
-            &-heading {
-              line-height: clamp(20px, 4vw, 60px);
-              width: 90%;
-              color: #131313;
-              font: {
-                size: clamp(20px, 4vw, 60px);
-                weight: 900;
-              }
+            &:before {
+              content: '';
+              position: absolute;
+              top: -5%;
+              left: -5%;
+              width: 110%;
+              height: 110%;
+              background-color: rgba(0, 0, 0, 0);
+              opacity: 1;
+              transition: 300ms;
+              z-index: -3;
             }
-            &-par {
-              padding-top: 5vw;
+            &:hover:before {
+              background-color: $cellHvrClr;
+            }
+            &-info {
+              margin-left: 20px;
+              width: 10vw;
+              max-width: 120px;
               color: #fff;
-              font-size: clamp(20px, 4vw, 60px);
-              &span{
-                white-space: nowrap;
+              transition: $cellAnSpeed $cellAnSpeed + 450;
+              &-ep {
+                margin-top: 25px;
+                font-size: 10px;
+                span {
+                  padding-left: 10px;
+                }
+                @include mediaMaxH(915px) {
+                  margin-top: 10px;
+                }
               }
-              @include mediaMaxH(600px){
-                display: none;
+              &-title {
+                letter-spacing: 2px;
+                margin-top: 15px;
+                font-size: clamp(15px, 2vw, 25px);
+                @include mediaMaxH(692px) {
+                  margin-top: 8px;
+                  font-size: 18px;
+                }
+                @include mediaMaxH(692px) {
+                  font-size: 16px;
+                  margin-top: 4px;
+                }
+              }
+              &-sign {
+                margin: 15px 0 0 2px;
+                height: 3px;
+                width: 20px;
+                background-color: #fff;
+                border-radius: 1px;
+                transition: 200ms;
+                z-index: 10;
+                @include mediaMaxH(800px) {
+                  margin-top: 10px;
+                }
               }
             }
-          }
+            &-info--time {
+              position: absolute;
+              bottom: 18px;
+              font-size: 10px;
+              @include mediaMaxH(650px) {
+                right: 20px;
+                text-align: right;
+              }
+            }
+            &-info--full {
+              transform: translateX(-50px);
+              opacity: 0;
+              margin-left: 2vw;
+              transition: 300ms;
+              @include mediaMaxW(576px){
+                margin: 0px 0px 0px 5vw;
+                position: absolute;
+                top: 30% !important;
+              }
+              &-heading {
+                line-height: clamp(20px, 4vw, 60px);
+                width: 90%;
+                color: #131313;
+                font: {
+                  size: clamp(20px, 4vw, 60px);
+                  weight: 900;
+                }
+              }
+              &-par {
+                padding-top: 5vw;
+                color: #fff;
+                font-size: clamp(20px, 4vw, 60px);
+                &span{
+                  white-space: nowrap;
+                }
+                @include mediaMaxH(600px){
+                  display: none;
+                }
+              }
+            }
             @include mediaMaxW(997.1px){
               left: 3%;
               width: 45%;
               height: 30%;
             }
-        }
+          }
           @for $i from 1 through $cellsInRow {
-          &-cell:nth-child(#{$i + 1}) {
-            left: 50% + ((50% / $cellsInRow) * $i);
-            @include mediaMaxW(997.1px){
-              left: 52%
+            &-cell:nth-child(#{$i + 1}) {
+              left: 50% + ((50% / $cellsInRow) * $i);
+              @include mediaMaxW(997.1px){
+                left: 52%
+              }
             }
           }
         }
-        }
         @for $i from 1 through $rows {
-        &__row:nth-child(#{$i + 1}) {
-          .box__row-cell {
-            top: 35% + (65% / $rows) * $i;
+          &__row:nth-child(#{$i + 1}) {
+            .box__row-cell {
+              top: 35% + (65% / $rows) * $i;
+            }
           }
         }
-      }
         .box__content {
           position: absolute;
           width: 100%;
@@ -456,417 +456,417 @@ $time: 300ms;
           opacity: 0;
           z-index: -10;
           transition: all 400ms 600ms, z-index 0ms 0ms;
-        .box__content-wrapper {
-          position: relative;
-          margin-left: auto;
-          width: 60%;
-          height: 100%;
-          overflow: hidden;
-          @include mediaMaxW(576px){
-					 width: 100%;
-					 height: 70vh;
-					 margin-top: 30vh;
-          }
-          .box__content-inner {
-            position: absolute;
-            left: 5vw;
-            transform: translateX(50px);
-            width: 100%;
+          .box__content-wrapper {
+            position: relative;
+            margin-left: auto;
+            width: 60%;
             height: 100%;
-            overflow: auto;
-            opacity: 0;
-            transition: $cellAnSpeed, opacity 200ms;
-            .box__content-text{
-              padding: 20px 0 30px 8px;
-              width: 300px;
-              max-width: 100%;
-              color: #ababab;
-              @include flex();
-              @include flex-coldirection();
-              .box__content-text-heading {
-                position: relative;
-                margin: 50px 0 20px 0;
-                color: #f5f5f5;
-                font: {
-                  size: 16px;
+            overflow: hidden;
+            @include mediaMaxW(576px){
+              width: 100%;
+              height: 70vh;
+              margin-top: 30vh;
+            }
+            .box__content-inner {
+              position: absolute;
+              left: 5vw;
+              transform: translateX(50px);
+              width: 100%;
+              height: 100%;
+              overflow: auto;
+              opacity: 0;
+              transition: $cellAnSpeed, opacity 200ms;
+              .box__content-text{
+                padding: 20px 0 30px 8px;
+                width: 300px;
+                max-width: 100%;
+                color: #ababab;
+                @include flex();
+                @include flex-coldirection();
+                .box__content-text-heading {
+                  position: relative;
+                  margin: 50px 0 20px 0;
+                  color: #f5f5f5;
+                  font: {
+                    size: 16px;
+                  }
                 }
-              }
-              .box__content-text-heading:after {
-                content: '';
-                position: absolute;
-                top: -15px;
-                left: 0;
-                width: 20px;
-                height: 2px;
-                background-color: #a73c3c;
-                box-shadow: 0 0 1px 0 #a73c3c;
-              }
-              .box__content-text-par {
-                line-height: 22px;
-                padding-bottom: 10px;
-                font: {
-                  size: 14px;
+                .box__content-text-heading:after {
+                  content: '';
+                  position: absolute;
+                  top: -15px;
+                  left: 0;
+                  width: 20px;
+                  height: 2px;
+                  background-color: #a73c3c;
+                  box-shadow: 0 0 1px 0 #a73c3c;
                 }
-              }
-              .box__content-text-list {
-                list-style-type: none;
-                .box__content-text-item {
-                  padding-bottom: 3px;
+                .box__content-text-par {
+                  line-height: 22px;
+                  padding-bottom: 10px;
                   font: {
                     size: 14px;
                   }
                 }
-
-              }
-              .box__content-text-link {
-                text-decoration: none;
-                color: #ababab;
-                font-size: 14px;
-                line-height: 20px;
-                white-space: nowrap;
-              }
-              .box__content-text-link:hover {
-                text-decoration: underline;
-              }
-              /******************************************************** STYLE CONTACT FORM*************************/
-              .remodal{
-                .remodalBorder{
-
-                  .ui-input {
-                    position: relative;
-                    padding: 0;
-                    border: 0;
+                .box__content-text-list {
+                  list-style-type: none;
+                  .box__content-text-item {
+                    padding-bottom: 3px;
+                    font: {
+                      size: 14px;
+                    }
                   }
 
-                  .ui-input input {
-                    /*font-family: $base-font-family;*/
-                    border: 0;
-                    background: none;
-                    padding: 16px 0 16px 0;
-                    font-size: 24px;
-                    outline: 0;
-                    width: 100%;
-                    tap-highlight-color: rgba(0,0,0,0);
-                    touch-callout: none;
-                  }
+                }
+                .box__content-text-link {
+                  text-decoration: none;
+                  color: #ababab;
+                  font-size: 14px;
+                  line-height: 20px;
+                  white-space: nowrap;
+                }
+                .box__content-text-link:hover {
+                  text-decoration: underline;
+                }
+                /******************************************************** STYLE CONTACT FORM*************************/
+                .remodal{
+                  .remodalBorder{
 
-                  .ui-input textarea {
-                    border: 0;
-                    background: none;
-                    padding: 16px 0 16px 0;
-                    font-size: 24px;
-                    outline: 0;
-                    width: 100%;
-                    tap-highlight-color: rgba(0,0,0,0);
-                    touch-callout: none;
-                  }
-
-                  .ui-input input + label {
-                    position: relative;
-                    display: block;
-                    padding: 8px 0 8px 0;
-                    text-transform: uppercase;
-                    font-size: 14px;
-                    letter-spacing: .0875em;
-                    font-weight: 500;
-                    text-align: left;
-
-                    &::before, &::after {
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      content: "";
-                      width: 100%;
-                      height: 1px;
-                    }
-
-                    &::before {
-                      background-color: rgba(255, 255, 255, .2);
-                    }
-
-                    &::after {
-                      transform: scaleX(0);
-                      transform-origin: left;
-                      transition: transform $time $bezier;
-                      background-color: $cellHvrClr;
-                      height: 2px;
-                    }
-
-                    span {
+                    .ui-input {
                       position: relative;
-                      color: rgba(255, 255, 255, .2);
-                      transition: color $time $bezier;
-
-                      &::after {
-                        content: attr(data-text);
-                        position: absolute;
-                        overflow: hidden;
-                        left: 0;
-                        transform: scaleX(1);
-                        white-space: nowrap;
-                        color: #fff;
-
-                        background-image: linear-gradient(to right,
-                                $cellHvrClr 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 100% 50%;
-                        background-size: 200%;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-
-                        backface-visibility: hidden;
-                        perspective: 1000;
-                        transform: translateZ(0);
-
-                        transition: background-position $time $bezier;
-                      }
+                      padding: 0;
+                      border: 0;
                     }
-                  }
 
-                  .ui-input textarea + label {
-                    position: relative;
-                    display: block;
-                    padding: 8px 0 8px 0;
-                    text-transform: uppercase;
-                    font-size: 14px;
-                    letter-spacing: .0875em;
-                    font-weight: 500;
-                    text-align: left;
-
-                    &::before, &::after {
-                      position: absolute;
-                      top: 0;
-                      left: 0;
-                      content: "";
+                    .ui-input input {
+                      /*font-family: $base-font-family;*/
+                      border: 0;
+                      background: none;
+                      padding: 16px 0 16px 0;
+                      font-size: 24px;
+                      outline: 0;
                       width: 100%;
-                      height: 1px;
+                      tap-highlight-color: rgba(0,0,0,0);
+                      touch-callout: none;
                     }
 
-                    &::before {
-                      background-color: rgba(255, 255, 255, .2);
+                    .ui-input textarea {
+                      border: 0;
+                      background: none;
+                      padding: 16px 0 16px 0;
+                      font-size: 24px;
+                      outline: 0;
+                      width: 100%;
+                      tap-highlight-color: rgba(0,0,0,0);
+                      touch-callout: none;
                     }
 
-                    &::after {
-                      transform: scaleX(0);
-                      transform-origin: left;
-                      transition: transform $time $bezier;
-                      background-color: $cellHvrClr;
-                      height: 2px;
-                    }
-
-                    span {
+                    .ui-input input + label {
                       position: relative;
-                      color: rgba(255, 255, 255, .2);
-                      transition: color $time $bezier;
+                      display: block;
+                      padding: 8px 0 8px 0;
+                      text-transform: uppercase;
+                      font-size: 14px;
+                      letter-spacing: .0875em;
+                      font-weight: 500;
+                      text-align: left;
 
-                      &::after {
-                        content: attr(data-text);
+                      &::before, &::after {
                         position: absolute;
-                        overflow: hidden;
+                        top: 0;
                         left: 0;
-                        transform: scaleX(1);
-                        white-space: nowrap;
-                        color: #fff;
-
-                        background-image: linear-gradient(to right,
-                                $cellHvrClr 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 100% 50%;
-                        background-size: 200%;
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-
-                        backface-visibility: hidden;
-                        perspective: 1000;
-                        transform: translateZ(0);
-
-                        transition: background-position $time $bezier;
+                        content: "";
+                        width: 100%;
+                        height: 1px;
                       }
-                    }
-                  }
 
-                  .ui-input input:focus,
-                  .ui-input input.error,
-                  .ui-input input:invalid,
-                  .ui-input input.filled {
-
-                    & + label {
+                      &::before {
+                        background-color: rgba(255, 255, 255, .2);
+                      }
 
                       &::after {
-                        transform: scaleX(1);
+                        transform: scaleX(0);
                         transform-origin: left;
+                        transition: transform $time $bezier;
+                        background-color: $cellHvrClr;
+                        height: 2px;
                       }
 
-                      span::after {
-                        //color: #4A90E2;
-                        background-image: linear-gradient(to right,
-                                rgba(255,255,255,1) 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 0% 50%;
+                      span {
+                        position: relative;
+                        color: rgba(255, 255, 255, .2);
+                        transition: color $time $bezier;
+
+                        &::after {
+                          content: attr(data-text);
+                          position: absolute;
+                          overflow: hidden;
+                          left: 0;
+                          transform: scaleX(1);
+                          white-space: nowrap;
+                          color: #fff;
+
+                          background-image: linear-gradient(to right,
+                              $cellHvrClr 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 100% 50%;
+                          background-size: 200%;
+                          -webkit-background-clip: text;
+                          -webkit-text-fill-color: transparent;
+
+                          backface-visibility: hidden;
+                          perspective: 1000;
+                          transform: translateZ(0);
+
+                          transition: background-position $time $bezier;
+                        }
                       }
                     }
-                  }
 
-                  .ui-input textarea:focus,
-                  .ui-input textarea.error,
-                  .ui-input textarea:invalid,
-                  .ui-input textarea.filled{
-                    & + label {
+                    .ui-input textarea + label {
+                      position: relative;
+                      display: block;
+                      padding: 8px 0 8px 0;
+                      text-transform: uppercase;
+                      font-size: 14px;
+                      letter-spacing: .0875em;
+                      font-weight: 500;
+                      text-align: left;
+
+                      &::before, &::after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: "";
+                        width: 100%;
+                        height: 1px;
+                      }
+
+                      &::before {
+                        background-color: rgba(255, 255, 255, .2);
+                      }
 
                       &::after {
-                        transform: scaleX(1);
+                        transform: scaleX(0);
                         transform-origin: left;
-                      }
-
-                      span::after {
-                        //color: #4A90E2;
-                        background-image: linear-gradient(to right,
-                                rgba(255,255,255,1) 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 0% 50%;
-                      }
-                    }
-                  }
-
-                  .ui-input input.filled {
-                    color: #ffffff;
-
-                    & + label {
-
-                      &::after {
-                        background-color: #ffffff;
-                      }
-
-                      span::after {
-                        background-image: linear-gradient(to right,
-                                #ffffff 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 0% 50%;
-                      }
-                    }
-                  }
-
-                  .ui-input textarea.filled {
-                    color: #ffffff;
-
-                    & + label {
-
-                      &::after {
-                        background-color: #ffffff;
-                      }
-
-                      span::after {
-                        background-image: linear-gradient(to right,
-                                #ffffff 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 0% 50%;
-                      }
-                    }
-                  }
-
-                  .ui-input input:focus {
-                    color: $cellHvrClr;
-
-                    & + label {
-
-                      &::after {
+                        transition: transform $time $bezier;
                         background-color: $cellHvrClr;
+                        height: 2px;
                       }
 
-                      span::after {
-                        background-image: linear-gradient(to right,
-                                $cellHvrClr 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 0% 50%;
-                      }
-                    }
-                  }
+                      span {
+                        position: relative;
+                        color: rgba(255, 255, 255, .2);
+                        transition: color $time $bezier;
 
-                  .ui-input textarea:focus {
-                    color: $cellHvrClr;
+                        &::after {
+                          content: attr(data-text);
+                          position: absolute;
+                          overflow: hidden;
+                          left: 0;
+                          transform: scaleX(1);
+                          white-space: nowrap;
+                          color: #fff;
 
-                    & + label {
+                          background-image: linear-gradient(to right,
+                              $cellHvrClr 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 100% 50%;
+                          background-size: 200%;
+                          -webkit-background-clip: text;
+                          -webkit-text-fill-color: transparent;
 
-                      &::after {
-                        background-color: $cellHvrClr;
-                      }
+                          backface-visibility: hidden;
+                          perspective: 1000;
+                          transform: translateZ(0);
 
-                      span::after {
-                        background-image: linear-gradient(to right,
-                                $cellHvrClr 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 0% 50%;
-                      }
-                    }
-                  }
-
-                  .ui-input input.error,
-                  .ui-input input:invalid {
-                    color: #4A90E2;
-
-                    & + label {
-
-                      &::after {
-                        background-color: #4A90E2;
-                      }
-
-                      span::after {
-                        background-image: linear-gradient(to right,
-                                #4A90E2 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 0% 50%;
+                          transition: background-position $time $bezier;
+                        }
                       }
                     }
-                  }
 
-                  .ui-input textarea.error,
-                  .ui-input textarea:invalid {
-                    color: #4A90E2;
+                    .ui-input input:focus,
+                    .ui-input input.error,
+                    .ui-input input:invalid,
+                    .ui-input input.filled {
 
-                    & + label {
+                      & + label {
 
-                      &::after {
-                        background-color: #4A90E2;
+                        &::after {
+                          transform: scaleX(1);
+                          transform-origin: left;
+                        }
+
+                        span::after {
+                          //color: #4A90E2;
+                          background-image: linear-gradient(to right,
+                              rgba(255,255,255,1) 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 0% 50%;
+                        }
                       }
+                    }
 
-                      span::after {
-                        background-image: linear-gradient(to right,
-                                #4A90E2 50%,
-                                rgba(255,255,255,0) 0%);
-                        background-position: 0% 50%;
+                    .ui-input textarea:focus,
+                    .ui-input textarea.error,
+                    .ui-input textarea:invalid,
+                    .ui-input textarea.filled{
+                      & + label {
+
+                        &::after {
+                          transform: scaleX(1);
+                          transform-origin: left;
+                        }
+
+                        span::after {
+                          //color: #4A90E2;
+                          background-image: linear-gradient(to right,
+                              rgba(255,255,255,1) 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 0% 50%;
+                        }
                       }
                     }
-                  }
 
-                  .__first, .__second, .__third, .__fourth {
-                    animation-name: fadeIn;
-                    animation-duration: 180ms;
-                    animation-fill-mode: both;
-                    animation-iteration-count: 1;
-                  }
+                    .ui-input input.filled {
+                      color: #ffffff;
 
-                  .__first { animation-delay: 0; }
-                  .__second { animation-delay: 80ms; }
-                  .__third { animation-delay: 180ms; }
-                  .__fourth { animation-delay: 360ms; }
+                      & + label {
 
-                  @keyframes fadeIn {
-                    from {
-                      opacity: 0;
-                      transform: translate3d(0, -25%, 0);
+                        &::after {
+                          background-color: #ffffff;
+                        }
+
+                        span::after {
+                          background-image: linear-gradient(to right,
+                              #ffffff 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 0% 50%;
+                        }
+                      }
                     }
-                    to {
-                      opacity: 1;
-                      transform: translate3d(0, 0, 0);
-                    }
-                  }
 
+                    .ui-input textarea.filled {
+                      color: #ffffff;
+
+                      & + label {
+
+                        &::after {
+                          background-color: #ffffff;
+                        }
+
+                        span::after {
+                          background-image: linear-gradient(to right,
+                              #ffffff 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 0% 50%;
+                        }
+                      }
+                    }
+
+                    .ui-input input:focus {
+                      color: $cellHvrClr;
+
+                      & + label {
+
+                        &::after {
+                          background-color: $cellHvrClr;
+                        }
+
+                        span::after {
+                          background-image: linear-gradient(to right,
+                              $cellHvrClr 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 0% 50%;
+                        }
+                      }
+                    }
+
+                    .ui-input textarea:focus {
+                      color: $cellHvrClr;
+
+                      & + label {
+
+                        &::after {
+                          background-color: $cellHvrClr;
+                        }
+
+                        span::after {
+                          background-image: linear-gradient(to right,
+                              $cellHvrClr 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 0% 50%;
+                        }
+                      }
+                    }
+
+                    .ui-input input.error,
+                    .ui-input input:invalid {
+                      color: #4A90E2;
+
+                      & + label {
+
+                        &::after {
+                          background-color: #4A90E2;
+                        }
+
+                        span::after {
+                          background-image: linear-gradient(to right,
+                              #4A90E2 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 0% 50%;
+                        }
+                      }
+                    }
+
+                    .ui-input textarea.error,
+                    .ui-input textarea:invalid {
+                      color: #4A90E2;
+
+                      & + label {
+
+                        &::after {
+                          background-color: #4A90E2;
+                        }
+
+                        span::after {
+                          background-image: linear-gradient(to right,
+                              #4A90E2 50%,
+                              rgba(255,255,255,0) 0%);
+                          background-position: 0% 50%;
+                        }
+                      }
+                    }
+
+                    .__first, .__second, .__third, .__fourth {
+                      animation-name: fadeIn;
+                      animation-duration: 180ms;
+                      animation-fill-mode: both;
+                      animation-iteration-count: 1;
+                    }
+
+                    .__first { animation-delay: 0; }
+                    .__second { animation-delay: 80ms; }
+                    .__third { animation-delay: 180ms; }
+                    .__fourth { animation-delay: 360ms; }
+
+                    @keyframes fadeIn {
+                      from {
+                        opacity: 0;
+                        transform: translate3d(0, -25%, 0);
+                      }
+                      to {
+                        opacity: 1;
+                        transform: translate3d(0, 0, 0);
+                      }
+                    }
+
+                  }
                 }
               }
             }
           }
         }
-      }
 
         /*Заполнение БГ ккарточек на главной странице*/
 
@@ -879,101 +879,101 @@ $time: 300ms;
         }
 
         &__close {
-        position: absolute;
-        top: 3vh;
-        left: 2vw;
-        height: 30px;
-        width: 30px;
-        font-size: 0;
-        cursor: pointer;
-        z-index: 9999;
-        display: none;
-        &:after,
-        &:before {
-          content: '';
           position: absolute;
-          top: 14px;
-          left: -2px;
-          transform: rotate(45deg);
-          width: 35px;
-          height: 2px;
-          background-color: #fff;
-          opacity: 0;
-          transition: 500ms;
-        }
-        &:before {
-          transform: rotate(-45deg);
-        }
-        span {
-          position: relative;
-          display: inline-block;
-          margin: 1px;
-          width: 4px;
-          height: 4px;
-          border-radius: 50%;
-          background-color: #fff;
-          transition: $cellAnSpeed 500ms;
-        }
-        @for $i from 6 through 10 {
-          span:nth-child(#{$i}) {
-            right: 6px;
+          top: 3vh;
+          left: 2vw;
+          height: 30px;
+          width: 30px;
+          font-size: 0;
+          cursor: pointer;
+          z-index: 9999;
+          display: none;
+          &:after,
+          &:before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: -2px;
+            transform: rotate(45deg);
+            width: 35px;
+            height: 2px;
+            background-color: #fff;
+            opacity: 0;
+            transition: 500ms;
+          }
+          &:before {
+            transform: rotate(-45deg);
+          }
+          span {
+            position: relative;
+            display: inline-block;
+            margin: 1px;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #fff;
+            transition: $cellAnSpeed 500ms;
+          }
+          @for $i from 6 through 10 {
+            span:nth-child(#{$i}) {
+              right: 6px;
+            }
           }
         }
-      }
 
         &__episodes {
-        position: absolute;
-        top: 28%;
-        right: 15px;
-        color: #fff;
-        letter-spacing: 2px;
-        font-size: 10px;
-        &:after {
-          content: '';
           position: absolute;
-          top: -20px;
-          right: 2px;
-          width: 15px;
-          height: 1px;
-          background-color: #fff;
+          top: 28%;
+          right: 15px;
+          color: #fff;
+          letter-spacing: 2px;
+          font-size: 10px;
+          &:after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: 2px;
+            width: 15px;
+            height: 1px;
+            background-color: #fff;
+          }
         }
-      }
 
         &__title {
-        position: absolute;
-        top: 25%;
-        left: 9%;
+          position: absolute;
+          top: 25%;
+          left: 9%;
           @include mediaMaxW(997.1px){
             position: initial;
             margin: 20% auto;
           }
-        &-heading {
-          position: relative;
-          color: $cellHvrClr;
-          letter-spacing: 3px;
-          line-height: clamp(35px, 7vw, 65px);
-          text-transform: uppercase;
-          font: {
-            size: clamp(35px, 7vw, 65px);
+          &-heading {
+            position: relative;
+            color: $cellHvrClr;
+            letter-spacing: 3px;
+            line-height: clamp(35px, 7vw, 65px);
+            text-transform: uppercase;
+            font: {
+              size: clamp(35px, 7vw, 65px);
+            }
+            @include mediaMaxW(997.1px){
+              @include flex();
+            }
+            span {
+              letter-spacing: 6px;
+              color: #fff;
+            }
           }
-          @include mediaMaxW(997.1px){
-            @include flex();
-          }
-          span {
-            letter-spacing: 6px;
-            color: #fff;
+          &-par {
+            text-transform: uppercase;
+            margin-top: 35%;
+            color: #7b2222;
+            font: {
+              size: 13px;
+              weight: bold;
+            }
           }
         }
-        &-par {
-          text-transform: uppercase;
-          margin-top: 35%;
-          color: #7b2222;
-          font: {
-            size: 13px;
-            weight: bold;
-          }
-        }
-      }
 
         .show-content {
           opacity: 1;
@@ -1046,11 +1046,11 @@ $time: 300ms;
       }
       /************************************************ КОНЕЦ ПЕРВОГО СЛАЙДА ***********************************************************/
 
-		}
+    }
 
     .container-main-second {
 
-	 }
+    }
 
     .container-main-third{
       width: 100%;
@@ -1111,6 +1111,9 @@ $time: 300ms;
           transition: 0.3s;
           z-index: 2;
           position: relative;
+          @include mediaMaxW(370px){
+            display: none;
+          }
         }
         &-img {
           width: 100%;
@@ -1148,8 +1151,10 @@ $time: 300ms;
           margin-top: 10px;
           text-transform: uppercase;
           font-size: clamp(14px, 1vw, 25px);
-          letter-spacing: 2px;
           font-family: $fontteacher;
+          @include mediaMaxW(625px){
+            margin-bottom: 0;
+          }
         }
         &-list {
           @include flex();
@@ -1242,6 +1247,12 @@ $time: 300ms;
           padding-left: 2vw;
           padding-right: 5vw;
           height: 100vh;
+          @include mediaMaxW(370px){
+            height: 100%;
+            overflow: auto;
+            position: absolute;
+            display: block;
+          }
           &-content {
             p {
               margin-bottom: 15px;
@@ -1252,7 +1263,7 @@ $time: 300ms;
           }
         }
         &-header {
-          margin-bottom: 30px;
+          margin-bottom: 3vw;
         }
         &-inner {
           min-height: 100%;
@@ -1317,6 +1328,9 @@ $time: 300ms;
           position: relative;
           right: 0;
           @include flex-wrap();
+          @include mediaMaxW(370px){
+            overflow: hidden;
+          }
           .person-title {
             font-size: clamp(20px, 2vw, 45px) !important;
           }
@@ -1369,6 +1383,9 @@ $time: 300ms;
           font-size: 25px;
           margin-right: 8px;
           text-decoration: none;
+          @include mediaMaxW(370px){
+            font-size: 20px;
+          }
           &:last-child {
             margin-right: 0;
           }
@@ -1605,3 +1622,14 @@ $time: 300ms;
     transform: rotate(-45deg) scale(1, 1);
   }
 }
+
+
+
+/*@media screen and (orientation: landscape) {
+  .cont {
+    display: none;
+  }
+  @media screen and (orientation: portrait) {
+
+}
+}*/

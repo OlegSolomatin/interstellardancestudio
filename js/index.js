@@ -538,4 +538,10 @@ $(document).ready(function() {
             }
         }
     });
+
+
+    <!-- Test -->
+    /*winWidth = $(window).width(),
+      winHeight = $(window).height(),
+      console.log(winHeight, winWidth);*/
 });
