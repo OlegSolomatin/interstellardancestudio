@@ -717,17 +717,7 @@ html {
           font-size: clamp(35px, 7vw, 65px);
           /*color: #fbf9bd;*/
           margin-bottom: 15px;
-          background: linear-gradient(90deg, #f25555 20%, black 55%, white 80%, #f25555 100%);
-          background-size: 200% auto;
-          color: #000;
-          background-clip: text;
-          text-fill-color: transparent;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: grad 5s linear infinite; }
-@keyframes grad {
-  to {
-    background-position: 200% center; } }
+          text-shadow: 1px 1px #F25555, 1px -1px #F25555, -1px 1px #F25555, -1px -1px #F25555, 3px 3px 6px rgba(0, 0, 0, 0.5); }
       .slide__container-content .container-main-third .team-container {
         padding: 0 30px;
         box-sizing: border-box;
@@ -776,9 +766,20 @@ html {
             .slide__container-content .container-main-third .person-img {
               height: calc(33vw - 4vh) !important; } }
         .slide__container-content .container-main-third .person-title {
-          color: #fff;
+          /*color: #fff;*/
           font-size: clamp(12px, 2vw, 25px);
-          font-family: "Karla", sans-serif; }
+          font-family: "Karla", sans-serif;
+          background: linear-gradient(90deg, #f25555 20%, black 55%, white 80%, #f25555 100%);
+          background-size: 200% auto;
+          color: #000;
+          background-clip: text;
+          text-fill-color: transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: grad 20s linear infinite; }
+@keyframes grad {
+  to {
+    background-position: 200% center; } }
         .slide__container-content .container-main-third .person-desc {
           color: rgba(255, 255, 255, 0.7);
           margin-top: 10px;
@@ -883,8 +884,8 @@ html {
           height: 100vh; }
           .slide__container-content .container-main-third .team-detail-bio-content p {
             margin-bottom: 15px;
-            line-height: clamp(14px, 2vw, 25px) !important;
-            font-size: clamp(14px, 2vw, 18px) !important;
+            line-height: clamp(11px, 2vw, 20px) !important;
+            font-size: clamp(11px, 2vw, 20px) !important;
             font-family: "Karla", sans-serif; }
         .slide__container-content .container-main-third .team-detail-header {
           margin-bottom: 30px; }
@@ -895,7 +896,7 @@ html {
           display: flex; }
         .slide__container-content .container-main-third .team-detail-left {
           position: relative;
-          width: 650px;
+          width: 500px;
           min-height: 100%;
           background-size: cover;
           background-repeat: no-repeat;
@@ -939,7 +940,7 @@ html {
             box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3); }
         .slide__container-content .container-main-third .team-detail-right {
           box-sizing: border-box;
-          width: calc(100% - 650px);
+          width: calc(100% - 500px);
           min-height: 100%;
           display: -webkit-box;
           display: -ms-flexbox;
@@ -1030,13 +1031,13 @@ html {
           width: calc(25% - 20px); }
           .slide__container-content .container-main-third .person-img {
             max-height: none;
-            height: calc(25vw - 10vh); } }
+            height: calc(25vw - 5vh); } }
       @media screen and (max-height: 970px) {
         .slide__container-content .container-main-third .person {
           width: calc(25% - 20px); }
           .slide__container-content .container-main-third .person-img {
             max-height: none;
-            height: calc(20vw - 5vh); } }
+            height: calc(18vw - 5vh); } }
       @media screen and (max-width: 480px) {
         .slide__container-content .container-main-third .person {
           width: calc(33% - 5px);

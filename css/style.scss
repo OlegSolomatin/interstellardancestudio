@@ -1074,21 +1074,7 @@ $time: 300ms;
           font-size: clamp(35px, 7vw, 65px);;
           /*color: #fbf9bd;*/
           margin-bottom: 15px;
-          background: linear-gradient(90deg, rgba(242,85,85,1) 20%, rgba(0,0,0,1) 55%, rgba(255,255,255,1) 80%, rgba(242,85,85,1) 100%);
-          background-size: 200% auto;
-
-          color: #000;
-          background-clip: text;
-          text-fill-color: transparent;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: grad 5s linear infinite;
-
-          @keyframes grad {
-            to {
-              background-position: 200% center;
-            }
-          }
+          text-shadow: 1px 1px #F25555, 1px -1px #F25555, -1px 1px #F25555, -1px -1px #F25555, 3px 3px 6px rgba(0,0,0,.5);
         }
       }
 
@@ -1138,9 +1124,24 @@ $time: 300ms;
           }
         }
         &-title {
-          color: #fff;
+          /*color: #fff;*/
           font-size: clamp(12px, 2vw, 25px);
           font-family: $fontteacher;
+          background: linear-gradient(90deg, rgba(242,85,85,1) 20%, rgba(0,0,0,1) 55%, rgba(255,255,255,1) 80%, rgba(242,85,85,1) 100%);
+          background-size: 200% auto;
+
+          color: #000;
+          background-clip: text;
+          text-fill-color: transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: grad 20s linear infinite;
+
+          @keyframes grad {
+            to {
+              background-position: 200% center;
+            }
+          }
         }
         &-desc {
           color: rgba(#fff, 0.7);
@@ -1244,8 +1245,8 @@ $time: 300ms;
           &-content {
             p {
               margin-bottom: 15px;
-              line-height: clamp(14px, 2vw, 25px) !important;
-              font-size: clamp(14px, 2vw, 18px) !important;
+              line-height: clamp(11px, 2vw, 20px) !important;
+              font-size: clamp(11px, 2vw, 20px) !important;
               font-family: "Karla", sans-serif;
             }
           }
@@ -1259,7 +1260,7 @@ $time: 300ms;
         }
         &-left {
           position: relative;
-          width: 650px;
+          width: 500px;
           min-height: 100%;
           background-size: cover;
           background-repeat: no-repeat;
@@ -1309,7 +1310,7 @@ $time: 300ms;
         }
         &-right {
           box-sizing: border-box;
-          width: calc(100% - 650px);
+          width: calc(100% - 500px);
           min-height: 100%;
           @include flex();
           @include align-items-center();
@@ -1425,7 +1426,7 @@ $time: 300ms;
           width: calc(25% - 20px);
           &-img{
             max-height: none;
-            height: calc(25vw - 10vh);
+            height: calc(25vw - 5vh);
           }
         }
       }
@@ -1434,7 +1435,7 @@ $time: 300ms;
           width: calc(25% - 20px);
           &-img{
             max-height: none;
-            height: calc(20vw - 5vh);
+            height: calc(18vw - 5vh);
           }
         }
       }
