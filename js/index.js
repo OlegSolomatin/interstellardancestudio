@@ -266,11 +266,11 @@ $(document).ready(function() {
 
     <!--Google reCaptcha-->
     var onSuccess = function(response) {
-        document.getElementById("butdis").disabled = false;
+        document.getElementById('butdis').disabled = false;
     };
 
     $(".linkButton").click(function() {
-        $( "input[name*='formInfo']" ).val($(this).attr( "title" ));
+        $( "input[name*='formInfo']" ).val($(this).attr( 'title' ));
     });
 
     <!--Cookies modal window-->
@@ -324,7 +324,7 @@ $(document).ready(function() {
     })();*/
 
     <!--Mask number phone-->
-    $("#phone").mask("+7 (999) 999-99-99");
+    $('#phone').mask('+7 (999) 999-99-99');
 
     <!--Contact form style-->
     var $input = $('.form-fieldset > input');
@@ -377,7 +377,7 @@ $(document).ready(function() {
         setTimeout(animFalse, animDur);
     };
 
-    <!-- CONTENT SLIDE TEACHERS-->
+    <!-- CONTENT TEACHERS-->
     const persons = [
         {
             name: "Esenia Astra",
@@ -470,7 +470,7 @@ $(document).ready(function() {
     ];
 
     const app = new Vue({
-        el: "#app",
+        el: '#app',
         data() {
             return {
                 persons: persons,
@@ -497,13 +497,13 @@ $(document).ready(function() {
                 if (!this.isOk) {
                     this.selectedPersonIndex = index;
                     this.isSelected = true;
-                    el.target.parentElement.className == "person-details"
+                    el.target.parentElement.className == 'person-details'
                       ? (this.selectedPerson = el.target.parentElement.parentElement)
                       : (this.selectedPerson = el.target.parentElement);
 
-                    this.selectedPerson.classList.add("person-selected");
+                    this.selectedPerson.classList.add('person-selected');
                     this.selectedPerson.setAttribute(
-                      "style",
+                      'style',
                       `width:${this.selectedPerson.offsetWidth}px;`
                     );
                     this.selectedPersonData = this.persons[index];
@@ -512,7 +512,7 @@ $(document).ready(function() {
                           .offsetWidth}px;height:${this.selectedPerson
                           .offsetHeight}px;left:${this.selectedPerson.offsetLeft}px;top:${this
                           .selectedPerson.offsetTop}px;position:fixed`;
-                        this.selectedPerson.setAttribute("style", this.inlineStyles);
+                        this.selectedPerson.setAttribute('style', this.inlineStyles);
                     }, 400);
                     window.setTimeout(() => {
                         this.isReady = true;
@@ -525,20 +525,19 @@ $(document).ready(function() {
             reset() {
                 this.isReady = false;
                 window.setTimeout(() => {
-                    this.selectedPerson.classList.add("person-back");
+                    this.selectedPerson.classList.add('person-back');
                 }, 280);
                 window.setTimeout(() => {
-                    this.selectedPerson.setAttribute("style", "");
+                    this.selectedPerson.setAttribute('style', '');
                 }, 340);
                 window.setTimeout(() => {
                     this.isSelected = false;
-                    this.selectedPerson.classList.remove("person-back", "person-selected");
+                    this.selectedPerson.classList.remove('person-back', 'person-selected');
                     this.isOk = false;
                 }, 400);
             }
         }
     });
-
 
     <!-- Test -->
     /*winWidth = $(window).width(),

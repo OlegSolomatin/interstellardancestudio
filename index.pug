@@ -51,6 +51,8 @@ html
 		//link(rel='stylesheet' media='(min-width: 640px)' href='min-640px.css')
 		//link(rel='stylesheet' media='(orientation: portrait)' href='portrait.css')
 		//link(rel='stylesheet' media='(orientation: landscape)' href='landscape.css')
+		title Interstellar - Dance Studio Kolomna
+		meta(name='description' content='Студия танцев в коломне. Hip-hop коломна. Современные танцы. Современные танцы Коломна. Свадебный танец Коломна.')
 		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
 		link(rel='stylesheet', href='css/normalize.css')
@@ -244,6 +246,81 @@ html
 				.slide__bg-dark
 				.slide__container-content
 					.container-main-second
+						.container-main-second-content
+							.example-1.card-events
+								.wrapper
+									.header
+										.date
+											span.day 12
+											span.month Aug
+											span.year 2016
+										ul.menu-content
+											li
+												a.fa.fa-bookmark-o(href='#')
+											li
+												a.fa.fa-heart-o(href='#')
+													span 18
+											li
+												a.fa.fa-comment-o(href='#')
+													span 3
+									.data
+										.content
+											span.author Jane Doe
+											h1.title
+												a(href='#') Stranger Things: The sound of the Upside Down
+											p.text
+												| The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.
+											a.button(href='#') Read more
+
+							.example-2.card-events
+								.wrapper
+									.header
+										.date
+											span.day 12
+											span.month Aug
+											span.year 2016
+										ul.menu-content
+											li
+												a.fa.fa-bookmark-o(href='#')
+											li
+												a.fa.fa-heart-o(href='#')
+													span 18
+											li
+												a.fa.fa-comment-o(href='#')
+													span 3
+									.data
+										.content
+											span.author Jane Doe
+											h1.title
+												a(href='#') Stranger Things: The sound of the Upside Down
+											p.text
+												| The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.
+											a.button(href='#') Read more
+
+							.example-3.card-events
+								.wrapper
+									.header
+										.date
+											span.day 12
+											span.month Aug
+											span.year 2016
+										ul.menu-content
+											li
+												a.fa.fa-bookmark-o(href='#')
+											li
+												a.fa.fa-heart-o(href='#')
+													span 18
+											li
+												a.fa.fa-comment-o(href='#')
+													span 3
+									.data
+										.content
+											span.author Jane Doe
+											h1.title
+												a(href='#') Stranger Things: The sound of the Upside Down
+											p.text
+												| The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.
+											a.button(href='#') Read more
 
 			.slide.slide--3(data-target='3')
 				.slide__text Teachers
@@ -274,6 +351,7 @@ html
 												p.person-desc {{selectedPersonData.title}}
 												.social
 													a.fab.fa-vk(:href='selectedPersonData.social.vk' target='_blank')
+														span#vkontakte_count
 													a.ion-social-youtube(:href='selectedPersonData.social.youtube' target='_blank')
 													a.ion-social-instagram(href='selectedPersonData.social.instagram' target='_blank')
 											.team-detail-bio-content(v-html='selectedPersonData.bio')
@@ -322,7 +400,8 @@ html
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js')
 		script(src='js/index.js')
+		script(src='js/social_zapros.js')
 		script(src='js/lazysizes.min.js')
 		script(src='js/script.js')
-		script(src='https://www.google.com/recaptcha/api.js')
+		//script(src='https://www.google.com/recaptcha/api.js')
 		script(src='js/jquery.maskedinput.min.js')
