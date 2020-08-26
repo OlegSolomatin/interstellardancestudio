@@ -350,7 +350,7 @@ html
 												p.person-desc {{selectedPersonData.title}}
 												.social
 													a.fab.fa-vk(:href='selectedPersonData.social.vk' target='_blank')
-														span#vkontakte_count
+														span#vkontakte_count {{selectedPersonData.social.vk_count}}
 													a.ion-social-youtube(:href='selectedPersonData.social.youtube' target='_blank')
 													a.ion-social-instagram(href='selectedPersonData.social.instagram' target='_blank')
 											.team-detail-bio-content(v-html='selectedPersonData.bio')
@@ -400,7 +400,7 @@ html
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js')
 		script(src='js/index.js')
 		//script(src='https://vk.com/js/api/openapi.js?168' type='text/javascript')
-		script(src='js/social_zapros.js')
+		//script(src='js/social_zapros.js')
 		script(src='js/lazysizes.min.js')
 		script(src='js/script.js')
 		//script(src='https://www.google.com/recaptcha/api.js')

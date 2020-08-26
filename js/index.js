@@ -9,6 +9,7 @@ $(document).ready(function() {
     const numSlides = 5;
     const initialAnimDur = 3000;
     const animDelay = 1000;
+    //let interstellarMemberCount = 0;
     let initialAnim = true;
     let clickAnim = false;
     var animation = false,
@@ -54,8 +55,6 @@ $(document).ready(function() {
         $closeBtn.addClass('show-close');
         $iconTwitter.addClass('icon-show');
 
-
-
         /*Проверка CSS свойства блока team details*/
         /*var activepersone = function () {
             if  ($('.team-detail').css('visibiliti') !== 'visible'){
@@ -93,6 +92,227 @@ $(document).ready(function() {
 
         $container.css({
             'display': 'flex'
+        });
+        
+       /* _this.find('.team-detail', function api_vk() {
+            let script = document.createElement('SCRIPT');
+            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            window.callbackFunc = function (result) {
+               interstellarMemberCount = result.response[0].members_count;
+            }
+        });*/
+        /*let vk_api = function () {
+            let script = document.createElement('SCRIPT');
+            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            window.callbackFunc = function (result) {
+                document.getElementById('vkontakte_count').innerText = result.response[0].members_count;
+            }
+        };
+
+        vk_api();*/
+        <!-- CONTENT TEACHERS-->
+
+        /*$(document).on('click', '.person', function(){
+            let script = document.createElement('SCRIPT');
+            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            window.callbackFunc = function (result) {
+                interstellarMemberCount = result.response[0].members_count;
+            };
+        });*/
+        /*function zapros(){
+            let script = document.createElement('SCRIPT');
+            let MemberCount = 0;
+            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            window.callbackFunc = function (result) {
+                MemberCount = result.response[0].members_count;
+            };
+            console.log(MemberCount);
+        }*/
+        /*let i = function () {
+            let script = document.createElement('SCRIPT');
+            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
+            document.getElementsByTagName("head")[0].appendChild(script);
+            window.callbackFunc = function (result) {
+                return i = result.response[0].members_count;
+            }
+            return i();
+        };*/
+        let interstellarMemberCount = $(document).on('click', '.person', function (){
+                let script = document.createElement('SCRIPT');
+                let InterstellarCountMember;
+                script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
+                document.getElementsByTagName("head")[0].appendChild(script);
+                window.callbackFunc = function (result) {
+                    InterstellarCountMember = result.response[0].members_count;
+                };
+                console.log(InterstellarCountMember);
+            });
+        console.log(interstellarMemberCount);
+
+        const persons = [
+            {
+                name: "Esenia Astra",
+                photo: "https://sun1-85.userapi.com/c854020/v854020657/1680ea/lGl4DMuNWbk.jpg",
+                alt: 'Здесь было фото преподавателя',
+                title: "Juzz-Funk",
+                bio:
+                  "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+                social: {
+                    vk: "https://vk.com/danceastra",
+                    vk_count: interstellarMemberCount,
+                    youtube: "https://www.youtube.com/channel/UCz6arMUrptoeLtghbb2YszQ",
+                    linstagram: "https://www.instagram.com/eseniastra/"
+                }
+            },
+            {
+                name: "Andrey Grizodub",
+                photo: "https://sun9-21.userapi.com/c849232/v849232101/1d6f2f/nilWa9vgT7Y.jpg",
+                alt: 'Здесь было фото преподавателя',
+                title: "Hip-Hop",
+                bio:
+                  "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+                social: {
+                    vk: "https://vk.com/id34453980",
+                    youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                    linstagram: "https://www.instagram.com/andreygrizodub/"
+                }
+            },
+            {
+                name: "Sergey Mihutkin",
+                photo: "https://sun9-76.userapi.com/c850624/v850624965/18ab92/qUoaHK6IgCg.jpg",
+                alt: 'Здесь было фото преподавателя',
+                title: "K-Pop",
+                bio:
+                  "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+                social: {
+                    vk: "https://vk.com/boombb",
+                    youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                    linstagram: "https://www.instagram.com/sergfd/"
+                }
+            },
+            {
+                name: "Alice Jenkins",
+                photo: "https://serving.photos.photobox.com/52898788b03c8a0e32a8cb52b4d43d7525f119daa2629569dbda0a8d827192217fb64c22.jpg",
+                alt: 'Здесь было фото преподавателя',
+                title: "QA Engineer",
+                bio:
+                  "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+                social: {
+                    vk: "https://vk.com/interstellar_dance_studio",
+                    youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                    linstagram: "https://www.instagram.com/interstellar_dance_studio_/?igshi"
+                }
+            },
+            {
+                name: "Polina Grizodub",
+                photo: "https://sun9-64.userapi.com/c836736/v836736584/36be7/155uDD3TkJo.jpg",
+                title: "Cantemporary",
+                bio:
+                  "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+                social: {
+                    vk: "https://vk.com/dancepollyinterstellar",
+                    youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                    linstagram: "https://www.instagram.com/polinagrizodub/"
+                }
+            },
+            {
+                name: "Vyacheslav Rodin",
+                photo: "https://sun9-36.userapi.com/c850136/v850136939/18f5c3/uJ_HtA0TLQE.jpg",
+                title: "Urban Hip-Hop",
+                bio:
+                  "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+                social: {
+                    vk: "https://vk.com/pushkadancer",
+                    youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                    linstagram: "https://www.instagram.com/rodin_dancer/"
+                }
+            },
+            {
+                name: "Al'bina Konstantinova",
+                photo: "https://sun9-64.userapi.com/c845019/v845019794/14eb6b/1ivH2KMZfhs.jpg",
+                title: "BodyFlex",
+                bio:
+                  "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
+                social: {
+                    vk: "https://vk.com/id34032898",
+                    youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
+                    linstagram: "https://www.instagram.com/albinakonstanti/"
+                }
+            }
+        ];
+
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    persons: persons,
+                    selectedPersonIndex: null,
+                    isSelected: false,
+                    selectedPerson: null,
+                    inlineStyles: null,
+                    isReady: false,
+                    isOk: false,
+                    selectedPersonData: {
+                        name: null,
+                        title: null,
+                        photo: null,
+                        social: {
+                            facebook: null,
+                            twitter: null,
+                            linkedin: null
+                        }
+                    }
+                };
+            },
+            methods: {
+                selectPerson(index, el) {
+                    if (!this.isOk) {
+                        this.selectedPersonIndex = index;
+                        this.isSelected = true;
+                        el.target.parentElement.className == 'person-details'
+                          ? (this.selectedPerson = el.target.parentElement.parentElement)
+                          : (this.selectedPerson = el.target.parentElement);
+
+                        this.selectedPerson.classList.add('person-selected');
+                        this.selectedPerson.setAttribute(
+                          'style',
+                          `width:${this.selectedPerson.offsetWidth}px;`
+                        );
+                        this.selectedPersonData = this.persons[index];
+                        window.setTimeout(() => {
+                            this.inlineStyles = `width:${this.selectedPerson
+                              .offsetWidth}px;height:${this.selectedPerson
+                              .offsetHeight}px;left:${this.selectedPerson.offsetLeft}px;top:${this
+                              .selectedPerson.offsetTop}px;position:fixed`;
+                            this.selectedPerson.setAttribute('style', this.inlineStyles);
+                        }, 400);
+                        window.setTimeout(() => {
+                            this.isReady = true;
+                            this.isOk = true;
+                        }, 420);
+                    } else {
+                        this.reset();
+                    }
+                },
+                reset() {
+                    this.isReady = false;
+                    window.setTimeout(() => {
+                        this.selectedPerson.classList.add('person-back');
+                    }, 280);
+                    window.setTimeout(() => {
+                        this.selectedPerson.setAttribute('style', '');
+                    }, 340);
+                    window.setTimeout(() => {
+                        this.isSelected = false;
+                        this.selectedPerson.classList.remove('person-back', 'person-selected');
+                        this.isOk = false;
+                    }, 400);
+                }
+            }
         });
     });
     /*Работа блока при наведении курсора*/
@@ -377,167 +597,7 @@ $(document).ready(function() {
         setTimeout(animFalse, animDur);
     };
 
-    <!-- CONTENT TEACHERS-->
-    const persons = [
-        {
-            name: "Esenia Astra",
-            photo: "https://sun1-85.userapi.com/c854020/v854020657/1680ea/lGl4DMuNWbk.jpg",
-            alt: 'Здесь было фото преподавателя',
-            title: "Juzz-Funk",
-            bio:
-              "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
-            social: {
-                vk: "https://vk.com/danceastra",
-                youtube: "https://www.youtube.com/channel/UCz6arMUrptoeLtghbb2YszQ",
-                linstagram: "https://www.instagram.com/eseniastra/"
-            }
-        },
-        {
-            name: "Andrey Grizodub",
-            photo: "https://sun9-21.userapi.com/c849232/v849232101/1d6f2f/nilWa9vgT7Y.jpg",
-            alt: 'Здесь было фото преподавателя',
-            title: "Hip-Hop",
-            bio:
-              "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
-            social: {
-                vk: "https://vk.com/id34453980",
-                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
-                linstagram: "https://www.instagram.com/andreygrizodub/"
-            }
-        },
-        {
-            name: "Sergey Mihutkin",
-            photo: "https://sun9-76.userapi.com/c850624/v850624965/18ab92/qUoaHK6IgCg.jpg",
-            alt: 'Здесь было фото преподавателя',
-            title: "K-Pop",
-            bio:
-              "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
-            social: {
-                vk: "https://vk.com/boombb",
-                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
-                linstagram: "https://www.instagram.com/sergfd/"
-            }
-        },
-        {
-            name: "Alice Jenkins",
-            photo: "https://serving.photos.photobox.com/52898788b03c8a0e32a8cb52b4d43d7525f119daa2629569dbda0a8d827192217fb64c22.jpg",
-            alt: 'Здесь было фото преподавателя',
-            title: "QA Engineer",
-            bio:
-              "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
-            social: {
-                vk: "https://vk.com/interstellar_dance_studio",
-                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
-                linstagram: "https://www.instagram.com/interstellar_dance_studio_/?igshi"
-            }
-        },
-        {
-            name: "Polina Grizodub",
-            photo: "https://sun9-64.userapi.com/c836736/v836736584/36be7/155uDD3TkJo.jpg",
-            title: "Cantemporary",
-            bio:
-              "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
-            social: {
-                vk: "https://vk.com/dancepollyinterstellar",
-                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
-                linstagram: "https://www.instagram.com/polinagrizodub/"
-            }
-        },
-        {
-            name: "Vyacheslav Rodin",
-            photo: "https://sun9-36.userapi.com/c850136/v850136939/18f5c3/uJ_HtA0TLQE.jpg",
-            title: "Urban Hip-Hop",
-            bio:
-              "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
-            social: {
-                vk: "https://vk.com/pushkadancer",
-                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
-                linstagram: "https://www.instagram.com/rodin_dancer/"
-            }
-        },
-        {
-            name: "Al'bina Konstantinova",
-            photo: "https://sun9-64.userapi.com/c845019/v845019794/14eb6b/1ivH2KMZfhs.jpg",
-            title: "BodyFlex",
-            bio:
-              "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
-            social: {
-                vk: "https://vk.com/id34032898",
-                youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
-                linstagram: "https://www.instagram.com/albinakonstanti/"
-            }
-        }
-    ];
 
-    const app = new Vue({
-        el: '#app',
-        data() {
-            return {
-                persons: persons,
-                selectedPersonIndex: null,
-                isSelected: false,
-                selectedPerson: null,
-                inlineStyles: null,
-                isReady: false,
-                isOk: false,
-                selectedPersonData: {
-                    name: null,
-                    title: null,
-                    photo: null,
-                    social: {
-                        facebook: null,
-                        twitter: null,
-                        linkedin: null
-                    }
-                }
-            };
-        },
-        methods: {
-            selectPerson(index, el) {
-                if (!this.isOk) {
-                    this.selectedPersonIndex = index;
-                    this.isSelected = true;
-                    el.target.parentElement.className == 'person-details'
-                      ? (this.selectedPerson = el.target.parentElement.parentElement)
-                      : (this.selectedPerson = el.target.parentElement);
-
-                    this.selectedPerson.classList.add('person-selected');
-                    this.selectedPerson.setAttribute(
-                      'style',
-                      `width:${this.selectedPerson.offsetWidth}px;`
-                    );
-                    this.selectedPersonData = this.persons[index];
-                    window.setTimeout(() => {
-                        this.inlineStyles = `width:${this.selectedPerson
-                          .offsetWidth}px;height:${this.selectedPerson
-                          .offsetHeight}px;left:${this.selectedPerson.offsetLeft}px;top:${this
-                          .selectedPerson.offsetTop}px;position:fixed`;
-                        this.selectedPerson.setAttribute('style', this.inlineStyles);
-                    }, 400);
-                    window.setTimeout(() => {
-                        this.isReady = true;
-                        this.isOk = true;
-                    }, 420);
-                } else {
-                    this.reset();
-                }
-            },
-            reset() {
-                this.isReady = false;
-                window.setTimeout(() => {
-                    this.selectedPerson.classList.add('person-back');
-                }, 280);
-                window.setTimeout(() => {
-                    this.selectedPerson.setAttribute('style', '');
-                }, 340);
-                window.setTimeout(() => {
-                    this.isSelected = false;
-                    this.selectedPerson.classList.remove('person-back', 'person-selected');
-                    this.isOk = false;
-                }, 400);
-            }
-        }
-    });
 
     <!-- Test -->
     /*winWidth = $(window).width(),
