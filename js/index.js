@@ -9,7 +9,7 @@ $(document).ready(function() {
     const numSlides = 5;
     const initialAnimDur = 3000;
     const animDelay = 1000;
-    //let interstellarMemberCount = 0;
+    let MemberCount;
     let initialAnim = true;
     let clickAnim = false;
     var animation = false,
@@ -141,17 +141,77 @@ $(document).ready(function() {
             }
             return i();
         };*/
-        let interstellarMemberCount = $(document).on('click', '.person', function (){
+        /*$(document).on('click', '.person', function (){
                 let script = document.createElement('SCRIPT');
-                let InterstellarCountMember;
                 script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
                 document.getElementsByTagName("head")[0].appendChild(script);
+                window.InterstellarCountMember
                 window.callbackFunc = function (result) {
-                    InterstellarCountMember = result.response[0].members_count;
+                    MemberCount = result.response[0].members_count;
                 };
-                console.log(InterstellarCountMember);
+            });*/
+         /*function zapros(Count) {
+            let CountM = Count;
+            let script = document.createElement('SCRIPT');
+            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
+            document.getElementsByTagName("head")[0].appendChild(script);
+                window.callbackFunc = function (result) {
+                    CountM = result.response[0].members_count;
+                    console.log(CountM);
+                    return CountM;
+                };
+                console.log('good');
+                return CountM;
+                console.log('lox');
+        };*/
+         /*function call(Count){
+             let script = document.createElement('SCRIPT');
+             script.src = "https://vk.com/js/api/openapi.js?168";
+             script.onload = () => Count(script);
+             document.head.append(script);
+         }
+         call(MemberCount =>{console.log('hello world')});*/
+         /*async function zapros(){
+             let script = document.createElement('SCRIPT');
+             let response = await window.callbackFunc;
+             script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
+             document.getElementsByTagName("head")[0].appendChild(script);
+             window.callbackFunc = function (result) {
+                 response = result.response[0].members_count;
+             };
+             return response;
+         }*/
+         /*VK.Api.call('users.get', {user_ids: 210700286, fields: 'bdate'}, function(r) {
+            if(r.response) {
+                alert(r.response[0].bdate);
+            }
+        });*/
+        /*window.vkAsyncInit = function() {
+            VK.init({
+                apiId: 7576220
             });
-        console.log(interstellarMemberCount);
+        };
+
+        setTimeout(function() {
+            var el = document.createElement("script");
+            el.type = "text/javascript";
+            el.src = "https://vk.com/js/api/openapi.js?168";
+            el.async = true;
+            document.getElementById("vk_api_transport").appendChild(el);
+        }, 0);
+
+        VK.Api.call('groups.get', {user_ids: 85050907, v:"5.80"}, function(r) {
+            if(r.response) {
+                alert('Привет, ' + r.response[0].members_count);
+            }
+        });*/
+
+        /*
+        * Создаем функцию которая делает запрос на php файл
+        * Php файл делает запрос по API, принимаем данные
+        * Переводим их в JSON, парсим нужные данные
+        * Возвращаем результат функции в переменную Vue.JS
+        * */
 
         const persons = [
             {
@@ -163,7 +223,7 @@ $(document).ready(function() {
                   "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
                 social: {
                     vk: "https://vk.com/danceastra",
-                    vk_count: interstellarMemberCount,
+                    vk_count: "6200",
                     youtube: "https://www.youtube.com/channel/UCz6arMUrptoeLtghbb2YszQ",
                     linstagram: "https://www.instagram.com/eseniastra/"
                 }
