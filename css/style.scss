@@ -1700,6 +1700,10 @@ $time: 300ms;
           &:last-child {
             margin-right: 0;
           }
+          span {
+            font-size: small;
+            font-family: "Karla", sans-serif;
+          }
         }
         @include mediaMaxW(970px){
           margin-top: 15px;

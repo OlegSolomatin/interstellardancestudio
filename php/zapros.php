@@ -8,5 +8,5 @@ $request_params = array(
 );
 $get_params = http_build_query($request_params);
 $result = json_decode(file_get_contents('https://api.vk.com/method/groups.getById?'. $get_params));
-echo"<script>console.group('".$label."');console.log('".$$result -> response[0] -> members_count"');console.groupEnd();</script>";
+echo ($result -> response[0] -> members_count);
 ?>

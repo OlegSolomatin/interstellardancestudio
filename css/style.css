@@ -1241,6 +1241,9 @@ html {
               font-size: 20px; } }
           .slide__container-content .container-main-third .social a:last-child {
             margin-right: 0; }
+          .slide__container-content .container-main-third .social a span {
+            font-size: small;
+            font-family: "Karla", sans-serif; }
         @media screen and (max-width: 970px) {
           .slide__container-content .container-main-third .social {
             margin-top: 15px;

@@ -1,15 +1,14 @@
 $(document).ready(function() {
     const $cont = $('.cont');
-    const $slide = $('.slide');
-    const $closeBtn = $('.slide__close');
-    const $text = $('.slide__text');
-    const $iconTwitter = $('.icon-link--twitter');
-    const $container = $('.slide__container-content');
-    const $bgdark = $('.slide__bg-dark');
-    const numSlides = 5;
-    const initialAnimDur = 3000;
-    const animDelay = 1000;
-    let MemberCount;
+        $slide = $('.slide');
+        $closeBtn = $('.slide__close');
+        $text = $('.slide__text');
+        $iconTwitter = $('.icon-link--twitter');
+        $container = $('.slide__container-content');
+        $bgdark = $('.slide__bg-dark');
+        numSlides = 5;
+        initialAnimDur = 3000;
+        animDelay = 1000;
     let initialAnim = true;
     let clickAnim = false;
     var animation = false,
@@ -55,20 +54,6 @@ $(document).ready(function() {
         $closeBtn.addClass('show-close');
         $iconTwitter.addClass('icon-show');
 
-        /*Проверка CSS свойства блока team details*/
-        /*var activepersone = function () {
-            if  ($('.team-detail').css('visibiliti') !== 'visible'){
-                _this.find('.box-close-active').css({
-                    'display': 'block',
-                    'transition': '2s'
-                });
-            } else {
-                _this.find('.box__close').css({
-                    'display': 'none'
-                });
-            }
-        };*/
-
         $row.on('click', '.box__row-cell', active);
         $closeBtn2.on('click', close);
 
@@ -93,125 +78,31 @@ $(document).ready(function() {
         $container.css({
             'display': 'flex'
         });
-        
-       /* _this.find('.team-detail', function api_vk() {
-            let script = document.createElement('SCRIPT');
-            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
-            document.getElementsByTagName("head")[0].appendChild(script);
-            window.callbackFunc = function (result) {
-               interstellarMemberCount = result.response[0].members_count;
-            }
-        });*/
-        /*let vk_api = function () {
-            let script = document.createElement('SCRIPT');
-            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
-            document.getElementsByTagName("head")[0].appendChild(script);
-            window.callbackFunc = function (result) {
-                document.getElementById('vkontakte_count').innerText = result.response[0].members_count;
-            }
-        };
 
-        vk_api();*/
         <!-- CONTENT TEACHERS-->
-
-        /*$(document).on('click', '.person', function(){
-            let script = document.createElement('SCRIPT');
-            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
-            document.getElementsByTagName("head")[0].appendChild(script);
-            window.callbackFunc = function (result) {
-                interstellarMemberCount = result.response[0].members_count;
-            };
-        });*/
-        /*function zapros(){
-            let script = document.createElement('SCRIPT');
-            let MemberCount = 0;
-            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
-            document.getElementsByTagName("head")[0].appendChild(script);
-            window.callbackFunc = function (result) {
-                MemberCount = result.response[0].members_count;
-            };
-            console.log(MemberCount);
-        }*/
-        /*let i = function () {
-            let script = document.createElement('SCRIPT');
-            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
-            document.getElementsByTagName("head")[0].appendChild(script);
-            window.callbackFunc = function (result) {
-                return i = result.response[0].members_count;
-            }
-            return i();
-        };*/
-        /*$(document).on('click', '.person', function (){
-                let script = document.createElement('SCRIPT');
-                script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
-                document.getElementsByTagName("head")[0].appendChild(script);
-                window.InterstellarCountMember
-                window.callbackFunc = function (result) {
-                    MemberCount = result.response[0].members_count;
-                };
-            });*/
-         /*function zapros(Count) {
-            let CountM = Count;
-            let script = document.createElement('SCRIPT');
-            script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
-            document.getElementsByTagName("head")[0].appendChild(script);
-                window.callbackFunc = function (result) {
-                    CountM = result.response[0].members_count;
-                    console.log(CountM);
-                    return CountM;
-                };
-                console.log('good');
-                return CountM;
-                console.log('lox');
-        };*/
-         /*function call(Count){
-             let script = document.createElement('SCRIPT');
-             script.src = "https://vk.com/js/api/openapi.js?168";
-             script.onload = () => Count(script);
-             document.head.append(script);
-         }
-         call(MemberCount =>{console.log('hello world')});*/
-         /*async function zapros(){
-             let script = document.createElement('SCRIPT');
-             let response = await window.callbackFunc;
-             script.src = "https://api.vk.com/method/groups.getById?group_id=85050907&fields=members_count&v=5.80&access_token=1a90f1471a90f1471a90f147e41ae36bdb11a901a90f14745d39452ab0babaf258a286b&callback=callbackFunc";
-             document.getElementsByTagName("head")[0].appendChild(script);
-             window.callbackFunc = function (result) {
-                 response = result.response[0].members_count;
-             };
-             return response;
-         }*/
-         /*VK.Api.call('users.get', {user_ids: 210700286, fields: 'bdate'}, function(r) {
-            if(r.response) {
-                alert(r.response[0].bdate);
-            }
-        });*/
-        /*window.vkAsyncInit = function() {
-            VK.init({
-                apiId: 7576220
-            });
-        };
-
-        setTimeout(function() {
-            var el = document.createElement("script");
-            el.type = "text/javascript";
-            el.src = "https://vk.com/js/api/openapi.js?168";
-            el.async = true;
-            document.getElementById("vk_api_transport").appendChild(el);
-        }, 0);
-
-        VK.Api.call('groups.get', {user_ids: 85050907, v:"5.80"}, function(r) {
-            if(r.response) {
-                alert('Привет, ' + r.response[0].members_count);
-            }
-        });*/
 
         /*
         * Создаем функцию которая делает запрос на php файл
         * Php файл делает запрос по API, принимаем данные
         * Переводим их в JSON, парсим нужные данные
         * Возвращаем результат функции в переменную Vue.JS
+        * Youtube API KEY AIzaSyBKBG2-r2hg5O8tyvLCTiKzv4HT4J44Jrg
         * */
+        function zaprosApiVK(){
+            $.ajax({
+                type: "POST",
+                url: '../php/zapros.php',
+                //data: formNm.serialize(),
+                success: function (data) {
+                    // Вывод текста результата отправки
+                    $('#vkontakte_count').html(data);
+                },
+                error: function (jqXHR, text, error) {
+                    // Вывод текста ошибки отправки
+                    $('#vkontakte_count').html(error);
+                }
+            });
+        };
 
         const persons = [
             {
@@ -223,7 +114,7 @@ $(document).ready(function() {
                   "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
                 social: {
                     vk: "https://vk.com/danceastra",
-                    vk_count: "6200",
+                    vk_count: zaprosApiVK(name),
                     youtube: "https://www.youtube.com/channel/UCz6arMUrptoeLtghbb2YszQ",
                     linstagram: "https://www.instagram.com/eseniastra/"
                 }
@@ -237,6 +128,7 @@ $(document).ready(function() {
                   "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
                 social: {
                     vk: "https://vk.com/id34453980",
+                    vk_count: zaprosApiVK(name),
                     youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                     linstagram: "https://www.instagram.com/andreygrizodub/"
                 }
@@ -250,6 +142,7 @@ $(document).ready(function() {
                   "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
                 social: {
                     vk: "https://vk.com/boombb",
+                    vk_count: zaprosApiVK(name),
                     youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                     linstagram: "https://www.instagram.com/sergfd/"
                 }
@@ -263,6 +156,7 @@ $(document).ready(function() {
                   "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
                 social: {
                     vk: "https://vk.com/interstellar_dance_studio",
+                    vk_count: zaprosApiVK(name),
                     youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                     linstagram: "https://www.instagram.com/interstellar_dance_studio_/?igshi"
                 }
@@ -275,6 +169,7 @@ $(document).ready(function() {
                   "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
                 social: {
                     vk: "https://vk.com/dancepollyinterstellar",
+                    vk_count: zaprosApiVK(name),
                     youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                     linstagram: "https://www.instagram.com/polinagrizodub/"
                 }
@@ -287,6 +182,7 @@ $(document).ready(function() {
                   "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
                 social: {
                     vk: "https://vk.com/pushkadancer",
+                    vk_count: zaprosApiVK(name),
                     youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                     linstagram: "https://www.instagram.com/rodin_dancer/"
                 }
@@ -299,6 +195,7 @@ $(document).ready(function() {
                   "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
                 social: {
                     vk: "https://vk.com/id34032898",
+                    vk_count: zaprosApiVK(name),
                     youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                     linstagram: "https://www.instagram.com/albinakonstanti/"
                 }
@@ -543,7 +440,6 @@ $(document).ready(function() {
 
     /*FIRST PAGE SCRIPT*/
 
-
     <!--Google reCaptcha-->
     var onSuccess = function(response) {
         document.getElementById('butdis').disabled = false;
@@ -552,56 +448,6 @@ $(document).ready(function() {
     $(".linkButton").click(function() {
         $( "input[name*='formInfo']" ).val($(this).attr( 'title' ));
     });
-
-    <!--Cookies modal window-->
-    /*(function(){
-        //Change these values
-        var msg = "Мы используем файлы cookie. Продолжив работу с сайтом, вы соглашаетесь с Политикой обработки персональных данных. ";
-        var closeBtnMsg = "Согласен(а)";
-        var privacyBtnMsg = "Узнать больше";
-        var privacyLink = "documents/politicks.pdf";
-        //check cookies
-        if(document.cookie){
-            var cookieString = document.cookie;
-            var cookieList = cookieString.split(";");
-            // if cookie named OKCookie is found, return
-            for(x = 0; x < cookieList.length; x++){
-                if (cookieList[x].indexOf("OKCookie") != -1){return};
-            }
-        }
-        var docRoot = document.body;
-        var okC = document.createElement("div");
-        okC.setAttribute("id", "okCookie");
-        var okCp = document.createElement("p");
-        var okcText = document.createTextNode(msg);
-        //close button
-        var okCclose = document.createElement("a");
-        var okcCloseText = document.createTextNode(closeBtnMsg);
-        okCclose.setAttribute("href", "#");
-        okCclose.setAttribute("id", "okClose");
-        okCclose.appendChild(okcCloseText);
-        okCclose.addEventListener("click", closeCookie, false);
-        //privacy button
-        var okCprivacy = document.createElement("a");
-        var okcPrivacyText = document.createTextNode(privacyBtnMsg);
-        okCprivacy.setAttribute("href", privacyLink);
-        okCprivacy.setAttribute("target", "_blank");
-        okCprivacy.setAttribute("id", "okCprivacy");
-        okCprivacy.appendChild(okcPrivacyText);
-        //add to DOM
-        okCp.appendChild(okcText);
-        okC.appendChild(okCp);
-        okC.appendChild(okCclose);
-        okC.appendChild(okCprivacy);
-        docRoot.appendChild(okC);
-        okC.classList.add("okcBeginAnimate");
-        function closeCookie(){
-            var cookieExpire = new Date();
-            cookieExpire.setFullYear(cookieExpire.getFullYear() +2);
-            document.cookie="OKCookie=1; expires=" + cookieExpire.toGMTString() + ";";
-            docRoot.removeChild(okC);
-        }
-    })();*/
 
     <!--Mask number phone-->
     $('#phone').mask('+7 (999) 999-99-99');
@@ -657,10 +503,4 @@ $(document).ready(function() {
         setTimeout(animFalse, animDur);
     };
 
-
-
-    <!-- Test -->
-    /*winWidth = $(window).width(),
-      winHeight = $(window).height(),
-      console.log(winHeight, winWidth);*/
 });
