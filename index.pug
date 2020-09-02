@@ -247,9 +247,27 @@ html
 				.slide__container-content
 					.container-main-second
 						.container-main-second-content
-							.example-1.card-events
+							h2 Events
+							script#v-carousel(type="x/template")
+								.card-carousel-wrapper
+									.card-carousel--nav__left(@click="moveCarousel(-1)" :disabled="atHeadOfList")
+									.card-carousel
+										.card-carousel--overflow-container
+											.card-carousel-cards(:style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}")
+												a.card-carousel--card(v-for="item in items" v-bind:href="item.href" target='_blank')
+													img( v-bind:src="item.banner")
+													.card-carousel--card--footer
+														p.name(v-for="(name,index) in item.name" :class="index > 1 ? 'secondary' : ''") {{ name }}
+														p.tag(v-for="(tag,index) in item.tag" :class="index > 0 ? 'secondary' : ''") {{ tag }}
+									.card-carousel--nav__right(
+										@click="moveCarousel(1)"
+										:disabled="atEndOfList"
+									)
+							#appcarousel
+								carousel
+							//.example-1.card-events
 								.wrapper
-									.header
+									//.header
 										.date
 											span.day 12
 											span.month Aug
@@ -263,7 +281,7 @@ html
 											li
 												a.fa.fa-comment-o(href='#')
 													span 3
-									.data
+									//.data
 										.content
 											span.author Jane Doe
 											h1.title
@@ -271,9 +289,9 @@ html
 											p.text
 												| The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.
 											a.button(href='#') Read more
-							.example-2.card-events
+							//.example-2.card-events
 								.wrapper
-									.header
+									//.header
 										.date
 											span.day 12
 											span.month Aug
@@ -287,7 +305,7 @@ html
 											li
 												a.fa.fa-comment-o(href='#')
 													span 3
-									.data
+									//.data
 										.content
 											span.author Jane Doe
 											h1.title
@@ -296,9 +314,9 @@ html
 												| The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.
 											a.button(href='#') Read more
 
-							.example-3.card-events
+							//.example-3.card-events
 								.wrapper
-									.header
+									//.header
 										.date
 											span.day 12
 											span.month Aug
@@ -312,7 +330,7 @@ html
 											li
 												a.fa.fa-comment-o(href='#')
 													span 3
-									.data
+									//.data
 										.content
 											span.author Jane Doe
 											h1.title
@@ -396,7 +414,7 @@ html
 		//script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
 		//script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
 		//script(src='libs/bootstrap-4.3.1-dist/js/bootstrap.min.js')
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js')
 		script(src='js/index.js')
 		//script(src='https://vk.com/js/api/openapi.js?168' type='text/javascript')
