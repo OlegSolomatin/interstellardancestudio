@@ -79,6 +79,8 @@ $(document).ready(function() {
             'display': 'flex'
         });
 
+
+
     });
     /*Работа блока при наведении курсора*/
     $(document).on('mousemove', '.slide', function() {
@@ -320,7 +322,7 @@ $(document).ready(function() {
 		* Возвращаем результат функции в переменную Vue.JS
 		* Youtube API KEY AIzaSyBKBG2-r2hg5O8tyvLCTiKzv4HT4J44Jrg
 		* */
-    function zaprosApiVK(){
+    $(document).on('mousemove', '.fa-vk', function(){
         $.ajax({
             type: "POST",
             url: '../php/zapros.php',
@@ -334,7 +336,7 @@ $(document).ready(function() {
                 $('#vkontakte_count').html(error);
             }
         });
-    };
+    });
 
     const persons = [
         {
@@ -346,7 +348,7 @@ $(document).ready(function() {
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
                 vk: "https://vk.com/danceastra",
-                vk_count: zaprosApiVK(name),
+                //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCz6arMUrptoeLtghbb2YszQ",
                 linstagram: "https://www.instagram.com/eseniastra/"
             }
@@ -360,7 +362,7 @@ $(document).ready(function() {
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
                 vk: "https://vk.com/id34453980",
-                vk_count: zaprosApiVK(name),
+                //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 linstagram: "https://www.instagram.com/andreygrizodub/"
             }
@@ -374,7 +376,7 @@ $(document).ready(function() {
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
                 vk: "https://vk.com/boombb",
-                vk_count: zaprosApiVK(name),
+                //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 linstagram: "https://www.instagram.com/sergfd/"
             }
@@ -388,7 +390,7 @@ $(document).ready(function() {
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
                 vk: "https://vk.com/interstellar_dance_studio",
-                vk_count: zaprosApiVK(name),
+                //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 linstagram: "https://www.instagram.com/interstellar_dance_studio_/?igshi"
             }
@@ -401,7 +403,7 @@ $(document).ready(function() {
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
                 vk: "https://vk.com/dancepollyinterstellar",
-                vk_count: zaprosApiVK(name),
+                //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 linstagram: "https://www.instagram.com/polinagrizodub/"
             }
@@ -414,7 +416,7 @@ $(document).ready(function() {
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
                 vk: "https://vk.com/pushkadancer",
-                vk_count: zaprosApiVK(name),
+                //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 linstagram: "https://www.instagram.com/rodin_dancer/"
             }
@@ -427,7 +429,7 @@ $(document).ready(function() {
               "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet architecto ea blanditiis quo labore esse magnam illum ut quibusdam. Corrupti ratione iure aliquam adipisci! Harum vitae laboriosam temporibus illo suscipit?</p><p>Saepe repudiandae rerum quam ut perferendis, ullam similique nemo quod, assumenda mollitia consectetur. Eveniet optio maxime perferendis odit possimus? Facilis architecto nesciunt doloribus consectetur culpa veritatis accusamus expedita quos voluptate!</p><p>Nisi provident minus possimus optio voluptate rem, perspiciatis, placeat, culpa aperiam quod temporibus.</p>",
             social: {
                 vk: "https://vk.com/id34032898",
-                vk_count: zaprosApiVK(name),
+                //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 linstagram: "https://www.instagram.com/albinakonstanti/"
             }

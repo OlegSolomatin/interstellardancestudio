@@ -289,6 +289,7 @@ $time: 300ms;
     height: 100%;
     display: none;
 
+    /*Content first slide*/
     .container-main {
       height: 100vh;
       background-color: $background;
@@ -1052,7 +1053,9 @@ $time: 300ms;
       /************************************************ КОНЕЦ ПЕРВОГО СЛАЙДА ***********************************************************/
 
     }
-
+    /*End content first slide*/
+    /**/
+    /*Content second slide*/
     .container-main-second {
 
       $vue-navy: #2c3e50;
@@ -1372,7 +1375,9 @@ $time: 300ms;
       }
 
     }
-
+    /*End content second slide*/
+    /**/
+    /*Content third slide*/
     .container-main-third{
       width: 100%;
       .container-main-third-content {
@@ -1797,6 +1802,15 @@ $time: 300ms;
         }
       }
     }
+    /*End content third slide*/
+    /**/
+    /*Content fourth slide*/
+    .container-main-fourth{
+
+    }
+    /*End content fourth slide*/
+    /**/
+    /**/
 
     /*************************************************COOMING SOON**********************************************************************************/
     .comming-soon{

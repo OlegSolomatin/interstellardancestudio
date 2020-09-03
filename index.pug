@@ -260,7 +260,6 @@ html
 													.card-carousel--card--footer
 														p.name(v-for="(name,index) in item.name" :class="index > 0 ? 'secondary' : ''") {{ name }}
 														p.tag(v-for="(tag,index) in item.tag" :class="index > 0 ? 'secondary' : ''") {{ tag }}
-
 											.card-carousel-cards(v-else :style="{ transform: 'translateY' + '(' + currentOffset + 'px' + ')'}")
 												a.card-carousel--card(v-for="item in items" v-bind:href="item.href" target='_blank')
 													img( v-bind:src="item.banner")
@@ -300,7 +299,7 @@ html
 												p.person-desc {{selectedPersonData.title}}
 												.social
 													a.fab.fa-vk(:href='selectedPersonData.social.vk' target='_blank')
-														span#vkontakte_count {{selectedPersonData.social.vk_count}}
+														span#vkontakte_count
 													a.ion-social-youtube(:href='selectedPersonData.social.youtube' target='_blank')
 													a.ion-social-instagram(href='selectedPersonData.social.instagram' target='_blank')
 											.team-detail-bio-content(v-html='selectedPersonData.bio')
@@ -311,16 +310,8 @@ html
 					.slide__close
 				.slide__bg-dark
 				.slide__container-content
-					.comming-soon
-						.circle
-						.form-group
-							p.text COMMING SOON
-							label Get latest updates about new release
-							.input-group
-								input.form-control(type='text' placeholder='Email Address')
-								.input-group-append
-									span#basic-addon2.input-group-text
-										button Notify Me
+					.container-main-fourth
+						.container-main-fourth-content
 			.slide.slide--5(data-target='5')
 				.slide__text About US
 				.slide__img
@@ -343,14 +334,9 @@ html
 			jQuery(window).on('load', function () {
 				jQuery('#p_prldr').delay(400).fadeOut('slow');
 			});
-		//script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js' integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo' crossorigin='anonymous')
-		//script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1' crossorigin='anonymous')
-		//script(src='libs/bootstrap-4.3.1-dist/js/bootstrap.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.17/vue.min.js')
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js')
 		script(src='js/index.js')
-		//script(src='https://vk.com/js/api/openapi.js?168' type='text/javascript')
-		//script(src='js/social_zapros.js')
 		script(src='js/lazysizes.min.js')
 		script(src='js/script.js')
 		//script(src='https://www.google.com/recaptcha/api.js')
