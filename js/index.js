@@ -510,11 +510,14 @@ $(document).ready(function() {
             return {
                 currentOffset: 0,
                 windowSize: 3,
+                windowSizeMobile: 1,
                 paginationFactor: 220,
+                paginationFactorMobile: 359,
+                width: 0,
                 items: [
                     {name: ['Kiril Zaharov'], tag: ['Hip-Hop'], href: 'https://vk.com/event190979061', banner: 'https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg'},
                     {name: ['RAF'], tag: ['Hip-Hop', 'Japanese', '$$$$'], href: 'https://vk.com/event187625337', banner: 'https://sun9-31.userapi.com/c850536/v850536203/1ed37d/Vvnmg5ZFBBo.jpg'},
-                    {name: ['Alya', 'Raf', 'Vitek', 'Tuzemec'], tag: ['Hip-Hop', 'Casual'], href: 'https://vk.com/event191745898', banner: 'https://sun9-17.userapi.com/nMAOm0S8oZ2IjRmqcpzFKT73pcbiLQRJyzJsXA/bdtpKTRNmzw.jpg'},
+                    {name: ['Aliya, Raf', 'Vitek, Tuzemec'], tag: ['Hip-Hop', 'Casual'], href: 'https://vk.com/event191745898', banner: 'https://sun9-17.userapi.com/nMAOm0S8oZ2IjRmqcpzFKT73pcbiLQRJyzJsXA/bdtpKTRNmzw.jpg'},
                     {name: ['Руслан Twist'], tag: ['Popping', 'Dance'], href: 'https://vk.com/ruslanpoppingtwist', banner: 'https://sun9-12.userapi.com/c858024/v858024753/9d2c0/J7oGG-MRJjU.jpg'},
                     {name: ['Васко Насонов', 'Ксения Шлезингер'], tag: ['Popping', 'Dance'], href: 'https://vk.com/event186203191', banner: 'https://sun9-26.userapi.com/c856120/v856120556/e2cd8/tVHFC-7obcQ.jpg'},
                     {name: ['Kipr'], tag: ['Kipr','Summer'], href: 'https://vk.com/event175214996', banner: 'https://sun9-43.userapi.com/c845017/v845017341/16220f/8FfnZEqJgME.jpg'},
@@ -529,8 +532,17 @@ $(document).ready(function() {
             atHeadOfList() {
                 return this.currentOffset === 0;
             },
+            atEndOfListMobile() {
+                return this.currentOffset <= (this.paginationFactorMobile * -1) * (this.items.length - this.windowSizeMobile);
+            },
+            atHeadOfListMobile() {
+                return this.currentOffset === 0;
+            },
         },
         methods: {
+            updateWidth() {
+                this.width = window.innerWidth;
+            },
             moveCarousel(direction) {
                 // Find a more elegant way to express the :style. consider using props to make it truly generic
                 if (direction === 1 && !this.atEndOfList) {
@@ -539,6 +551,18 @@ $(document).ready(function() {
                     this.currentOffset += this.paginationFactor;
                 }
             },
+            moveCarouselmobile(direction) {
+                // Find a more elegant way to express the :style. consider using props to make it truly generic
+                if (direction === 1 && !this.atEndOfListMobile) {
+                    this.currentOffset -= this.paginationFactorMobile;
+                } else if (direction === -1 && !this.atHeadOfListMobile) {
+                    this.currentOffset += this.paginationFactorMobile;
+                }
+            },
+        },
+        created() {
+            window.addEventListener('resize', this.updateWidth);
+            this.updateWidth();
         }
     });
 

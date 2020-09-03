@@ -250,95 +250,27 @@ html
 							h2 Events
 							script#v-carousel(type="x/template")
 								.card-carousel-wrapper
-									.card-carousel--nav__left(@click="moveCarousel(-1)" :disabled="atHeadOfList")
+									.card-carousel--nav__left(v-if="width > 600" @click="moveCarousel(-1)" :disabled="atHeadOfList")
+									.card-carousel--nav__left(v-else @click="moveCarouselmobile(-1)" :disabled="atHeadOfListMobile")
 									.card-carousel
 										.card-carousel--overflow-container
-											.card-carousel-cards(:style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}")
+											.card-carousel-cards(v-if="width > 600" :style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}")
 												a.card-carousel--card(v-for="item in items" v-bind:href="item.href" target='_blank')
 													img( v-bind:src="item.banner")
 													.card-carousel--card--footer
-														p.name(v-for="(name,index) in item.name" :class="index > 1 ? 'secondary' : ''") {{ name }}
+														p.name(v-for="(name,index) in item.name" :class="index > 0 ? 'secondary' : ''") {{ name }}
 														p.tag(v-for="(tag,index) in item.tag" :class="index > 0 ? 'secondary' : ''") {{ tag }}
-									.card-carousel--nav__right(
-										@click="moveCarousel(1)"
-										:disabled="atEndOfList"
-									)
+
+											.card-carousel-cards(v-else :style="{ transform: 'translateY' + '(' + currentOffset + 'px' + ')'}")
+												a.card-carousel--card(v-for="item in items" v-bind:href="item.href" target='_blank')
+													img( v-bind:src="item.banner")
+													.card-carousel--card--footer
+														p.name(v-for="(name,index) in item.name" :class="index > 0 ? 'secondary' : ''") {{ name }}
+														p.tag(v-for="(tag,index) in item.tag" :class="index > 0 ? 'secondary' : ''") {{ tag }}
+									.card-carousel--nav__right(v-if="width > 600" @click="moveCarousel(1)" :disabled="atEndOfList")
+									.card-carousel--nav__right(v-else @click="moveCarouselmobile(1)" :disabled="atEndOfListMobile")
 							#appcarousel
 								carousel
-							//.example-1.card-events
-								.wrapper
-									//.header
-										.date
-											span.day 12
-											span.month Aug
-											span.year 2016
-										ul.menu-content
-											li
-												a.fa.fa-bookmark-o(href='#')
-											li
-												a.fa.fa-heart-o(href='#')
-													span 18
-											li
-												a.fa.fa-comment-o(href='#')
-													span 3
-									//.data
-										.content
-											span.author Jane Doe
-											h1.title
-												a(href='#') Stranger Things: The sound of the Upside Down
-											p.text
-												| The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.
-											a.button(href='#') Read more
-							//.example-2.card-events
-								.wrapper
-									//.header
-										.date
-											span.day 12
-											span.month Aug
-											span.year 2016
-										ul.menu-content
-											li
-												a.fa.fa-bookmark-o(href='#')
-											li
-												a.fa.fa-heart-o(href='#')
-													span 18
-											li
-												a.fa.fa-comment-o(href='#')
-													span 3
-									//.data
-										.content
-											span.author Jane Doe
-											h1.title
-												a(href='#') Stranger Things: The sound of the Upside Down
-											p.text
-												| The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.
-											a.button(href='#') Read more
-
-							//.example-3.card-events
-								.wrapper
-									//.header
-										.date
-											span.day 12
-											span.month Aug
-											span.year 2016
-										ul.menu-content
-											li
-												a.fa.fa-bookmark-o(href='#')
-											li
-												a.fa.fa-heart-o(href='#')
-													span 18
-											li
-												a.fa.fa-comment-o(href='#')
-													span 3
-									//.data
-										.content
-											span.author Jane Doe
-											h1.title
-												a(href='#') Stranger Things: The sound of the Upside Down
-											p.text
-												| The antsy bingers of Netflix will eagerly anticipate the digital release of the Survive soundtrack, out today.
-											a.button(href='#') Read more
-
 			.slide.slide--3(data-target='3')
 				.slide__text Teachers
 				.slide__img
