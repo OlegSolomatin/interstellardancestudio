@@ -606,14 +606,14 @@ $(document).ready(function() {
                             style: 'Hip-Hop',
                             teacher: 'Дмитрий',
                             price: '2700/300',
-                            videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'
                         },
                         {
                             time: '19:30 - 20:55',
                             recruitment: 'Набор 14-25 лет',
                             style: 'Hip-Hop',
                             teacher: 'Andrey Grizodub',
-                            price: '2700/300'
+                            price: '2700/300',
+                            videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'
                         },
                         {
                             time: '21:30 - 22:55',
