@@ -52,7 +52,7 @@ html
 		//link(rel='stylesheet' media='(orientation: portrait)' href='portrait.css')
 		//link(rel='stylesheet' media='(orientation: landscape)' href='landscape.css')
 		title Interstellar - Dance Studio Kolomna
-		meta(name='description' content='Студия танцев в коломне. Hip-hop коломна. Современные танцы. Современные танцы Коломна. Свадебный танец Коломна.')
+		meta(name='description' content='Студия танцев в коломне. Hip-hop коломна. Современные танцы. Современные танцы Коломна. Свадебный танец Коломна. Dance studio - Interstellar Коломна. ')
 		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')
 		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css')
 		link(rel='stylesheet', href='css/normalize.css')
@@ -312,6 +312,71 @@ html
 				.slide__container-content
 					.container-main-fourth
 						.container-main-fourth-content
+							h2 Расписание
+							script#v-carousel2(type="x/template")
+								.card-carousel-wrapper
+									.card-carousel--nav__left(v-if="width > 600" @click="moveCarouselCalendar(-1)" :disabled="atHeadOfList")
+									.card-carousel--nav__left(v-else @click="moveCarouselmobileCalendar(-1)" :disabled="atHeadOfListMobileCalendar")
+									.card-carousel
+										.card-carousel--overflow-container
+											.card-carousel-cards(:style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}")
+												section.card-carousel--card(v-for="(hall,index) in items")
+													h3.name-hall {{hall.name}}
+													.grid-wrapper
+														article(v-for="(hallnum,index) in hall.hallnum")
+															h3 {{hallnum.time}}
+															p {{hallnum.recruitment}}
+															p {{hallnum.style}}
+															p {{hallnum.teacher}}
+															p {{hallnum.price}}
+															.video(v-html='hallnum.videoframe')
+											//.card-carousel-cards(v-if="width > 600" :style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}")
+												a.card-carousel--card(v-for="item in items" v-bind:href="item.href" target='_blank')
+													img( v-bind:src="item.banner")
+													.card-carousel--card--footer
+														p.name(v-for="(name,index) in item.name" :class="index > 0 ? 'secondary' : ''") {{ name }}
+														p.tag(v-for="(tag,index) in item.tag" :class="index > 0 ? 'secondary' : ''") {{ tag }}
+											//.card-carousel-cards(v-else :style="{ transform: 'translateY' + '(' + currentOffset + 'px' + ')'}")
+												a.card-carousel--card(v-for="item in items" v-bind:href="item.href" target='_blank')
+													img( v-bind:src="item.banner")
+													.card-carousel--card--footer
+														p.name(v-for="(name,index) in item.name" :class="index > 0 ? 'secondary' : ''") {{ name }}
+														p.tag(v-for="(tag,index) in item.tag" :class="index > 0 ? 'secondary' : ''") {{ tag }}
+									.card-carousel--nav__right(v-if="width > 600" @click="moveCarouselCalendar(1)" :disabled="atEndOfList")
+									.card-carousel--nav__right(v-else @click="moveCarouselmobileCalendar(1)" :disabled="atEndOfListMobileCalendar")
+							#appcarouselCalendar
+								carousel
+							//section
+								h2 7 December
+								.grid-wrapper
+									article
+										h3 10:00 - 10.55 AM
+										p Hip-Hop & Urban 7-10 lvl
+									article
+										h3 17:00 - 18:25 AM
+										p Hip-Hop 10-13 lvl
+									article
+										h3 18:30 - 19:25 AM
+										p Hip-Hop
+									article
+										h3 19:30 - 20:55 AM
+										p
+											| Hip-Hop Maniacs
+										img(src='https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg' alt='Black and white photo of a lake')
+									article
+										h3 21:30 - 22:55 AM
+										p Hip-Hop Pristory Crew
+									//article
+										h3 15:30 AM
+										p I gave it a cold? I gave it a virus. A computer virus.
+									//article
+										h3 16:30 AM
+										p
+											| God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.
+									//article
+										h3 17:30 AM
+										p What do they got in there? King Kong?
+										img(src='https://www.popphoto.com/resizer/yRp6jk6SC2E-Gg0HH-3UPykc3-o=/1200x628/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/H6IXNGES7XFT3BC2QPOREFGINU.jpg' alt='Black and white Mountian view')
 			.slide.slide--5(data-target='5')
 				.slide__text About US
 				.slide__img
