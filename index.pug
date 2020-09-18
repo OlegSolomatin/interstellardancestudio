@@ -75,10 +75,10 @@ html
 				use.text(xlink:href="#s-text")
 		.cont
 			.slide.slide--1(data-target='1')
-				.slide__text.slide__text--1 First Page
+				.slide__text.slide__text--1 News
 				.slide__img
 					.slide__close
-				.slide__bg-dark
+				.slide__bg-dark.slide__bg-dark-1
 				.slide__container-content
 					.container-main
 						.box
@@ -243,7 +243,7 @@ html
 				.slide__text Events
 				.slide__img
 					.slide__close
-				.slide__bg-dark
+				.slide__bg-dark.slide__bg-dark-2
 				.slide__container-content
 					.container-main-second
 						.container-main-second-content
@@ -274,7 +274,7 @@ html
 				.slide__text Teachers
 				.slide__img
 					.slide__close
-				.slide__bg-dark
+				.slide__bg-dark.slide__bg-dark-3
 				.slide__container-content
 					.container-main-third
 						#app(:class="['container-main-third-content', isSelected ? 'container-selected':'', isReady ? 'container-ready':'']")
@@ -308,7 +308,7 @@ html
 				.slide__text Calendar
 				.slide__img
 					.slide__close
-				.slide__bg-dark
+				.slide__bg-dark.slide__bg-dark-4
 				.slide__container-content
 					.container-main-fourth
 						.container-main-fourth-content
@@ -346,42 +346,11 @@ html
 									.card-carousel--nav__right(v-else @click="moveCarouselmobileCalendar(1)" :disabled="atEndOfListMobileCalendar")
 							#appcarouselCalendar
 								carousel
-							//section
-								h2 7 December
-								.grid-wrapper
-									article
-										h3 10:00 - 10.55 AM
-										p Hip-Hop & Urban 7-10 lvl
-									article
-										h3 17:00 - 18:25 AM
-										p Hip-Hop 10-13 lvl
-									article
-										h3 18:30 - 19:25 AM
-										p Hip-Hop
-									article
-										h3 19:30 - 20:55 AM
-										p
-											| Hip-Hop Maniacs
-										img(src='https://images.fineartamerica.com/images-medium-large-5/maroon-bells-aspen-colorado-black-and-white-photography-by-sai.jpg' alt='Black and white photo of a lake')
-									article
-										h3 21:30 - 22:55 AM
-										p Hip-Hop Pristory Crew
-									//article
-										h3 15:30 AM
-										p I gave it a cold? I gave it a virus. A computer virus.
-									//article
-										h3 16:30 AM
-										p
-											| God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.
-									//article
-										h3 17:30 AM
-										p What do they got in there? King Kong?
-										img(src='https://www.popphoto.com/resizer/yRp6jk6SC2E-Gg0HH-3UPykc3-o=/1200x628/smart/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/H6IXNGES7XFT3BC2QPOREFGINU.jpg' alt='Black and white Mountian view')
 			.slide.slide--5(data-target='5')
 				.slide__text About US
 				.slide__img
 					.slide__close
-				.slide__bg-dark
+				.slide__bg-dark.slide__bg-dark-5
 				.slide__container-content
 					.comming-soon
 						.circle

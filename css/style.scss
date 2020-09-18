@@ -83,6 +83,10 @@ $bgFirstpage: (
   display: -ms-flexbox;
   display: flex;
 }
+@mixin flex-shrink($num) {
+  -ms-flex-negative: $num;
+  flex-shrink: $num;
+}
 @mixin flex-rowdirection {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -1713,7 +1717,20 @@ $time: 300ms;
           span {
             font-size: small;
             font-family: "Karla", sans-serif;
+					 	transition: all 0.3s;
+					 	opacity: 0;
+						position: absolute;
+						font-size: 10px;
+						font-weight: 700;
+						font-family: 'Open Sans';
+						-webkit-transform: translate(-110%, 0);
+						transform: translate(-110%, 0);
           }
+				 	&:hover>span{
+					 -webkit-transform: translate(-110%, -10px);
+					 transform: translate(-110%, -10px);
+					 opacity: 1;
+				 }
         }
         @include mediaMaxW(970px){
           margin-top: 15px;
@@ -1803,26 +1820,25 @@ $time: 300ms;
     /**/
     /**********************************************************************************Content fourth slide*/
     .container-main-fourth{
-		 width: 100%;
+      width: 100%;
 
-		 $border: 1px solid #4d4d4d;
-		 $header-font: 'Poppins', sans-serif;
-		 $vue-navy: #2c3e50;
-		 $vue-navy-light: #3a5169;
-		 $gray: #666a73;
-		 $light-gray: #f8f8f8;
+      $border: 1px solid #4d4d4d;
+      $header-font: 'Poppins', sans-serif;
+      $vue-navy: #2c3e50;
+      $vue-navy-light: #3a5169;
+      $gray: #666a73;
+      $light-gray: #f8f8f8;
+      $san-juan: #2d4e68;
+      $white: #fff;
+      $black: #000;
+      $open-sans: 'Open Sans',
+      sans-serif;
+		  @include flex();
+		  @include justify-content-center();
 
-		 width: 100%;
-		 @include flex();
-		 @include justify-content-center();
 
-		 $san-juan: #2d4e68;
-		 $white: #fff;
-		 $black: #000;
-		 $open-sans: 'Open Sans',
-		 sans-serif;
 		 // clear-fix mixin
-		 @mixin cf {
+		  @mixin cf {
 			&::before,
 			&::after {
 			 content: '';
@@ -1833,273 +1849,196 @@ $time: 300ms;
 			}
 		 }
 
-		 &-content {
-			@include flex();
-			@include justify-content-center();
-			@include align-items-center();
-			@include flex-coldirection();
-			width: 100%;
-			max-width: 1400px;
-			font-size: clamp(15px, 2vw, 25px) !important;
+		  &-content {
+			  @include flex();
+			  @include justify-content-center();
+			  @include align-items-center();
+			  @include flex-coldirection();
+			  width: 100%;
+			  max-width: 1400px;
+			  font-size: clamp(15px, 2vw, 25px) !important;
+        h2 {
+          font-size: 3.6em;
+          font-weight: 100;
+          text-align: center;
+          margin-bottom: 0;
+          font-size: clamp(35px, 7vw, 65px);
+          margin-bottom: 15px;
+          text-shadow: 1px 1px #F25555, 1px -1px #F25555, -1px 1px #F25555, -1px -1px #F25555, 3px 3px 6px rgba(0, 0, 0, 0.5);
+			  }
+        #appcarouselCalendar{
+          z-index: 1;
+          .card-carousel-wrapper {
+            @include flex();
+            @include align-items-center();
+            @include justify-content-center();
+            height: 80vh;
 
-			h2 {
-			 font-size: 3.6em;
-			 font-weight: 100;
-			 text-align: center;
-			 margin-bottom: 0;
-			 font-size: clamp(35px, 7vw, 65px);
-			 margin-bottom: 15px;
-			 text-shadow: 1px 1px #F25555, 1px -1px #F25555, -1px 1px #F25555, -1px -1px #F25555, 3px 3px 6px rgba(0, 0, 0, 0.5);
-			}
+            @include mediaMaxW(600px){
+              @include flex-coldirection();
+            }
+            .card-carousel {
+              @include flex();
+              @include justify-content-center();
+              width: 80vw;
+              max-width: 1400px;
+              height: 100%;
 
-			#appcarouselCalendar{
+              @include mediaMaxW(600px){
+                height: 60vh;
+              }
 
-			 z-index: 1;
-
-			 .card-carousel-wrapper {
-				@include flex();
-				@include align-items-center();
-				@include justify-content-center();
-				height: 80vh;
-
-				@include mediaMaxW(600px){
-				 @include flex-coldirection();
-				}
-			 }
-
-			 .card-carousel {
-				@include flex();
-				@include justify-content-center();
-				width: 80vw;
-				max-width: 1400px;
-				height: 100%;
-
-				@include mediaMaxW(600px){
-				 height: 60vh;
-				}
-
-				&--overflow-container {
-				 overflow: hidden;
-				 width: 100%;
-				}
-
-				&--nav__left,
-				&--nav__right {
-				 display: inline-block;
-				 width: 15px;
-				 height: 15px;
-				 padding: 10px;
-				 box-sizing: border-box;
-				 border-top: 3px solid $cellHvrClr;
-				 border-right: 3px solid $cellHvrClr;
-				 cursor: pointer;
-				 margin: 0 20px;
-				 transition: transform 150ms linear;
-				 &[disabled] {
-					opacity: 0.2;
-					border-color: black;
-				 }
-				}
-
-				&--nav__left {
-				 transform: rotate(-135deg);
-				 &:active {
-					transform: rotate(-135deg) scale(0.9);
-				 }
-				 @include mediaMaxW(600px){
-					transform: rotate(-45deg);
-					&:active {
-					 transform: rotate(-45deg) scale(0.9);
-					}
-				 }
-				}
-
-				&--nav__right {
-				 transform: rotate(45deg);
-				 &:active {
-					transform: rotate(45deg) scale(0.9);
-				 }
-				 @include mediaMaxW(600px){
-					transform: rotate(135deg);
-					&:active {
-					 transform: rotate(135deg) scale(0.9);
-					}
-				 }
-				}
-			 }
-
-			 .card-carousel-cards {
-				transition: transform 0.5s ease-out;
-				transform: translatex(0px);
-				width: 100%;
-				height: 100%;
+              &--overflow-container {
+                overflow: hidden;
+                width: 100%;
+                .card-carousel-cards {
+                  transition: transform 0.5s ease-out;
+                  transform: translatex(0px);
+                  width: 100%;
+                  height: 100%;
+                  @include flex();
 
 
-				@include mediaMaxW(600px){
-				 @include flex-coldirection();
-				}
+                  @include mediaMaxW(600px){
+                    @include flex-coldirection();
+                  }
 
-				.card-carousel--card {
-				 background: #2b2a2b;
-				 color: white;
-				 z-index: 3;
-				 padding: 2rem;
-				 max-width: 1400px;
-				 width: 100%;
-				 height: 100%;
+                  .card-carousel--card {
+                    background: #2b2a2b;
+                    color: white;
+                    z-index: 3;
+                    padding: 2rem;
+                    max-width: 1400px;
+                    width: 100%;
+                    height: 100%;
+									 	@include flex();
+									 	@include flex-coldirection();
+                    @include flex-shrink(0);
 
-				 @include mediaMaxW(600px){
-					margin: 0px;
-					margin-bottom: 20px;
-				 }
+                    @include mediaMaxW(600px){
+                      margin: 0px;
+                      margin-bottom: 20px;
+                    }
 
-				 &:first-child {
-					margin-left: 0;
-				 }
+                    &:first-child {
+                      margin-left: 0;
+                    }
 
-				 &:last-child {
-					margin-right: 0;
-				 }
+                    &:last-child {
+                      margin-right: 0;
+                    }
 
-				 .name-hall {
-					 color: $cellHvrClr;
-					 font-family: $header-font;
-					 font-weight: 500;
-				 }
+                    .name-hall {
+                      color: $cellHvrClr;
+                      font-family: $header-font;
+                      font-weight: 500;
+                    }
 
-				 .grid-wrapper{
+                    .grid-wrapper{
+											@include flex();
+										 	@include flex-wrap();
+                      height: inherit;
 
-					height: inherit;
+                      article{
+											 width: 33.3%;
+											 text-align: center;
+											 @include flex();
+											 @include flex-coldirection();
+											 @include justify-content-center();
+                        p{
+                          font-family: 'Karla', sans-serif;
+                          font-size: 0.95rem;
+                          color: #c8c8c8;
+                        }
+                        padding-bottom: 1rem;
+                        border: $border;
+                        // using Grid area to place the 4th and 8th element.
+                        /*&:nth-child(4n+3){
+                          @media screen and (min-width: 1025px){
+                            border-bottom: 0;
+                          }
+                        }
+                        &:nth-child(4){
+                          @media screen and (min-width: 1025px){
+                            border-right: $border;
+                            padding-right: 1rem;
+                          }
+                        }
+                        &:nth-child(4n){
+                          @media screen and (min-width: 600px){
+                            border-left: $border;
+                            border-bottom: 0;
+                            padding-left: 1rem;
+                          }
+                        }*/
+											 &:last-child{
+												p{
+												 margin: 0
+												}
+												h3{
+												 margin: 0;
+												 padding: 0;
+												}
+											 }
 
-					article{
-					 p{
-						font-family: 'Karla', sans-serif;
-						font-size: 0.95rem;
-						color: #c8c8c8;
-					 }
-					 padding-bottom: 1rem;
-					 border-bottom: $border;
-					 // using Grid area to place the 4th and 8th element.
-					 &:nth-child(4){
-						grid-area: 1/2/4/3;
-					 }
+                        .video {
+                          @include mediaMaxH(600px){
+                            display: none;
+                          }
+                        }
 
-					 &:nth-child(8){
-						@media screen and (min-width: 1025px){
-						 grid-area: 1/4/4/-1;
-						}
-						@media screen and (min-width: 600px) and (max-width: 1024px){
-						 grid-area: 4/2/8/3;
-						}
-					 }
-					 &:nth-child(4n+3){
-						@media screen and (min-width: 1025px){
-						 border-bottom: 0;
-						}
-					 }
-					 &:nth-child(4){
-						@media screen and (min-width: 1025px){
-						 border-right: $border;
-						 padding-right: 1rem;
-						}
-					 }
-					 &:nth-child(4n){
-						@media screen and (min-width: 600px){
-						 border-left: $border;
-						 border-bottom: 0;
-						 padding-left: 1rem;
-						}
-					 }
+                      }
+                    }
+                  }
+                }
+              }
 
-					 .video {
+              &--nav__left,
+              &--nav__right {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                padding: 10px;
+                box-sizing: border-box;
+                border-top: 3px solid $cellHvrClr;
+                border-right: 3px solid $cellHvrClr;
+                cursor: pointer;
+                margin: 0 20px;
+                transition: transform 150ms linear;
+                &[disabled] {
+                  opacity: 0.2;
+                  border-color: black;
+                }
+              }
 
-					 }
+              &--nav__left {
+                transform: rotate(-135deg);
+                &:active {
+                  transform: rotate(-135deg) scale(0.9);
+                }
+                @include mediaMaxW(600px){
+                  transform: rotate(-45deg);
+                  &:active {
+                    transform: rotate(-45deg) scale(0.9);
+                  }
+                }
+              }
 
-					}
-
-					// Adding grid layout for screen size above 600
-					@media screen and (min-width: 600px){
-					 display: grid;
-					 grid-auto-flow: column;
-					 grid-gap: 1rem;
-
-					}
-
-					@media screen and (min-width: 1025px){
-					 grid-template-columns: 1fr 1fr 1fr;
-					}
-					@media screen and (min-width: 600px) and (max-width: 1024px){
-					 grid-template-columns: 1fr 2fr;
-					}
-
-				 }
-
-				 &--footer {
-					border-top: 0;
-					padding: 7px 15px;
-					background: $cellHvrClr;
-					height: 90px;
-					border-bottom-right-radius: 4px;
-					border-bottom-left-radius: 4px;
-
-					p {
-					 padding: 3px 0;
-					 margin: 0;
-					 margin-bottom: 2px;
-					 font-size: 15px;
-					 //font-size: 19px;
-					 font-weight: 500;
-					 color: $white;
-					 user-select: none;
-
-					 &.tag {
-						font-size: 11px;
-						font-weight: 300;
-						padding: 4px;
-						background: rgba(40,44,53,.2);
-						display: inline-block;
-						position: relative;
-						margin-left: 4px;
-						color: $white;
-
-						&:before {
-						 content:"";
-						 float:left;
-						 position:absolute;
-						 top:0;
-						 left: -12px;
-						 width:0;
-						 height:0;
-						 border-color:transparent rgba(40,44,53,.2) transparent transparent;
-						 border-style:solid;
-						 border-width:8px 12px 12px 0;
-						}
-						&.secondary {
-						 margin-left: 0;
-						 border-left: 3px solid transparent;
-						 &:before {
-							display: none !important;
-						 }
-						}
-
-						&:after {
-						 content:"";
-						 position:absolute;
-						 top:8px;
-						 left:-3px;
-						 float:left;
-						 width:4px;
-						 height:4px;
-						 border-radius: 2px;
-						 background: $white;
-						}
-					 }
-					}
-				 }
-				}
-			 }
-
-			}
+              &--nav__right {
+                transform: rotate(45deg);
+                &:active {
+                  transform: rotate(45deg) scale(0.9);
+                }
+                @include mediaMaxW(600px){
+                  transform: rotate(135deg);
+                  &:active {
+                    transform: rotate(135deg) scale(0.9);
+                  }
+                }
+              }
+            }
+			    }
+			  }
 		 }
 
     }

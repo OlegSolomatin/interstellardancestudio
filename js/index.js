@@ -79,8 +79,6 @@ $(document).ready(function() {
             'display': 'flex'
         });
 
-
-
     });
     /*Работа блока при наведении курсора*/
     $(document).on('mousemove', '.slide', function() {
@@ -93,6 +91,10 @@ $(document).ready(function() {
             'transition': '750ms'
         });
 
+        _this.find('.slide__text--1').css({
+            'left': '8%'
+        });
+
         function windowSize(){
             if ($(window).width() > '576'){
                 _this.find('.slide__text').css({
@@ -103,9 +105,6 @@ $(document).ready(function() {
                     '-webkit-transition': '750ms',
                     'display': 'block',
                     'font-size': '35px'
-                });
-                _this.find('.slide__text--1').css({
-                    'left': '8%'
                 });
             } else {
                 _this.find('.slide__text').css({
@@ -166,6 +165,10 @@ $(document).ready(function() {
             'opacity': '0'
         });
 
+        _this.find('.slide__text--1').css({
+            'left': '4%'
+        });
+
         function windowSize(){
             if ($(window).width() > '576'){
                 _this.find('.slide__text').css({
@@ -175,9 +178,6 @@ $(document).ready(function() {
                     '-webkit-transition': '200ms',
                     'display': 'block',
                     'font-size': '30px'
-                });
-                _this.find('.slide__text--1').css({
-                    'left': '4%'
                 });
             } else {
                 _this.find('.slide__text').css({
@@ -238,6 +238,22 @@ $(document).ready(function() {
                 'transform': 'translate3d(0, -50%, 0)'
             })
         }, 200)
+    });
+
+    $(document).on('mousemove', '.fa-vk', function(){
+        $.ajax({
+            type: "POST",
+            url: '../php/zapros.php',
+            //data: formNm.serialize(),
+            success: function (data) {
+                // Вывод текста результата отправки
+                $('#vkontakte_count').html(data);
+            },
+            error: function (jqXHR, text, error) {
+                // Вывод текста ошибки отправки
+                $('#vkontakte_count').html(error);
+            }
+        });
     });
 
     setTimeout(function() {
@@ -322,20 +338,199 @@ $(document).ready(function() {
 		* Возвращаем результат функции в переменную Vue.JS
 		* Youtube API KEY AIzaSyBKBG2-r2hg5O8tyvLCTiKzv4HT4J44Jrg
 		* */
-    $(document).on('mousemove', '.fa-vk', function(){
-        $.ajax({
-            type: "POST",
-            url: '../php/zapros.php',
-            //data: formNm.serialize(),
-            success: function (data) {
-                // Вывод текста результата отправки
-                $('#vkontakte_count').html(data);
-            },
-            error: function (jqXHR, text, error) {
-                // Вывод текста ошибки отправки
-                $('#vkontakte_count').html(error);
+    Vue.component("carousel", {
+        template: "#v-carousel",
+        data() {
+            return {
+                currentOffset: 0,
+                windowSize: 3,
+                windowSizeMobile: 1,
+                paginationFactor: 220,
+                paginationFactorMobile: 359,
+                width: 0,
+                items: [
+                    {name: ['Kiril Zaharov'], tag: ['Hip-Hop'], href: 'https://vk.com/event190979061', banner: 'https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg'},
+                    {name: ['RAF'], tag: ['Hip-Hop', 'Japanese', '$$$$'], href: 'https://vk.com/event187625337', banner: 'https://sun9-31.userapi.com/c850536/v850536203/1ed37d/Vvnmg5ZFBBo.jpg'},
+                    {name: ['Aliya, Raf', 'Vitek, Tuzemec'], tag: ['Hip-Hop', 'Casual'], href: 'https://vk.com/event191745898', banner: 'https://sun9-17.userapi.com/nMAOm0S8oZ2IjRmqcpzFKT73pcbiLQRJyzJsXA/bdtpKTRNmzw.jpg'},
+                    {name: ['Руслан Twist'], tag: ['Popping', 'Dance'], href: 'https://vk.com/ruslanpoppingtwist', banner: 'https://sun9-12.userapi.com/c858024/v858024753/9d2c0/J7oGG-MRJjU.jpg'},
+                    {name: ['Васко Насонов', 'Ксения Шлезингер'], tag: ['Popping', 'Dance'], href: 'https://vk.com/event186203191', banner: 'https://sun9-26.userapi.com/c856120/v856120556/e2cd8/tVHFC-7obcQ.jpg'},
+                    {name: ['Kipr'], tag: ['Kipr','Summer'], href: 'https://vk.com/event175214996', banner: 'https://sun9-43.userapi.com/c845017/v845017341/16220f/8FfnZEqJgME.jpg'},
+                    {name: ['Алексей Арапов'], tag: ['Art House'], href: 'https://vk.com/arapovkolomna', banner: 'https://sun9-10.userapi.com/c849120/v849120739/90618/FebKvaZtAzs.jpg'},
+                ]
             }
-        });
+        },
+        computed: {
+            atEndOfList() {
+                return this.currentOffset <= (this.paginationFactor * -1) * (this.items.length - this.windowSize);
+            },
+            atHeadOfList() {
+                return this.currentOffset === 0;
+            },
+            atEndOfListMobile() {
+                return this.currentOffset <= (this.paginationFactorMobile * -1) * (this.items.length - this.windowSizeMobile);
+            },
+            atHeadOfListMobile() {
+                return this.currentOffset === 0;
+            },
+        },
+        methods: {
+            updateWidth() {
+                this.width = window.innerWidth;
+            },
+            moveCarousel(direction) {
+                // Find a more elegant way to express the :style. consider using props to make it truly generic
+                if (direction === 1 && !this.atEndOfList) {
+                    this.currentOffset -= this.paginationFactor;
+                } else if (direction === -1 && !this.atHeadOfList) {
+                    this.currentOffset += this.paginationFactor;
+                }
+            },
+            moveCarouselmobile(direction) {
+                // Find a more elegant way to express the :style. consider using props to make it truly generic
+                if (direction === 1 && !this.atEndOfListMobile) {
+                    this.currentOffset -= this.paginationFactorMobile;
+                } else if (direction === -1 && !this.atHeadOfListMobile) {
+                    this.currentOffset += this.paginationFactorMobile;
+                }
+            },
+        },
+        created() {
+            window.addEventListener('resize', this.updateWidth);
+            this.updateWidth();
+        }
+    });
+
+    new Vue({
+        el:"#appcarousel"
+    });
+
+    Vue.component("carousel", {
+        template: "#v-carousel2",
+        data() {
+            return {
+                currentOffset: 0,
+                windowSizeCalendar: 1,
+                windowSizeMobileCalendar: 1,
+                paginationFactorCalendar: 1400,
+                paginationFactorMobileCalendar: 359,
+                width: 0,
+                items: [
+                    {
+                        name: "Зал 1",
+                        hallnum: [
+                            {
+                                time: '10:00 - 10:55',
+                                recruitment: 'Набор 7-10 лет',
+                                style: 'Hip-Hop',
+                                teacher: 'Слава',
+                                price: '2700/300'
+                            },
+                            {
+                                time: '17:00 - 18:25',
+                                recruitment: 'Набор 10-13 лет',
+                                style: 'Hip-Hop',
+                                teacher: 'Андрей',
+                                price: '2700/300'
+                            },
+                            {
+                                time: '18:30 - 19:25',
+                                recruitment: '',
+                                style: 'Hip-Hop',
+                                teacher: 'Дмитрий',
+                                price: '2700/300',
+                            },
+                            {
+                                time: '19:30 - 20:55',
+                                recruitment: 'Набор 14-25 лет',
+                                style: 'Hip-Hop',
+                                teacher: 'Andrey Grizodub',
+                                price: '2700/300',
+                            },
+                            {
+                                time: '21:30 - 22:55',
+                                recruitment: 'Набор 25-50 лет',
+                                style: 'Hip-Hop',
+                                teacher: 'Andrey Grizodub',
+                                price: '2700/300',
+                            },
+                            {
+                                videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'
+                            },
+                        ],
+                    },
+                    {
+                        name: "Зал 2",
+                        hallnum: [
+                            {time: '10:00 - 10:55', recruitment: 'Набор 7-10 лет', style: 'Hip-Hop', teacher: 'Слава', price: '2700/300'},
+                            {time: '17:00 - 18:25', recruitment: 'Набор 10-13 лет', style: 'Hip-Hop', teacher: 'Андрей', price: '2700/300'},
+                            {time: '18:30 - 19:25', recruitment: '', style: 'Hip-Hop', teacher: 'Дмитрий', price: '2700/300'},
+                            {time: '19:30 - 20:55', recruitment: 'Набор 14-25 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
+                            {time: '21:30 - 22:55', recruitment: 'Набор 25-50 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
+                        ]
+                    },
+                    {
+                        name: "Зал 3",
+                        hallnum: [
+                            {time: '10:00 - 10:55', recruitment: 'Набор 7-10 лет', style: 'Hip-Hop', teacher: 'Слава', price: '2700/300'},
+                            {time: '17:00 - 18:25', recruitment: 'Набор 10-13 лет', style: 'Hip-Hop', teacher: 'Андрей', price: '2700/300'},
+                            {time: '18:30 - 19:25', recruitment: '', style: 'Hip-Hop', teacher: 'Дмитрий', price: '2700/300'},
+                            {time: '19:30 - 20:55', recruitment: 'Набор 14-25 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
+                            {time: '21:30 - 22:55', recruitment: 'Набор 25-50 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
+                        ]
+                    },
+                    /*{name: ['Kiril Zaharov'], tag: ['Hip-Hop'], href: 'https://vk.com/event190979061', banner: 'https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg'},
+										{name: ['RAF'], tag: ['Hip-Hop', 'Japanese', '$$$$'], href: 'https://vk.com/event187625337', banner: 'https://sun9-31.userapi.com/c850536/v850536203/1ed37d/Vvnmg5ZFBBo.jpg'},
+										{name: ['Aliya, Raf', 'Vitek, Tuzemec'], tag: ['Hip-Hop', 'Casual'], href: 'https://vk.com/event191745898', banner: 'https://sun9-17.userapi.com/nMAOm0S8oZ2IjRmqcpzFKT73pcbiLQRJyzJsXA/bdtpKTRNmzw.jpg'},
+										{name: ['Руслан Twist'], tag: ['Popping', 'Dance'], href: 'https://vk.com/ruslanpoppingtwist', banner: 'https://sun9-12.userapi.com/c858024/v858024753/9d2c0/J7oGG-MRJjU.jpg'},
+										{name: ['Васко Насонов', 'Ксения Шлезингер'], tag: ['Popping', 'Dance'], href: 'https://vk.com/event186203191', banner: 'https://sun9-26.userapi.com/c856120/v856120556/e2cd8/tVHFC-7obcQ.jpg'},
+										{name: ['Kipr'], tag: ['Kipr','Summer'], href: 'https://vk.com/event175214996', banner: 'https://sun9-43.userapi.com/c845017/v845017341/16220f/8FfnZEqJgME.jpg'},
+										{name: ['Алексей Арапов'], tag: ['Art House'], href: 'https://vk.com/arapovkolomna', banner: 'https://sun9-10.userapi.com/c849120/v849120739/90618/FebKvaZtAzs.jpg'},*/
+                ]
+            }
+        },
+        computed: {
+            atEndOfList() {
+                return this.currentOffset <= (this.paginationFactorCalendar * -1) * (this.items.length - this.windowSize);
+            },
+            atHeadOfList() {
+                return this.currentOffset === 0;
+            },
+            atEndOfListMobileCalendar() {
+                return this.currentOffset <= (this.paginationFactorMobileCalendar * -1) * (this.items.length - this.windowSizeMobile);
+            },
+            atEndOfListMobileCalendar() {
+                return this.currentOffset === 0;
+            },
+        },
+        methods: {
+            updateWidth() {
+                this.width = window.innerWidth;
+            },
+            moveCarouselCalendar(direction) {
+                // Find a more elegant way to express the :style. consider using props to make it truly generic
+                if (direction === 1 && !this.atEndOfList) {
+                    this.currentOffset -= this.paginationFactorCalendar;
+                } else if (direction === -1 && !this.atHeadOfList) {
+                    this.currentOffset += this.paginationFactorCalendar;
+                }
+            },
+            moveCarouselmobileCalendar(direction) {
+                // Find a more elegant way to express the :style. consider using props to make it truly generic
+                if (direction === 1 && !this.atEndOfListMobileCalendar) {
+                    this.currentOffset -= this.paginationFactorMobileCalendar;
+                } else if (direction === -1 && !this.atHeadOfListMobileCalendar) {
+                    this.currentOffset += this.paginationFactorMobileCalendar;
+                }
+            },
+        },
+        created() {
+            window.addEventListener('resize', this.updateWidth);
+            this.updateWidth();
+        }
+    });
+
+    new Vue({
+        el:"#appcarouselCalendar"
     });
 
     const persons = [
@@ -505,198 +700,4 @@ $(document).ready(function() {
             }
         }
     });
-
-    Vue.component("carousel", {
-        template: "#v-carousel",
-        data() {
-            return {
-                currentOffset: 0,
-                windowSize: 3,
-                windowSizeMobile: 1,
-                paginationFactor: 220,
-                paginationFactorMobile: 359,
-                width: 0,
-                items: [
-                    {name: ['Kiril Zaharov'], tag: ['Hip-Hop'], href: 'https://vk.com/event190979061', banner: 'https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg'},
-                    {name: ['RAF'], tag: ['Hip-Hop', 'Japanese', '$$$$'], href: 'https://vk.com/event187625337', banner: 'https://sun9-31.userapi.com/c850536/v850536203/1ed37d/Vvnmg5ZFBBo.jpg'},
-                    {name: ['Aliya, Raf', 'Vitek, Tuzemec'], tag: ['Hip-Hop', 'Casual'], href: 'https://vk.com/event191745898', banner: 'https://sun9-17.userapi.com/nMAOm0S8oZ2IjRmqcpzFKT73pcbiLQRJyzJsXA/bdtpKTRNmzw.jpg'},
-                    {name: ['Руслан Twist'], tag: ['Popping', 'Dance'], href: 'https://vk.com/ruslanpoppingtwist', banner: 'https://sun9-12.userapi.com/c858024/v858024753/9d2c0/J7oGG-MRJjU.jpg'},
-                    {name: ['Васко Насонов', 'Ксения Шлезингер'], tag: ['Popping', 'Dance'], href: 'https://vk.com/event186203191', banner: 'https://sun9-26.userapi.com/c856120/v856120556/e2cd8/tVHFC-7obcQ.jpg'},
-                    {name: ['Kipr'], tag: ['Kipr','Summer'], href: 'https://vk.com/event175214996', banner: 'https://sun9-43.userapi.com/c845017/v845017341/16220f/8FfnZEqJgME.jpg'},
-                    {name: ['Алексей Арапов'], tag: ['Art House'], href: 'https://vk.com/arapovkolomna', banner: 'https://sun9-10.userapi.com/c849120/v849120739/90618/FebKvaZtAzs.jpg'},
-                ]
-            }
-        },
-        computed: {
-            atEndOfList() {
-                return this.currentOffset <= (this.paginationFactor * -1) * (this.items.length - this.windowSize);
-            },
-            atHeadOfList() {
-                return this.currentOffset === 0;
-            },
-            atEndOfListMobile() {
-                return this.currentOffset <= (this.paginationFactorMobile * -1) * (this.items.length - this.windowSizeMobile);
-            },
-            atHeadOfListMobile() {
-                return this.currentOffset === 0;
-            },
-        },
-        methods: {
-            updateWidth() {
-                this.width = window.innerWidth;
-            },
-            moveCarousel(direction) {
-                // Find a more elegant way to express the :style. consider using props to make it truly generic
-                if (direction === 1 && !this.atEndOfList) {
-                    this.currentOffset -= this.paginationFactor;
-                } else if (direction === -1 && !this.atHeadOfList) {
-                    this.currentOffset += this.paginationFactor;
-                }
-            },
-            moveCarouselmobile(direction) {
-                // Find a more elegant way to express the :style. consider using props to make it truly generic
-                if (direction === 1 && !this.atEndOfListMobile) {
-                    this.currentOffset -= this.paginationFactorMobile;
-                } else if (direction === -1 && !this.atHeadOfListMobile) {
-                    this.currentOffset += this.paginationFactorMobile;
-                }
-            },
-        },
-        created() {
-            window.addEventListener('resize', this.updateWidth);
-            this.updateWidth();
-        }
-    });
-
-    new Vue({
-        el:"#appcarousel"
-    });
-
-	  Vue.component("carousel", {
-		    template: "#v-carousel2",
-		    data() {
-			      return {
-				    currentOffset: 0,
-				    windowSizeCalendar: 1,
-				    windowSizeMobileCalendar: 1,
-				    paginationFactorCalendar: 1400,
-				    paginationFactorMobileCalendar: 359,
-				    width: 0,
-            items: [
-                {
-                    name: "Зал 1",
-                    hallnum: [
-                        {
-                            time: '10:00 - 10:55',
-                            recruitment: 'Набор 7-10 лет',
-                            style: 'Hip-Hop',
-                            teacher: 'Слава',
-                            price: '2700/300'
-                        },
-                        {
-                            time: '17:00 - 18:25',
-                            recruitment: 'Набор 10-13 лет',
-                            style: 'Hip-Hop',
-                            teacher: 'Андрей',
-                            price: '2700/300'
-                        },
-                        {
-                            time: '18:30 - 19:25',
-                            recruitment: '',
-                            style: 'Hip-Hop',
-                            teacher: 'Дмитрий',
-                            price: '2700/300',
-                        },
-                        {
-                            time: '19:30 - 20:55',
-                            recruitment: 'Набор 14-25 лет',
-                            style: 'Hip-Hop',
-                            teacher: 'Andrey Grizodub',
-                            price: '2700/300',
-                            videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'
-                        },
-                        {
-                            time: '21:30 - 22:55',
-                            recruitment: 'Набор 25-50 лет',
-                            style: 'Hip-Hop',
-                            teacher: 'Andrey Grizodub',
-                            price: '2700/300',
-                            videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'
-                        },
-                    ],
-                },
-                {
-                    name: "Зал 2",
-                    hallnum: [
-                    {time: '10:00 - 10:55', recruitment: 'Набор 7-10 лет', style: 'Hip-Hop', teacher: 'Слава', price: '2700/300'},
-                    {time: '17:00 - 18:25', recruitment: 'Набор 10-13 лет', style: 'Hip-Hop', teacher: 'Андрей', price: '2700/300'},
-                    {time: '18:30 - 19:25', recruitment: '', style: 'Hip-Hop', teacher: 'Дмитрий', price: '2700/300'},
-                    {time: '19:30 - 20:55', recruitment: 'Набор 14-25 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
-                    {time: '21:30 - 22:55', recruitment: 'Набор 25-50 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
-                ]
-                },
-                {
-                    name: "Зал 3",
-                    hallnum: [
-                    {time: '10:00 - 10:55', recruitment: 'Набор 7-10 лет', style: 'Hip-Hop', teacher: 'Слава', price: '2700/300'},
-                    {time: '17:00 - 18:25', recruitment: 'Набор 10-13 лет', style: 'Hip-Hop', teacher: 'Андрей', price: '2700/300'},
-                    {time: '18:30 - 19:25', recruitment: '', style: 'Hip-Hop', teacher: 'Дмитрий', price: '2700/300'},
-                    {time: '19:30 - 20:55', recruitment: 'Набор 14-25 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
-                    {time: '21:30 - 22:55', recruitment: 'Набор 25-50 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
-                ]
-                },
-					/*{name: ['Kiril Zaharov'], tag: ['Hip-Hop'], href: 'https://vk.com/event190979061', banner: 'https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg'},
-					{name: ['RAF'], tag: ['Hip-Hop', 'Japanese', '$$$$'], href: 'https://vk.com/event187625337', banner: 'https://sun9-31.userapi.com/c850536/v850536203/1ed37d/Vvnmg5ZFBBo.jpg'},
-					{name: ['Aliya, Raf', 'Vitek, Tuzemec'], tag: ['Hip-Hop', 'Casual'], href: 'https://vk.com/event191745898', banner: 'https://sun9-17.userapi.com/nMAOm0S8oZ2IjRmqcpzFKT73pcbiLQRJyzJsXA/bdtpKTRNmzw.jpg'},
-					{name: ['Руслан Twist'], tag: ['Popping', 'Dance'], href: 'https://vk.com/ruslanpoppingtwist', banner: 'https://sun9-12.userapi.com/c858024/v858024753/9d2c0/J7oGG-MRJjU.jpg'},
-					{name: ['Васко Насонов', 'Ксения Шлезингер'], tag: ['Popping', 'Dance'], href: 'https://vk.com/event186203191', banner: 'https://sun9-26.userapi.com/c856120/v856120556/e2cd8/tVHFC-7obcQ.jpg'},
-					{name: ['Kipr'], tag: ['Kipr','Summer'], href: 'https://vk.com/event175214996', banner: 'https://sun9-43.userapi.com/c845017/v845017341/16220f/8FfnZEqJgME.jpg'},
-					{name: ['Алексей Арапов'], tag: ['Art House'], href: 'https://vk.com/arapovkolomna', banner: 'https://sun9-10.userapi.com/c849120/v849120739/90618/FebKvaZtAzs.jpg'},*/
-				]
-			}
-		},
-		computed: {
-			atEndOfList() {
-				return this.currentOffset <= (this.paginationFactorCalendar * -1) * (this.items.length - this.windowSize);
-			},
-      atHeadOfList() {
-				return this.currentOffset === 0;
-			},
-			atEndOfListMobileCalendar() {
-				return this.currentOffset <= (this.paginationFactorMobileCalendar * -1) * (this.items.length - this.windowSizeMobile);
-			},
-      atEndOfListMobileCalendar() {
-				return this.currentOffset === 0;
-			},
-		},
-		methods: {
-			updateWidth() {
-				this.width = window.innerWidth;
-			},
-			moveCarouselCalendar(direction) {
-				// Find a more elegant way to express the :style. consider using props to make it truly generic
-				if (direction === 1 && !this.atEndOfList) {
-					this.currentOffset -= this.paginationFactorCalendar;
-				} else if (direction === -1 && !this.atHeadOfList) {
-					this.currentOffset += this.paginationFactorCalendar;
-				}
-			},
-			moveCarouselmobileCalendar(direction) {
-				// Find a more elegant way to express the :style. consider using props to make it truly generic
-				if (direction === 1 && !this.atEndOfListMobileCalendar) {
-					this.currentOffset -= this.paginationFactorMobileCalendar;
-				} else if (direction === -1 && !this.atHeadOfListMobileCalendar) {
-					this.currentOffset += this.paginationFactorMobileCalendar;
-				}
-			},
-		},
-		created() {
-			window.addEventListener('resize', this.updateWidth);
-			this.updateWidth();
-		}
-	});
-
-	  new Vue({
-		el:"#appcarouselCalendar"
-	});
 });
