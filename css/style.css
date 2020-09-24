@@ -728,73 +728,7 @@ html {
         flex-direction: column;
         width: 100%;
         max-width: 1400px;
-        font-size: clamp(15px, 2vw, 25px) !important;
-        /*.card-events {
-          float: left;
-          width: 30% !important;
-          z-index: 1;
-          .menu-content {
-            @include cf;
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            li {
-              display: inline-block;
-            }
-            a {
-              color: $white;
-            }
-            span {
-              position: absolute;
-              left: 50%;
-              top: 0;
-              font-size: 10px;
-              font-weight: 700;
-              font-family: 'Open Sans';
-              transform: translate(-50%, 0);
-            }
-          }
-          .wrapper {
-            background-color: $white;
-            min-height: 460px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
-            &:hover {
-              .data {
-                transform: translateY(0);
-              }
-            }
-          }
-          .data {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            transform: translateY(calc(70px + 1em));
-            transition: transform 0.3s;
-            .content {
-              padding: 1em;
-              position: relative;
-              z-index: 1;
-            }
-          }
-          .author {
-            font-size: 12px;
-          }
-          .title {
-            margin-top: 10px;
-          }
-          .text {
-            height: 70px;
-            margin: 0;
-          }
-          input[type='checkbox'] {
-            display: none;
-          }
-          input[type='checkbox']:checked + .menu-content {
-            transform: translateY(-60px);
-          }
-        }*/ }
+        font-size: clamp(15px, 2vw, 25px) !important; }
         .slide__container-content .container-main-second-content h2 {
           font-size: 3.6em;
           font-weight: 100;
@@ -1377,7 +1311,7 @@ html {
         -ms-flex-direction: column;
         flex-direction: column;
         width: 100%;
-        max-width: 1400px;
+        max-width: 80vw;
         font-size: clamp(15px, 2vw, 25px) !important; }
         .slide__container-content .container-main-fourth-content h2 {
           font-size: 3.6em;
@@ -1414,7 +1348,6 @@ html {
               -ms-flex-pack: center;
               justify-content: center;
               width: 80vw;
-              max-width: 1400px;
               height: 100%; }
               @media screen and (max-width: 600px) {
                 .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel {
@@ -1441,7 +1374,6 @@ html {
                     color: white;
                     z-index: 3;
                     padding: 2rem;
-                    max-width: 1400px;
                     width: 100%;
                     height: 100%;
                     display: -webkit-box;
@@ -1452,7 +1384,8 @@ html {
                     -ms-flex-direction: column;
                     flex-direction: column;
                     -ms-flex-negative: 0;
-                    flex-shrink: 0; }
+                    flex-shrink: 0;
+                    margin-right: 20px; }
                     @media screen and (max-width: 600px) {
                       .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card {
                         margin: 0px;
@@ -1464,15 +1397,16 @@ html {
                     .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .name-hall {
                       color: #F25555;
                       font-family: "Poppins", sans-serif;
-                      font-weight: 500; }
-                    .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .grid-wrapper {
+                      font-weight: 500;
+                      text-transform: none; }
+                    .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper {
                       display: -webkit-box;
                       display: -ms-flexbox;
                       display: flex;
                       -ms-flex-wrap: wrap;
                       flex-wrap: wrap;
                       height: inherit; }
-                      .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .grid-wrapper article {
+                      .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article {
                         width: 33.3%;
                         text-align: center;
                         display: -webkit-box;
@@ -1485,37 +1419,20 @@ html {
                         -webkit-box-pack: center;
                         -ms-flex-pack: center;
                         justify-content: center;
-                        padding-bottom: 1rem;
-                        border: 1px solid #4d4d4d;
-                        /*&:nth-child(4n+3){
-                          @media screen and (min-width: 1025px){
-                            border-bottom: 0;
-                          }
-                        }
-                        &:nth-child(4){
-                          @media screen and (min-width: 1025px){
-                            border-right: $border;
-                            padding-right: 1rem;
-                          }
-                        }
-                        &:nth-child(4n){
-                          @media screen and (min-width: 600px){
-                            border-left: $border;
-                            border-bottom: 0;
-                            padding-left: 1rem;
-                          }
-                        }*/ }
-                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .grid-wrapper article p {
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                        border: 1px solid #4d4d4d; }
+                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article div p {
                           font-family: 'Karla', sans-serif;
                           font-size: 0.95rem;
                           color: #c8c8c8; }
-                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .grid-wrapper article:last-child p {
-                          margin: 0; }
-                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .grid-wrapper article:last-child h3 {
-                          margin: 0;
-                          padding: 0; }
+                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article .recruitment > p {
+                          background: brown;
+                          width: max-content;
+                          padding: 5px; }
                         @media screen and (max-height: 600px) {
-                          .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .grid-wrapper article .video {
+                          .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article .video {
                             display: none; } }
               .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__left, .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__right {
                 display: inline-block;

@@ -285,7 +285,6 @@ $(document).ready(function() {
         $(this).toggleClass('filled', !!$(this).val());
     });
 
-
     var animFalse = function() {
         animation = false;
     };
@@ -349,6 +348,7 @@ $(document).ready(function() {
                 paginationFactorMobile: 359,
                 width: 0,
                 items: [
+										{name: ['Василиса Дегтярь'], tag: ['TWERK'], href: 'https://vk.com/wall-85050907_9023', banner: 'https://sun1-19.userapi.com/ckSJkEIA08W1XyJVp1zhqd0uWI8AOwGsfMsIxw/86IUIspRyTQ.jpg'},
                     {name: ['Kiril Zaharov'], tag: ['Hip-Hop'], href: 'https://vk.com/event190979061', banner: 'https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg'},
                     {name: ['RAF'], tag: ['Hip-Hop', 'Japanese', '$$$$'], href: 'https://vk.com/event187625337', banner: 'https://sun9-31.userapi.com/c850536/v850536203/1ed37d/Vvnmg5ZFBBo.jpg'},
                     {name: ['Aliya, Raf', 'Vitek, Tuzemec'], tag: ['Hip-Hop', 'Casual'], href: 'https://vk.com/event191745898', banner: 'https://sun9-17.userapi.com/nMAOm0S8oZ2IjRmqcpzFKT73pcbiLQRJyzJsXA/bdtpKTRNmzw.jpg'},
@@ -407,75 +407,45 @@ $(document).ready(function() {
     Vue.component("carousel", {
         template: "#v-carousel2",
         data() {
-            return {
+        	return {
                 currentOffset: 0,
                 windowSizeCalendar: 1,
                 windowSizeMobileCalendar: 1,
-                paginationFactorCalendar: 1400,
+                paginationFactorCalendar: 0,
                 paginationFactorMobileCalendar: 359,
                 width: 0,
+								timestamp: " ",
                 items: [
                     {
-                        name: "Зал 1",
+                        name: "Зал 1 расписание на",
                         hallnum: [
-                            {
-                                time: '10:00 - 10:55',
-                                recruitment: 'Набор 7-10 лет',
-                                style: 'Hip-Hop',
-                                teacher: 'Слава',
-                                price: '2700/300'
-                            },
-                            {
-                                time: '17:00 - 18:25',
-                                recruitment: 'Набор 10-13 лет',
-                                style: 'Hip-Hop',
-                                teacher: 'Андрей',
-                                price: '2700/300'
-                            },
-                            {
-                                time: '18:30 - 19:25',
-                                recruitment: '',
-                                style: 'Hip-Hop',
-                                teacher: 'Дмитрий',
-                                price: '2700/300',
-                            },
-                            {
-                                time: '19:30 - 20:55',
-                                recruitment: 'Набор 14-25 лет',
-                                style: 'Hip-Hop',
-                                teacher: 'Andrey Grizodub',
-                                price: '2700/300',
-                            },
-                            {
-                                time: '21:30 - 22:55',
-                                recruitment: 'Набор 25-50 лет',
-                                style: 'Hip-Hop',
-                                teacher: 'Andrey Grizodub',
-                                price: '2700/300',
-                            },
-                            {
-                                videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'
-                            },
+                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Слава</p>', price: '<p>2700/300</p>'},
+                            {time: '<h3>17:00 - 18:25</h3>', recruitment: '<p>Набор 10-13 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Андрей</p>', price: '<p>2700/300</p>'},
+                            {time: '<h3>18:30 - 19:25</h3>', recruitment: '', style: '<p>Hip-Hop</p>', teacher: '<p>Дмитрий</p>', price: '<p>2700/300</p>'},
+                            {time: '<h3>19:30 - 20:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+                            {time: '<h3>21:30 - 22:55</h3>', recruitment: '<p>Набор 25-50 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+                            {videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
                         ],
                     },
                     {
-                        name: "Зал 2",
+                        name: "Зал 2 расписание на",
                         hallnum: [
-                            {time: '10:00 - 10:55', recruitment: 'Набор 7-10 лет', style: 'Hip-Hop', teacher: 'Слава', price: '2700/300'},
-                            {time: '17:00 - 18:25', recruitment: 'Набор 10-13 лет', style: 'Hip-Hop', teacher: 'Андрей', price: '2700/300'},
-                            {time: '18:30 - 19:25', recruitment: '', style: 'Hip-Hop', teacher: 'Дмитрий', price: '2700/300'},
-                            {time: '19:30 - 20:55', recruitment: 'Набор 14-25 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
-                            {time: '21:30 - 22:55', recruitment: 'Набор 25-50 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
+                            {time: '<h3>17:00 - 17:55</h3>', recruitment: '', style: '<p>Cherries</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+                            {time: '<h3>18:00 - 18:55</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>Contemporary</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+                            {time: '<h3>19:00 - 19:55</h3>', recruitment: '', style: '<p>Перчики</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+                            {time: '<h3>20:00 - 20:55</h3>', recruitment: '', style: '<p>Улей</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+														{videoframe: '<iframe src="//vk.com/video_ext.php?oid=304797199&id=456239522&hash=a8eca156838556bf&hd=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'}
                         ]
                     },
                     {
-                        name: "Зал 3",
+                        name: "Зал 3 расписание на",
                         hallnum: [
-                            {time: '10:00 - 10:55', recruitment: 'Набор 7-10 лет', style: 'Hip-Hop', teacher: 'Слава', price: '2700/300'},
-                            {time: '17:00 - 18:25', recruitment: 'Набор 10-13 лет', style: 'Hip-Hop', teacher: 'Андрей', price: '2700/300'},
-                            {time: '18:30 - 19:25', recruitment: '', style: 'Hip-Hop', teacher: 'Дмитрий', price: '2700/300'},
-                            {time: '19:30 - 20:55', recruitment: 'Набор 14-25 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
-                            {time: '21:30 - 22:55', recruitment: 'Набор 25-50 лет', style: 'Hip-Hop', teacher: 'Andrey Grizodub', price: '2700/300'},
+                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Слава</p>', price: '<p>2700/300</p>'},
+                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 10-13 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Андрей</p>', price: '<p>2700/300</p>'},
+                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '', style: '<p>Hip-Hop</p>', teacher: '<p>Дмитрий</p>', price: '<p>2700/300</p>'},
+                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 25-50 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+														//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239398&hash=62788f487833db51&hd=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'}
                         ]
                     },
                     /*{name: ['Kiril Zaharov'], tag: ['Hip-Hop'], href: 'https://vk.com/event190979061', banner: 'https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg'},
@@ -490,7 +460,7 @@ $(document).ready(function() {
         },
         computed: {
             atEndOfList() {
-                return this.currentOffset <= (this.paginationFactorCalendar * -1) * (this.items.length - this.windowSize);
+								return this.currentOffset <= (this.paginationFactorCalendar * -1) * (this.items.length - this.windowSizeCalendar);
             },
             atHeadOfList() {
                 return this.currentOffset === 0;
@@ -505,6 +475,7 @@ $(document).ready(function() {
         methods: {
             updateWidth() {
                 this.width = window.innerWidth;
+								this.paginationFactorCalendar = document.body.clientWidth/100 * 80 + 20;
             },
             moveCarouselCalendar(direction) {
                 // Find a more elegant way to express the :style. consider using props to make it truly generic
@@ -522,10 +493,18 @@ $(document).ready(function() {
                     this.currentOffset += this.paginationFactorMobileCalendar;
                 }
             },
+						getNow: function() {
+							const days = ['Воскресенье','Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+							const d = new Date();
+							const n = d.getDay();
+							this.timestamp = days[n];
+						},
         },
         created() {
             window.addEventListener('resize', this.updateWidth);
             this.updateWidth();
+            window.addEventListener('load', this.getNow);
+            this.getNow();
         }
     });
 

@@ -179,4 +179,43 @@ $(document).on('click', '.slide__bg-dark', function() {/*var activepersone = fun
 <!-- Test -->
 /*winWidth = $(window).width(),
 	winHeight = $(window).height(),
-	console.log(winHeight, winWidth);*/
+	console.log(winHeight, winWidth);
+
+
+
+	Poluchenie dati i vremeni
+	methods: {
+            updateWidth() {
+                this.width = window.innerWidth;
+								this.paginationFactorCalendar = document.body.clientWidth/100 * 80 + 20;
+            },
+            moveCarouselCalendar(direction) {
+                // Find a more elegant way to express the :style. consider using props to make it truly generic
+                if (direction === 1 && !this.atEndOfList) {
+                    this.currentOffset -= this.paginationFactorCalendar;
+                } else if (direction === -1 && !this.atHeadOfList) {
+                    this.currentOffset += this.paginationFactorCalendar;
+                }
+            },
+            moveCarouselmobileCalendar(direction) {
+                // Find a more elegant way to express the :style. consider using props to make it truly generic
+                if (direction === 1 && !this.atEndOfListMobileCalendar) {
+                    this.currentOffset -= this.paginationFactorMobileCalendar;
+                } else if (direction === -1 && !this.atHeadOfListMobileCalendar) {
+                    this.currentOffset += this.paginationFactorMobileCalendar;
+                }
+            },
+						getNow: function() {
+            	const today = new Date();
+							const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+							const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+							const dateTime = date;
+							this.timestamp = dateTime;
+						},
+        },
+        created() {
+            window.addEventListener('resize', this.updateWidth);
+            this.updateWidth();
+						setInterval(this.getNow, 1000);
+        }
+	*/

@@ -1299,81 +1299,8 @@ $time: 300ms;
               }
             }
           }
-
         }
-
-        // Base styles
-        /*.card-events {
-          float: left;
-          width: 30% !important;
-          z-index: 1;
-          .menu-content {
-            @include cf;
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            li {
-              display: inline-block;
-            }
-            a {
-              color: $white;
-            }
-            span {
-              position: absolute;
-              left: 50%;
-              top: 0;
-              font-size: 10px;
-              font-weight: 700;
-              font-family: 'Open Sans';
-              transform: translate(-50%, 0);
-            }
-          }
-          .wrapper {
-            background-color: $white;
-            min-height: 460px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
-            &:hover {
-              .data {
-                transform: translateY(0);
-              }
-            }
-          }
-          .data {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            transform: translateY(calc(70px + 1em));
-            transition: transform 0.3s;
-            .content {
-              padding: 1em;
-              position: relative;
-              z-index: 1;
-            }
-          }
-          .author {
-            font-size: 12px;
-          }
-          .title {
-            margin-top: 10px;
-          }
-          .text {
-            height: 70px;
-            margin: 0;
-          }
-          input[type='checkbox'] {
-            display: none;
-          }
-          input[type='checkbox']:checked + .menu-content {
-            transform: translateY(-60px);
-          }
-        }*/
-
-        // Second example styles
-
       }
-
     }
     /**********************************************************************************End content second slide*/
     /**/
@@ -1855,7 +1782,7 @@ $time: 300ms;
 			  @include align-items-center();
 			  @include flex-coldirection();
 			  width: 100%;
-			  max-width: 1400px;
+			  max-width: 80vw;
 			  font-size: clamp(15px, 2vw, 25px) !important;
         h2 {
           font-size: 3.6em;
@@ -1881,7 +1808,6 @@ $time: 300ms;
               @include flex();
               @include justify-content-center();
               width: 80vw;
-              max-width: 1400px;
               height: 100%;
 
               @include mediaMaxW(600px){
@@ -1908,12 +1834,12 @@ $time: 300ms;
                     color: white;
                     z-index: 3;
                     padding: 2rem;
-                    max-width: 1400px;
                     width: 100%;
                     height: 100%;
 									 	@include flex();
 									 	@include flex-coldirection();
                     @include flex-shrink(0);
+                    margin-right: 20px;
 
                     @include mediaMaxW(600px){
                       margin: 0px;
@@ -1932,61 +1858,39 @@ $time: 300ms;
                       color: $cellHvrClr;
                       font-family: $header-font;
                       font-weight: 500;
+                      text-transform: none;
                     }
 
-                    .grid-wrapper{
+                    .flex-wrapper{
 											@include flex();
 										 	@include flex-wrap();
                       height: inherit;
 
                       article{
-											 width: 33.3%;
-											 text-align: center;
-											 @include flex();
-											 @include flex-coldirection();
-											 @include justify-content-center();
-                        p{
-                          font-family: 'Karla', sans-serif;
-                          font-size: 0.95rem;
-                          color: #c8c8c8;
-                        }
-                        padding-bottom: 1rem;
+                        width: 33.3%;
+                        text-align: center;
+                        @include flex();
+                        @include flex-coldirection();
+                        @include justify-content-center();
+                        @include align-items-center();
                         border: $border;
-                        // using Grid area to place the 4th and 8th element.
-                        /*&:nth-child(4n+3){
-                          @media screen and (min-width: 1025px){
-                            border-bottom: 0;
+                        div {
+                          p{
+                            font-family: 'Karla', sans-serif;
+                            font-size: 0.95rem;
+                            color: #c8c8c8;
                           }
                         }
-                        &:nth-child(4){
-                          @media screen and (min-width: 1025px){
-                            border-right: $border;
-                            padding-right: 1rem;
-                          }
+                        .recruitment > p{
+                          background: brown;
+                          width: max-content;
+                          padding: 5px;
                         }
-                        &:nth-child(4n){
-                          @media screen and (min-width: 600px){
-                            border-left: $border;
-                            border-bottom: 0;
-                            padding-left: 1rem;
-                          }
-                        }*/
-											 &:last-child{
-												p{
-												 margin: 0
-												}
-												h3{
-												 margin: 0;
-												 padding: 0;
-												}
-											 }
-
                         .video {
                           @include mediaMaxH(600px){
                             display: none;
                           }
                         }
-
                       }
                     }
                   }

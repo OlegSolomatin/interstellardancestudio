@@ -321,27 +321,15 @@ html
 										.card-carousel--overflow-container
 											.card-carousel-cards(:style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}")
 												section.card-carousel--card(v-for="(hall,index) in items")
-													h3.name-hall {{hall.name}}
-													.grid-wrapper
+													h3.name-hall {{hall.name}} {{timestamp}}
+													.flex-wrapper
 														article(v-for="(hallnum,index) in hall.hallnum")
-															h3 {{hallnum.time}}
-															p {{hallnum.recruitment}}
-															p {{hallnum.style}}
-															p {{hallnum.teacher}}
-															p {{hallnum.price}}
+															.time(v-html='hallnum.time')
+															.recruitment(v-html='hallnum.recruitment')
+															.style(v-html='hallnum.style')
+															.teacher(v-html='hallnum.teacher')
+															.price(v-html='hallnum.price')
 															.video(v-html='hallnum.videoframe')
-											//.card-carousel-cards(v-if="width > 600" :style="{ transform: 'translateX' + '(' + currentOffset + 'px' + ')'}")
-												a.card-carousel--card(v-for="item in items" v-bind:href="item.href" target='_blank')
-													img( v-bind:src="item.banner")
-													.card-carousel--card--footer
-														p.name(v-for="(name,index) in item.name" :class="index > 0 ? 'secondary' : ''") {{ name }}
-														p.tag(v-for="(tag,index) in item.tag" :class="index > 0 ? 'secondary' : ''") {{ tag }}
-											//.card-carousel-cards(v-else :style="{ transform: 'translateY' + '(' + currentOffset + 'px' + ')'}")
-												a.card-carousel--card(v-for="item in items" v-bind:href="item.href" target='_blank')
-													img( v-bind:src="item.banner")
-													.card-carousel--card--footer
-														p.name(v-for="(name,index) in item.name" :class="index > 0 ? 'secondary' : ''") {{ name }}
-														p.tag(v-for="(tag,index) in item.tag" :class="index > 0 ? 'secondary' : ''") {{ tag }}
 									.card-carousel--nav__right(v-if="width > 600" @click="moveCarouselCalendar(1)" :disabled="atEndOfList")
 									.card-carousel--nav__right(v-else @click="moveCarouselmobileCalendar(1)" :disabled="atEndOfListMobileCalendar")
 							#appcarouselCalendar
