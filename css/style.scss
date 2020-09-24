@@ -1868,6 +1868,7 @@ $time: 300ms;
 
                       article{
                         width: 33.3%;
+                        height: 50%;
                         text-align: center;
                         @include flex();
                         @include flex-coldirection();

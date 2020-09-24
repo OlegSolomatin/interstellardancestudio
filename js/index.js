@@ -415,47 +415,152 @@ $(document).ready(function() {
                 paginationFactorMobileCalendar: 359,
                 width: 0,
 								timestamp: " ",
+								weekday: 0,
                 items: [
                     {
                         name: "Зал 1 расписание на",
-                        hallnum: [
-                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Слава</p>', price: '<p>2700/300</p>'},
-                            {time: '<h3>17:00 - 18:25</h3>', recruitment: '<p>Набор 10-13 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Андрей</p>', price: '<p>2700/300</p>'},
-                            {time: '<h3>18:30 - 19:25</h3>', recruitment: '', style: '<p>Hip-Hop</p>', teacher: '<p>Дмитрий</p>', price: '<p>2700/300</p>'},
-                            {time: '<h3>19:30 - 20:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
-                            {time: '<h3>21:30 - 22:55</h3>', recruitment: '<p>Набор 25-50 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
-                            {videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+                        monday: [
+                        	{time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Слава</p>', price: '<p>2700/300</p>'},
+													{time: '<h3>17:00 - 18:25</h3>', recruitment: '<p>Набор 10-13 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Андрей</p>', price: '<p>2700/300</p>'},
+													{time: '<h3>18:30 - 19:25</h3>', recruitment: '', style: '<p>Hip-Hop</p>', teacher: '<p>Дмитрий</p>', price: '<p>2700/300</p>'},
+													{time: '<h3>19:30 - 20:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+													{time: '<h3>21:30 - 22:55</h3>', recruitment: '<p>Набор 25-50 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
                         ],
+												tuesday: [
+														{time: '<h3>18:00 - 19:25</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Jazz-funk(Kabuki)</p>', teacher: '<p>Есения</p>', price: '<p>2700/400</p>'},
+														{time: '<h3>19:30 - 20:55</h3>', recruitment: '', style: '<p>Grizly</p>', teacher: '<p>Андрей</p>', price: '<p>3000</p>'},
+														//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												wednesday: [
+														{time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Слава</p>', price: '<p>2700/300</p>'},
+														{time: '<h3>17:00 - 18:25</h3>', recruitment: '<p>Набор 10-13 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Андрей</p>', price: '<p>2700/300</p>'},
+														{time: '<h3>18:30 - 19:25</h3>', recruitment: '', style: '<p>Hip-Hop</p>', teacher: '<p>Дмитрий</p>', price: '<p>2700/300</p>'},
+														{time: '<h3>19:30 - 20:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+														{time: '<h3>21:30 - 22:55</h3>', recruitment: '<p>Набор 25-50 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+														//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												thursday: [
+														{time: '<h3>17:00 - 17:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Акробатика, Растяжка</p>', teacher: '<p>Андрей, Полина</p>', price: '<p>2000/400</p>'},
+														{time: '<h3>18:00 - 19:25</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Jazz-funk(Kabuki)</p>', teacher: '<p>Есения</p>', price: '<p>2700/400</p>'},
+														{time: '<h3>19:30 - 20:55</h3>', recruitment: '', style: '<p>Grizly</p>', teacher: '<p>Андрей</p>', price: '<p>3000</p>'},
+														//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												friday: [
+														{time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Слава</p>', price: '<p>2700/300</p>'},
+														{time: '<h3>17:00 - 18:25</h3>', recruitment: '<p>Набор 10-13 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Андрей</p>', price: '<p>2700/300</p>'},
+														{time: '<h3>18:30 - 19:25</h3>', recruitment: '', style: '<p>Hip-Hop</p>', teacher: '<p>Дмитрий</p>', price: '<p>2700/300</p>'},
+														{time: '<h3>19:30 - 20:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+														{time: '<h3>21:30 - 22:55</h3>', recruitment: '<p>Набор 25-50 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
+														//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												saturday: [
+													{message: '<span>У нас выходной. Проверьте вкладку Events возможно там будет что то интересное</span>'},
+												],
+												sunday : [
+														{time: '<h3>17:00 - 17:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Акробатика, Растяжка</p>', teacher: '<p>Андрей, Полина</p>', price: '<p>2000/400</p>'},
+														{time: '<h3>18:00 - 19:25</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Jazz-funk(Kabuki)</p>', teacher: '<p>Есения</p>', price: '<p>2700/400</p>'},
+														{time: '<h3>19:30 - 20:55</h3>', recruitment: '', style: '<p>Grizly</p>', teacher: '<p>Андрей</p>', price: '<p>3000</p>'},
+														//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												]
                     },
                     {
                         name: "Зал 2 расписание на",
-                        hallnum: [
-                            {time: '<h3>17:00 - 17:55</h3>', recruitment: '', style: '<p>Cherries</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
-                            {time: '<h3>18:00 - 18:55</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>Contemporary</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
-                            {time: '<h3>19:00 - 19:55</h3>', recruitment: '', style: '<p>Перчики</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
-                            {time: '<h3>20:00 - 20:55</h3>', recruitment: '', style: '<p>Улей</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
-														{videoframe: '<iframe src="//vk.com/video_ext.php?oid=304797199&id=456239522&hash=a8eca156838556bf&hd=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'}
-                        ]
+												monday: [
+													{time: '<h3>17:00 - 17:55</h3>', recruitment: '', style: '<p>Cherries</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:00 - 18:55</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>Contemporary</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:00 - 19:55</h3>', recruitment: '', style: '<p>Перчики</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>20:00 - 20:55</h3>', recruitment: '', style: '<p>Улей</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=304797199&id=456239522&hash=a8eca156838556bf&hd=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'}
+													],
+												tuesday: [
+													{time: '<h3>16:30 - 17:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hip Начинающие</p>', teacher: '<p>Миша</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '', style: '<p>Hip-Hop Продолжающие</p>', teacher: '<p>Миша</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:30 - 19-25</h3>', recruitment: '', style: '<p>K-pop</p>', teacher: '<p>Серёжа</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:30 - 25:55</h3>', recruitment: '', style: '<p>Grizly kids</p>', teacher: '<p>Полина</p>', price: '<p>3000</p>'},
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												wednesday: [
+													{time: '<h3>17:00 - 17:55</h3>', recruitment: '', style: '<p>Cherries</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:00 - 18:55</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>Contemporary</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:00 - 19:55</h3>', recruitment: '', style: '<p>Перчики</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>20:00 - 20:55</h3>', recruitment: '', style: '<p>Улей</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												thursday: [
+													{time: '<h3>16:30 - 17:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hip Начинающие</p>', teacher: '<p>Миша</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '', style: '<p>Hip-Hop Продолжающие</p>', teacher: '<p>Миша</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:30 - 19-25</h3>', recruitment: '', style: '<p>K-pop</p>', teacher: '<p>Серёжа</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:30 - 25:55</h3>', recruitment: '', style: '<p>Grizly kids</p>', teacher: '<p>Полина</p>', price: '<p>3000</p>'},
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												friday: [
+													{time: '<h3>17:00 - 17:55</h3>', recruitment: '', style: '<p>Cherries</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:00 - 18:55</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>Contemporary</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:00 - 19:55</h3>', recruitment: '', style: '<p>Перчики</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>20:00 - 20:55</h3>', recruitment: '', style: '<p>Улей</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>'},
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												saturday: [
+													{message: '<span>У нас выходной. Проверьте вкладку Events возможно там будет что то интересное</span>'},
+												],
+												sunday : [
+													{time: '<h3>16:30 - 17:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hip Начинающие</p>', teacher: '<p>Миша</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '', style: '<p>Hip-Hop Продолжающие</p>', teacher: '<p>Миша</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:30 - 19-25</h3>', recruitment: '', style: '<p>K-pop</p>', teacher: '<p>Серёжа</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:30 - 25:55</h3>', recruitment: '', style: '<p>Grizly kids</p>', teacher: '<p>Полина</p>', price: '<p>3000</p>'},
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												]
                     },
                     {
                         name: "Зал 3 расписание на",
-                        hallnum: [
-                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Слава</p>', price: '<p>2700/300</p>'},
-                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 10-13 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Андрей</p>', price: '<p>2700/300</p>'},
-                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '', style: '<p>Hip-Hop</p>', teacher: '<p>Дмитрий</p>', price: '<p>2700/300</p>'},
-                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 14-25 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
-                            {time: '<h3>10:00 - 10:55</h3>', recruitment: '<p>Набор 25-50 лет</p>', style: '<p>Hip-Hop</p>', teacher: '<p>Andrey Grizodub</p>', price: '<p>2700/300</p>'},
-														//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239398&hash=62788f487833db51&hd=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'}
-                        ]
+												monday: [
+													{time: '<h3>13:00 - 13:55</h3>', recruitment: '<p>Набор</p>', style: '<p>Bodyflex</p>', teacher: '<p>Альбина</p>', price: '<p>2700/400</p>'},
+													{time: '<h3>16:30 - 17:25</h3>', recruitment: '<p>Набор 4-6 лет</p>', style: '', teacher: '<p>Алина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '<p>Набор 4-6 лет</p>', style: '', teacher: '<p>Алина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:30 - 19:25</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop & Urban</p>', teacher: '<p>Слава</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:30 - 20:25</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>K-pop</p>', teacher: '<p>Ольга</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>20:30 - 21:55</h3>', recruitment: '<p>Набор от 14 лет</p>', style: '<p>Творческая лаборатория</p>', teacher: '<p>Юля</p>', price: '<p>2700/400</p>'},
+													],
+												tuesday: [
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '<p>Набор 3.5-4 лет</p>', style: '', teacher: '<p>Таисия</p>', price: '<p>2700/400</p>'},
+													{time: '<h3>18:30 - 19:25</h3>', recruitment: '<p>Набор 5-6 лет</p>', style: '', teacher: '<p>Таисия</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:45 - 21:10</h3>', recruitment: '<p>Набор 16-50 лет</p>', style: '<p>Стрип пластика</p>', teacher: '<p>Есения</p>', price: '<p>2000/400</p>'}
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												wednesday: [
+													{time: '<h3>13:00 - 13:55</h3>', recruitment: '<p>Набор</p>', style: '<p>Bodyflex</p>', teacher: '<p>Альбина</p>', price: '<p>2700/400</p>'},
+													{time: '<h3>16:30 - 17:25</h3>', recruitment: '<p>Набор 4-6 лет</p>', style: '', teacher: '<p>Алина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '<p>Набор 4-6 лет</p>', style: '', teacher: '<p>Алина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:30 - 19:25</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop & Urban</p>', teacher: '<p>Слава</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:30 - 20:25</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>K-pop</p>', teacher: '<p>Ольга</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>20:30 - 21:55</h3>', recruitment: '<p>Набор от 14 лет</p>', style: '<p>Творческая лаборатория</p>', teacher: '<p>Юля</p>', price: '<p>2700/400</p>'},
+												],
+												thursday: [
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '<p>Набор 3.5-4 лет</p>', style: '', teacher: '<p>Таисия</p>', price: '<p>2700/400</p>'},
+													{time: '<h3>18:30 - 19:25</h3>', recruitment: '<p>Набор 5-6 лет</p>', style: '', teacher: '<p>Таисия</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:45 - 21:10</h3>', recruitment: '<p>Набор 16-50 лет</p>', style: '<p>Стрип пластика</p>', teacher: '<p>Есения</p>', price: '<p>2000/400</p>'}
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												],
+												friday: [
+													{time: '<h3>13:00 - 13:55</h3>', recruitment: '<p>Набор</p>', style: '<p>Bodyflex</p>', teacher: '<p>Альбина</p>', price: '<p>2700/400</p>'},
+													{time: '<h3>16:30 - 17:25</h3>', recruitment: '<p>Набор 4-6 лет</p>', style: '', teacher: '<p>Алина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '<p>Набор 4-6 лет</p>', style: '', teacher: '<p>Алина</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>18:30 - 19:25</h3>', recruitment: '<p>Набор 7-10 лет</p>', style: '<p>Hip-Hop & Urban</p>', teacher: '<p>Слава</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>19:30 - 20:25</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>K-pop</p>', teacher: '<p>Ольга</p>', price: '<p>2300/300</p>'},
+													{time: '<h3>20:30 - 21:55</h3>', recruitment: '<p>Набор от 14 лет</p>', style: '<p>Творческая лаборатория</p>', teacher: '<p>Юля</p>', price: '<p>2700/400</p>'},
+												],
+												saturday: [
+													{message: '<span>У нас выходной. Проверьте вкладку Events возможно там будет что то интересное</span>'},
+												],
+												sunday : [
+													{time: '<h3>15:30 - 17:00</h3>', recruitment: '<p>Набор 16-50 лет</p>', style: '<p>Стрип пластика</p>', teacher: '<p>Таисия</p>', price: '<p>2000/400</p>'},
+													{time: '<h3>17:30 - 18:25</h3>', recruitment: '<p>Набор 3.5-4 лет</p>', style: '', teacher: '<p>Таисия</p>', price: '<p>2700/400</p>'},
+													{time: '<h3>18:30 - 19:25</h3>', recruitment: '<p>Набор 5-6 лет</p>', style: '', teacher: '<p>Таисия</p>', price: '<p>2300/300</p>'},
+													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
+												]
                     },
-                    /*{name: ['Kiril Zaharov'], tag: ['Hip-Hop'], href: 'https://vk.com/event190979061', banner: 'https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg'},
-										{name: ['RAF'], tag: ['Hip-Hop', 'Japanese', '$$$$'], href: 'https://vk.com/event187625337', banner: 'https://sun9-31.userapi.com/c850536/v850536203/1ed37d/Vvnmg5ZFBBo.jpg'},
-										{name: ['Aliya, Raf', 'Vitek, Tuzemec'], tag: ['Hip-Hop', 'Casual'], href: 'https://vk.com/event191745898', banner: 'https://sun9-17.userapi.com/nMAOm0S8oZ2IjRmqcpzFKT73pcbiLQRJyzJsXA/bdtpKTRNmzw.jpg'},
-										{name: ['Руслан Twist'], tag: ['Popping', 'Dance'], href: 'https://vk.com/ruslanpoppingtwist', banner: 'https://sun9-12.userapi.com/c858024/v858024753/9d2c0/J7oGG-MRJjU.jpg'},
-										{name: ['Васко Насонов', 'Ксения Шлезингер'], tag: ['Popping', 'Dance'], href: 'https://vk.com/event186203191', banner: 'https://sun9-26.userapi.com/c856120/v856120556/e2cd8/tVHFC-7obcQ.jpg'},
-										{name: ['Kipr'], tag: ['Kipr','Summer'], href: 'https://vk.com/event175214996', banner: 'https://sun9-43.userapi.com/c845017/v845017341/16220f/8FfnZEqJgME.jpg'},
-										{name: ['Алексей Арапов'], tag: ['Art House'], href: 'https://vk.com/arapovkolomna', banner: 'https://sun9-10.userapi.com/c849120/v849120739/90618/FebKvaZtAzs.jpg'},*/
-                ]
+								]
             }
         },
         computed: {
@@ -498,6 +603,7 @@ $(document).ready(function() {
 							const d = new Date();
 							const n = d.getDay();
 							this.timestamp = days[n];
+							this.weekday = n;
 						},
         },
         created() {
