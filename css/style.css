@@ -30,8 +30,8 @@ html {
     position: relative; }
   .slide__close {
     position: fixed;
-    top: 3vw;
-    left: 3vw;
+    top: 2vw;
+    left: 2vw;
     width: 10vw;
     height: 10vw;
     max-width: 100px;
@@ -47,8 +47,8 @@ html {
       position: absolute;
       top: 0;
       left: 0;
-      width: 115px;
-      height: 20px;
+      width: 80px;
+      height: 15px;
       border-radius: 20px;
       background-color: #fff;
       transition: 500ms 500ms; }
@@ -64,7 +64,7 @@ html {
       transform-origin: center left;
       transform: rotate(45deg) scale(0, 0); }
     .slide__close:before {
-      left: -33px;
+      left: -25px;
       transform-origin: center right;
       transform: rotate(-45deg) scale(0, 0);
       transition: 500ms 650ms; }
@@ -1394,17 +1394,138 @@ html {
                       margin-left: 0; }
                     .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card:last-child {
                       margin-right: 0; }
-                    .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .name-hall {
-                      color: #F25555;
-                      font-family: "Poppins", sans-serif;
-                      font-weight: 500;
-                      text-transform: none; }
+                    .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .container-date-weather {
+                      /*.weather{
+                        .stormy {
+                          position: absolute;
+                          top:25%;
+                          left:70%;
+                          background:linear-gradient( to top right,rgba(117,117,117 ,1) 0%,
+                              rgba(33,33,33 ,1) 90%);
+                          width: 130px;
+                          height: 130px;
+                          border-radius: 40%;
+                          z-index: 120;
+                        }
+                        .stormy li {
+                          position: absolute;
+                          list-style: none;
+                          width: 5px;
+                          height: 5px;
+                          border-radius: 100%;
+                          background-color:#777;
+                          box-shadow: 1px 1px 30px #555;
+                          animation: fall 3s infinite linear ;
+                          opacity:0;
+                        }
+                        .stormy li:nth-child(1) {
+                          top:0%;
+                          left:100%;
+                        }
+                        .stormy li:nth-child(2) {
+                          top:5%;
+                          left:90%;
+                        }
+                        .stormy li:nth-child(3) {
+                          top:-10%;
+                          left:80%;
+                          animation-delay: 2s;
+                        }
+                        .stormy li:nth-child(4) {
+                          top:10%;
+                          left:100%;
+                          animation-delay: 2s;
+                        }
+                        .stormy li:nth-child(5) {
+                          top:20%;
+                          left:80%;
+                          animation-delay: 0.5s;
+                        }
+                        .stormy li:nth-child(6) {
+                          top:35%;
+                          left:70%;
+                          background-color: #bbb;
+                          animation-delay: 0.5s;
+                        }
+                        .stormy li:nth-child(7) {
+                          top:23%;
+                          left:60%;
+                          background-color: #bbb;
+                          animation-delay: 0.8s;
+                        }
+                        .stormy li:nth-child(8) {
+                          top:5%;
+                          left:70%;
+                          background-color: #bbb;
+                          animation-delay: 0.8s;
+                        }
+                        .snowe {
+                          position: absolute;
+                          top:60%;
+                          left:40%;
+                          width:40px;
+                          height: 40px;
+                          border-radius:60px;
+                          background-color: #ddd;
+                        }
+                        .snowex {
+                          position: absolute;
+                          top:50%;
+                          left:50%;
+                          width:15px;
+                          height: 15px;
+                          border-radius:15px;
+                          background-color: #bbb;
+                        }
+                        .stick {
+                          position: absolute;
+                          top:60%;
+                          left:40%;
+                          width:3px;
+                          height: 15px;
+                          transform: rotate(-45deg);
+                          background-color: #333;
+                          z-index: -10;
+                        }
+                        .stick2 {
+                          position: absolute;
+                          top:60%;
+                          left:70%;
+                          width:3px;
+                          height: 15px;
+                          transform: rotate(45deg);
+                          background-color: #333;
+                          z-index: -10;
+                        }
+                        @keyframes fall {
+                          10%
+                          {
+                            opacity:0.8;
+                          }
+                          50% {
+                            opacity:1;
+                            transform: translate(-10px,30px);
+                          }
+                          100%
+                          {
+                            transform: translate(-25px,70px);
+                          }
+                        }
+                      }*/ }
+                      .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .container-date-weather .name-hall {
+                        color: #F25555;
+                        font-family: "Poppins", sans-serif;
+                        font-weight: 500;
+                        text-transform: none; }
                     .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper {
                       display: -webkit-box;
                       display: -ms-flexbox;
                       display: flex;
                       -ms-flex-wrap: wrap;
                       flex-wrap: wrap;
+                      -webkit-box-align: center;
+                      -ms-flex-align: center;
+                      align-items: center;
                       height: inherit; }
                       .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article {
                         width: 33.3%;
@@ -1424,17 +1545,42 @@ html {
                         -ms-flex-align: center;
                         align-items: center;
                         border: 1px solid #4d4d4d; }
+                        @media screen and (max-width: 970px) {
+                          .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article .time h3 {
+                            font-size: 1.45rem !important; } }
                         .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article div p {
                           font-family: 'Karla', sans-serif;
                           font-size: 0.95rem;
                           color: #c8c8c8; }
+                          @media screen and (max-width: 970px) {
+                            .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article div p {
+                              font-size: 0.85rem; } }
+                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article .message > p {
+                          padding: 5px;
+                          background: yellow;
+                          border-radius: 5px;
+                          color: black;
+                          box-shadow: 0 0 5px white;
+                          transform: scale(0.85);
+                          animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse {
+  from {
+    transform: scale(0.85); }
+  50% {
+    transform: scale(1); }
+  to {
+    transform: scale(0.85); } }
                         .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article .recruitment > p {
                           background: brown;
                           width: max-content;
-                          padding: 5px; }
+                          padding: 5px;
+                          border-radius: 5px; }
                         @media screen and (max-height: 600px) {
                           .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper article .video {
                             display: none; } }
+                      .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper .mess-container {
+                        width: 100%;
+                        height: 50%; }
               .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__left, .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__right {
                 display: inline-block;
                 width: 15px;
@@ -1451,6 +1597,8 @@ html {
                   border-color: black; }
               .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__left {
                 transform: rotate(-135deg); }
+                .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__left:hover {
+                  transform: scale(1.2) rotate(-135deg); }
                 .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__left:active {
                   transform: rotate(-135deg) scale(0.9); }
                 @media screen and (max-width: 600px) {
@@ -1460,6 +1608,8 @@ html {
                       transform: rotate(-45deg) scale(0.9); } }
               .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__right {
                 transform: rotate(45deg); }
+                .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__right:hover {
+                  transform: scale(1.2) rotate(45deg); }
                 .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__right:active {
                   transform: rotate(45deg) scale(0.9); }
                 @media screen and (max-width: 600px) {
