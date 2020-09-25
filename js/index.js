@@ -464,7 +464,7 @@ $(document).ready(function() {
 													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
 												],
 												mobilecalendar: [
-													{href: '<a href="../img/zal1.jpg" target="_blank"><img alt="Расписание Зал #1" src="https://sun9-33.userapi.com/k7d64s-OQU3lYTPjd6mOwmugND65HBbTCocnNg/UW8ONyWQvp0.jpg" data-src="../img/zal1.jpg" class="lazyloaded"></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #1</p>'}
+													{href: '<a href="../img/zal1.jpg" target="_blank"><img alt="Расписание Зал #1" src="https://sun9-33.userapi.com/k7d64s-OQU3lYTPjd6mOwmugND65HBbTCocnNg/UW8ONyWQvp0.jpg" class="lazyloaded" /*data-src="../img/zal1.jpg"*/ ></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #1</p>'}
 												],
                     },
                     {
@@ -515,7 +515,7 @@ $(document).ready(function() {
 													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
 												],
 												mobilecalendar: [
-													{href: '<a href="../img/zal2.jpg" target="_blank"><img alt="Расписание Зал #2" src="../img/zal2.jpg" data-src="../img/zal2.jpg" class="lazyloaded"></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #2</p>'}
+													{href: '<a href="../img/zal2.jpg" target="_blank"><img alt="Расписание Зал #2" src="../img/zal2.jpg" class="lazyloaded" /*data-src="../img/zal2.jpg"*/ ></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #2</p>'}
 												],
                     },
                     {
