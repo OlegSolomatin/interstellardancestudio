@@ -412,7 +412,7 @@ $(document).ready(function() {
                 windowSizeCalendar: 1,
                 windowSizeMobileCalendar: 1,
                 paginationFactorCalendar: 0,
-                paginationFactorMobileCalendar: 359,
+                paginationFactorMobileCalendar: 0,
                 width: 0,
 								timestamp: " ",
 								weekday: 0,
@@ -464,7 +464,7 @@ $(document).ready(function() {
 													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
 												],
 												mobilecalendar: [
-													{href: '<a href="../img/zal1.jpg" target="_blank"><img alt="Расписание Зал #1" src="https://sun9-33.userapi.com/k7d64s-OQU3lYTPjd6mOwmugND65HBbTCocnNg/UW8ONyWQvp0.jpg" class="lazyloaded" /*data-src="../img/zal1.jpg"*/ ></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #1</p>'}
+													{href: '<a href="https://sun9-33.userapi.com/k7d64s-OQU3lYTPjd6mOwmugND65HBbTCocnNg/UW8ONyWQvp0.jpg" target="_blank"><img alt="Здесь было расписание Зала #1, но оно куда то исчезло. Мы знаем о данной проблеме и стараемся её решить" src="https://sun9-33.userapi.com/k7d64s-OQU3lYTPjd6mOwmugND65HBbTCocnNg/UW8ONyWQvp0.jpg" class="lazyloaded" /*data-src="../img/zal1.jpg"*/ ></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #1</p>'}
 												],
                     },
                     {
@@ -515,7 +515,7 @@ $(document).ready(function() {
 													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
 												],
 												mobilecalendar: [
-													{href: '<a href="../img/zal2.jpg" target="_blank"><img alt="Расписание Зал #2" src="../img/zal2.jpg" class="lazyloaded" /*data-src="../img/zal2.jpg"*/ ></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #2</p>'}
+													{href: '<a href="https://sun9-59.userapi.com/9qMBnlUgdx6mZ_C8v1bGmoxwanTdd2WwK43hyA/pvPjyLNcSVY.jpg" target="_blank"><img alt="Здесь было расписание Зала #2, но оно куда то исчезло. Мы знаем о данной проблеме и стараемся её решить" src="https://sun9-59.userapi.com/9qMBnlUgdx6mZ_C8v1bGmoxwanTdd2WwK43hyA/pvPjyLNcSVY.jpg" class="lazyloaded" /*data-src="../img/zal2.jpg"*/ ></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #2</p>'}
 												],
                     },
                     {
@@ -566,7 +566,7 @@ $(document).ready(function() {
 													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=-85050907&id=456239394&hash=a272799d5c04d5fb&hd=2" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'},
 												],
 												mobilecalendar: [
-													{href: '<a href="../img/zal3.jpg" target="_blank"><img alt="Расписание Зал #3" src="../img/zal3.jpg" data-src="../img/zal3.jpg" class="lazyloaded"></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #3</p>'}
+													{href: '<a href="https://sun9-74.userapi.com/j5hqqfbP8tSIA6jIrDci3N9Vd8-hxYNuutjxuA/tSvrBIdNKDI.jpg" target="_blank"><img alt="Здесь было расписание Зала #3, но оно куда то исчезло. Мы знаем о данной проблеме и стараемся её решить" src="https://sun9-74.userapi.com/j5hqqfbP8tSIA6jIrDci3N9Vd8-hxYNuutjxuA/tSvrBIdNKDI.jpg" class="lazyloaded" /*data-src="../img/zal3.jpg"*/></a>', text: '<p>Нажмите на картинку что бы скачать распиание Зала #3</p>'}
 												],
                     },
 								]
@@ -580,7 +580,7 @@ $(document).ready(function() {
                 return this.currentOffset === 0;
             },
             atEndOfListMobileCalendar() {
-                return this.currentOffset <= (this.paginationFactorMobileCalendar * -1) * (this.items.length - this.windowSizeMobile);
+                return this.currentOffset <= (this.paginationFactorMobileCalendar * -1) * (this.items.length - this.windowSizeMobileCalendar);
             },
             atHeadOfListMobileCalendar() {
                 return this.currentOffset === 0;
@@ -590,6 +590,7 @@ $(document).ready(function() {
             updateWidth() {
                 this.width = window.innerWidth;
 								this.paginationFactorCalendar = document.body.clientWidth/100 * 80 + 20;
+								this.paginationFactorMobileCalendar = document.body.clientHeight/100 * 60 + 20;
             },
             moveCarouselCalendar(direction) {
                 // Find a more elegant way to express the :style. consider using props to make it truly generic

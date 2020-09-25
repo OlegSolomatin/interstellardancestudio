@@ -972,10 +972,32 @@ html {
           z-index: 1;
           position: relative;
           max-height: 240px;
-          height: calc(20vw - 4vh); }
+          height: calc(20vw - 4vh);
+          border-radius: 50%; }
           @media screen and (max-width: 480px) {
             .slide__container-content .container-main-third .person-img {
               height: calc(33vw - 4vh) !important; } }
+          .slide__container-content .container-main-third .person-img:after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            bottom: -5px;
+            left: -5px;
+            border-radius: 50%;
+            background: #fff;
+            z-index: -1; }
+          .slide__container-content .container-main-third .person-img:before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            bottom: -8px;
+            left: -8px;
+            border-radius: 50%;
+            background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            z-index: -1;
+            transition: transform 5s ease-in-out; }
         .slide__container-content .container-main-third .person-title {
           /*color: #fff;*/
           font-size: clamp(12px, 2vw, 25px);
@@ -1389,7 +1411,8 @@ html {
                     @media screen and (max-width: 600px) {
                       .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card {
                         margin: 0px;
-                        margin-bottom: 20px; } }
+                        margin-bottom: 20px;
+                        padding: 1rem; } }
                     .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card:first-child {
                       margin-left: 0; }
                     .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card:last-child {
@@ -1517,6 +1540,9 @@ html {
                         font-family: "Poppins", sans-serif;
                         font-weight: 500;
                         text-transform: none; }
+                        @media screen and (max-width: 600px) {
+                          .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .container-date-weather .name-hall {
+                            font-size: 1.25rem; } }
                     .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper {
                       display: -webkit-box;
                       display: -ms-flexbox;
@@ -1581,6 +1607,27 @@ html {
                       .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper .mess-container {
                         width: 100%;
                         height: 50%; }
+                      .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper .mobile-calendar {
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -ms-flex-pack: distribute;
+                        justify-content: space-around;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                        flex-direction: column;
+                        height: inherit; }
+                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper .mobile-calendar div:first-child a {
+                          width: 100%;
+                          height: 100%;
+                          display: -webkit-box;
+                          display: -ms-flexbox;
+                          display: flex; }
+                          .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper .mobile-calendar div:first-child a img {
+                            width: 100%; }
+                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper .mobile-calendar div:last-child p {
+                          text-align: center; }
               .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__left, .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__right {
                 display: inline-block;
                 width: 15px;
