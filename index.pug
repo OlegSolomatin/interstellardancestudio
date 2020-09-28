@@ -283,7 +283,7 @@ html
 									h2.header-title Teachers
 								.person-list
 									.person(v-for='(person,index) in persons' @click='selectPerson(index,$event)')
-										img.person-img(:src='person.photo')
+										.person-img(:style='`background-image:url(${person.photo})`')
 										.person-details
 											h2.person-title {{person.name}}
 											p.person-desc {{person.title}}
@@ -303,7 +303,6 @@ html
 													a.ion-social-youtube(:href='selectedPersonData.social.youtube' target='_blank')
 													a.ion-social-instagram(:href='selectedPersonData.social.instagram' target='_blank')
 											.team-detail-bio-content(v-html='selectedPersonData.bio')
-
 			.slide.slide--4(data-target='4')
 				.slide__text Calendar
 				.slide__img

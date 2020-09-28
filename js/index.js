@@ -473,7 +473,7 @@ $(document).ready(function() {
 													{time: '<h3>17:00 - 17:55</h3>', recruitment: '', style: '<p>Cherries</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>', message: ''},
 													{time: '<h3>18:00 - 18:55</h3>', recruitment: '<p>Набор от 10 лет</p>', style: '<p>Contemporary</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>', message: ''},
 													{time: '<h3>19:00 - 19:55</h3>', recruitment: '', style: '<p>Перчики</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>', message: ''},
-													{time: '<h3>20:00 - 20:55</h3>', recruitment: '', style: '<p>Улей</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>', message: ''},
+													//{time: '<h3>20:00 - 20:55</h3>', recruitment: '', style: '<p>Улей</p>', teacher: '<p>Полина</p>', price: '<p>2300/300</p>', message: ''},
 													//{videoframe: '<iframe src="//vk.com/video_ext.php?oid=304797199&id=456239522&hash=a8eca156838556bf&hd=1" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>'}
 													],
 												tuesday: [

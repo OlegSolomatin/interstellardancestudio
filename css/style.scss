@@ -41,7 +41,7 @@ $shade:#2c2637;
 $bgPics: (
         url('../img/images/testbg4.jpg') center center no-repeat,
         url('../img/images/testbg5.jpg') center center no-repeat,
-        url('../img/images/testbg3.jpg') center center no-repeat,
+        url('../img/images/bg3.jpg') center center no-repeat,
         url('../img/images/testbg2.jpg') center center no-repeat,
         url('../img/images/testbg1.jpg') center center no-repeat
 );
@@ -59,6 +59,11 @@ $bgFirstpage: (
 
 @mixin mediaMaxW($width) {
   @media screen and (max-width: $width) {
+    @content;
+  }
+}
+@mixin mediaMinW($width) {
+  @media screen and (min-width: $width) {
     @content;
   }
 }
@@ -1316,17 +1321,14 @@ $time: 300ms;
         z-index: 3;
       }
       .header {
-        width: 100%;
         text-align: center;
         margin-bottom: 15px;
         overflow: hidden;
-        transition: 0.45s ease 0.05s;
         max-height: 70px;
         &-title {
-          width: 100%;
-          font-size: clamp(35px, 7vw, 65px);;
-          margin-bottom: 15px;
-          text-shadow: 1px 1px #F25555, 1px -1px #F25555, -1px 1px #F25555, -1px -1px #F25555, 3px 3px 6px rgba(0,0,0,.5);
+          font-size: clamp(35px, 7vw, 65px);
+          color: white;
+          /*text-shadow: 1px 1px #F25555, 1px -1px #F25555, -1px 1px #F25555, -1px -1px #F25555, 3px 3px 6px rgba(0,0,0,.5);*/
         }
       }
 
@@ -1357,9 +1359,8 @@ $time: 300ms;
         transition: 0.45s;
         position: relative;
         &-details {
-          padding: 0 20px;
           box-sizing: border-box;
-          margin-top: -15px;
+          margin-top: -10px;
           transition: 0.3s;
           z-index: 2;
           position: relative;
@@ -1369,66 +1370,52 @@ $time: 300ms;
         }
         &-img {
           width: 100%;
-          filter: grayscale(100%);
           z-index: 1;
           position: relative;
-          max-height: 240px;
+          max-height: 200px;
+          max-width: 200px;
           height: calc(20vw - 4vh);
 				 	border-radius: 50%;
-
+          background-size: cover;
           @include mediaMaxW(480px){
             height: calc(33vw - 4vh) !important;
           }
-				 &:after{
-					content: '';
-					position: absolute;
-					top: -5px;
-					right: -5px;
-					bottom: -5px;
-					left: -5px;
-					border-radius: 50%;
-					background: #fff;
-					z-index: -1;
-				 }
 				 &:before{
-					content: '';
-					position: absolute;
-					top: -8px;
-					right: -8px;
-					bottom: -8px;
-					left: -8px;
-					border-radius: 50%;
-					background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-					z-index: -1;
-					transition: transform 5s ease-in-out;
+           content: '';
+           position: absolute;
+           top: 0px;
+           right: 0px;
+           bottom: 0px;
+           left: 0px;
+           background-image: url("https://music.yandex.ru/i/brfh5jttsYpuJjPvB_wxZXPqPMI.svg");
+           background-size: 100% 100%;
 				 }
         }
         &-title {
           /*color: #fff;*/
-          font-size: clamp(12px, 2vw, 25px);
+          font-size: 1.3rem;
           font-family: $fontteacher;
-          background: linear-gradient(90deg, rgba(242,85,85,1) 20%, rgba(0,0,0,1) 55%, rgba(255,255,255,1) 80%, rgba(242,85,85,1) 100%);
-          background-size: 200% auto;
-
-          color: #000;
-          background-clip: text;
-          text-fill-color: transparent;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          animation: grad 20s linear infinite;
-
-          @keyframes grad {
-            to {
-              background-position: 200% center;
-            }
+          color: white;
+          font-weight: 600;
+          @include mediaMaxW(1100px){
+            font-size: 1rem;
+          }
+          @include mediaMaxW(758px){
+            font-size: 0.7rem;
           }
         }
         &-desc {
           color: rgba(#fff, 0.7);
           margin-top: 10px;
           text-transform: uppercase;
-          font-size: clamp(14px, 1vw, 25px);
+          font-size: 1rem;
           font-family: $fontteacher;
+          @include mediaMaxW(1100px){
+            font-size: 0.8rem;
+          }
+          @include mediaMaxW(758px){
+            font-size: 0.6rem;
+          }
           @include mediaMaxW(625px){
             margin-bottom: 0;
           }
@@ -1492,7 +1479,7 @@ $time: 300ms;
         }
         .person-list .person-selected {
           opacity: 1 !important;
-          img {
+          .person-img {
             display: none;
           }
           &:before {
@@ -1530,12 +1517,23 @@ $time: 300ms;
             position: absolute;
             display: block;
           }
+          @include mediaMaxH(370px){
+            height: 100%;
+            overflow: auto;
+            position: absolute;
+            display: block;
+          }
           &-content {
             p {
               margin-bottom: 15px;
               line-height: clamp(11px, 2vw, 20px) !important;
               font-size: clamp(11px, 2vw, 20px) !important;
               font-family: "Karla", sans-serif;
+
+              @include mediaMinW(1920px){
+                line-height: 30px !important;
+                font-size: 30px !important;
+              }
             }
           }
         }
@@ -1584,6 +1582,9 @@ $time: 300ms;
             right: 0;
             top: 0;
           }
+          @include mediaMinW(1920px){
+            padding: 3vw;
+          }
         }
         &-photo {
           position: relative;
@@ -1608,8 +1609,14 @@ $time: 300ms;
           @include mediaMaxW(370px){
             overflow: hidden;
           }
+          @include mediaMaxH(370px){
+            overflow: hidden;
+          }
           .person-title {
             font-size: clamp(20px, 2vw, 45px) !important;
+            @include mediaMinW(1920px){
+              font-size: clamp(25px, 3vw, 55px) !important;
+            }
           }
         }
       }
@@ -1663,6 +1670,9 @@ $time: 300ms;
           @include mediaMaxW(370px){
             font-size: 20px;
           }
+          @include mediaMinW(1920px){
+            font-size: 35px;
+          }
           &:last-child {
             margin-right: 0;
           }
@@ -1701,9 +1711,6 @@ $time: 300ms;
         .team-detail-right {
           padding-right: 0;
           width: calc(100% - 400px);
-        }
-        .person-details {
-          padding: 0 10px;
         }
       }
 
@@ -1865,6 +1872,7 @@ $time: 300ms;
 									 	@include flex-coldirection();
                     @include flex-shrink(0);
                     margin-right: 20px;
+                    opacity: 0.9;
 
                     @include mediaMaxW(600px){
                       margin: 0px;
@@ -1890,123 +1898,6 @@ $time: 300ms;
 												font-size: 1.25rem;
 											 }
                       }
-                      /*.weather{
-                        .stormy {
-                          position: absolute;
-                          top:25%;
-                          left:70%;
-                          background:linear-gradient( to top right,rgba(117,117,117 ,1) 0%,
-                              rgba(33,33,33 ,1) 90%);
-                          width: 130px;
-                          height: 130px;
-                          border-radius: 40%;
-                          z-index: 120;
-                        }
-                        .stormy li {
-                          position: absolute;
-                          list-style: none;
-                          width: 5px;
-                          height: 5px;
-                          border-radius: 100%;
-                          background-color:#777;
-                          box-shadow: 1px 1px 30px #555;
-                          animation: fall 3s infinite linear ;
-                          opacity:0;
-                        }
-                        .stormy li:nth-child(1) {
-                          top:0%;
-                          left:100%;
-                        }
-                        .stormy li:nth-child(2) {
-                          top:5%;
-                          left:90%;
-                        }
-                        .stormy li:nth-child(3) {
-                          top:-10%;
-                          left:80%;
-                          animation-delay: 2s;
-                        }
-                        .stormy li:nth-child(4) {
-                          top:10%;
-                          left:100%;
-                          animation-delay: 2s;
-                        }
-                        .stormy li:nth-child(5) {
-                          top:20%;
-                          left:80%;
-                          animation-delay: 0.5s;
-                        }
-                        .stormy li:nth-child(6) {
-                          top:35%;
-                          left:70%;
-                          background-color: #bbb;
-                          animation-delay: 0.5s;
-                        }
-                        .stormy li:nth-child(7) {
-                          top:23%;
-                          left:60%;
-                          background-color: #bbb;
-                          animation-delay: 0.8s;
-                        }
-                        .stormy li:nth-child(8) {
-                          top:5%;
-                          left:70%;
-                          background-color: #bbb;
-                          animation-delay: 0.8s;
-                        }
-                        .snowe {
-                          position: absolute;
-                          top:60%;
-                          left:40%;
-                          width:40px;
-                          height: 40px;
-                          border-radius:60px;
-                          background-color: #ddd;
-                        }
-                        .snowex {
-                          position: absolute;
-                          top:50%;
-                          left:50%;
-                          width:15px;
-                          height: 15px;
-                          border-radius:15px;
-                          background-color: #bbb;
-                        }
-                        .stick {
-                          position: absolute;
-                          top:60%;
-                          left:40%;
-                          width:3px;
-                          height: 15px;
-                          transform: rotate(-45deg);
-                          background-color: #333;
-                          z-index: -10;
-                        }
-                        .stick2 {
-                          position: absolute;
-                          top:60%;
-                          left:70%;
-                          width:3px;
-                          height: 15px;
-                          transform: rotate(45deg);
-                          background-color: #333;
-                          z-index: -10;
-                        }
-                        @keyframes fall {
-                          10%
-                          {
-                            opacity:0.8;
-                          }
-                          50% {
-                            opacity:1;
-                            transform: translate(-10px,30px);
-                          }
-                          100%
-                          {
-                            transform: translate(-25px,70px);
-                          }
-                        }
-                      }*/
                     }
                     .flex-wrapper{
 											@include flex();
