@@ -644,7 +644,28 @@ $(document).ready(function() {
                 //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCz6arMUrptoeLtghbb2YszQ",
                 instagram: "https://www.instagram.com/eseniastra/"
-            }
+            },
+						photogallery: {
+							photo1: "",
+							photo2: "",
+							photo3: "",
+							photo4: "",
+							photo5: "",
+						},
+						videogallery: {
+							video1: "",
+							video2: "",
+							video3: "",
+						},
+						raspisanie: {
+							monday: "",
+							tuesday: "",
+							wednesday: "",
+							thursday: "",
+							friday: "",
+							saturday: "",
+							sunday: "",
+						},
         },
         {
             name: "Andrey Grizodub",
@@ -658,7 +679,28 @@ $(document).ready(function() {
                 //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 instagram: "https://www.instagram.com/andreygrizodub/"
-            }
+            },
+						photogallery: {
+            		photo1: "",
+								photo2: "",
+								photo3: "",
+								photo4: "",
+								photo5: "",
+						},
+						videogallery: {
+            		video1: "",
+								video2: "",
+								video3: "",
+						},
+						raspisanie: {
+            		monday: "",
+								tuesday: "",
+								wednesday: "",
+								thursday: "",
+								friday: "",
+								saturday: "",
+								sunday: "",
+						}
         },
         {
             name: "Sergey Mihutkin",
@@ -672,7 +714,28 @@ $(document).ready(function() {
                 //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 instagram: "https://www.instagram.com/sergfd/"
-            }
+            },
+						photogallery: {
+							photo1: "",
+							photo2: "",
+							photo3: "",
+							photo4: "",
+							photo5: "",
+						},
+						videogallery: {
+							video1: "",
+							video2: "",
+							video3: "",
+						},
+						raspisanie: {
+							monday: "",
+							tuesday: "",
+							wednesday: "",
+							thursday: "",
+							friday: "",
+							saturday: "",
+							sunday: "",
+						},
         },
         {
             name: "Alice Jenkins",
@@ -686,7 +749,28 @@ $(document).ready(function() {
                 //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 instagram: "https://www.instagram.com/interstellar_dance_studio_/?igshi"
-            }
+            },
+						photogallery: {
+							photo1: "",
+							photo2: "",
+							photo3: "",
+							photo4: "",
+							photo5: "",
+						},
+						videogallery: {
+							video1: "",
+							video2: "",
+							video3: "",
+						},
+						raspisanie: {
+							monday: "",
+							tuesday: "",
+							wednesday: "",
+							thursday: "",
+							friday: "",
+							saturday: "",
+							sunday: "",
+						},
         },
         {
             name: "Polina Grizodub",
@@ -699,7 +783,28 @@ $(document).ready(function() {
                 //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 instagram: "https://www.instagram.com/polinagrizodub/"
-            }
+            },
+						photogallery: {
+							photo1: "",
+							photo2: "",
+							photo3: "",
+							photo4: "",
+							photo5: "",
+						},
+						videogallery: {
+							video1: "",
+							video2: "",
+							video3: "",
+						},
+						raspisanie: {
+							monday: "",
+							tuesday: "",
+							wednesday: "",
+							thursday: "",
+							friday: "",
+							saturday: "",
+							sunday: "",
+						},
         },
         {
             name: "Vyacheslav Rodin",
@@ -712,7 +817,28 @@ $(document).ready(function() {
                 //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
 								instagram: "https://www.instagram.com/rodin_dancer/"
-            }
+            },
+						photogallery: {
+							photo1: "",
+							photo2: "",
+							photo3: "",
+							photo4: "",
+							photo5: "",
+						},
+						videogallery: {
+							video1: "",
+							video2: "",
+							video3: "",
+						},
+						raspisanie: {
+							monday: "",
+							tuesday: "",
+							wednesday: "",
+							thursday: "",
+							friday: "",
+							saturday: "",
+							sunday: "",
+						},
         },
         {
             name: "Al'bina Konstantinova",
@@ -725,7 +851,28 @@ $(document).ready(function() {
                 //vk_count: zaprosApiVK(),
                 youtube: "https://www.youtube.com/channel/UCHVby83zLrdxwO4nMfEVeZw",
                 instagram: "https://www.instagram.com/albinakonstanti/"
-            }
+            },
+						photogallery: {
+							photo1: "",
+							photo2: "",
+							photo3: "",
+							photo4: "",
+							photo5: "",
+						},
+						videogallery: {
+							video1: "",
+							video2: "",
+							video3: "",
+						},
+						raspisanie: {
+							monday: "",
+							tuesday: "",
+							wednesday: "",
+							thursday: "",
+							friday: "",
+							saturday: "",
+							sunday: "",
+						},
         }
     ];
 
