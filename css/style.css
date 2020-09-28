@@ -1403,7 +1403,7 @@ html {
                     background: #2b2a2b;
                     color: white;
                     z-index: 3;
-                    padding: 2rem;
+                    padding: 1rem 2rem;
                     width: 100%;
                     height: 100%;
                     display: -webkit-box;
@@ -1519,6 +1519,14 @@ html {
                             width: 100%; }
                         .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .flex-wrapper .mobile-calendar div:last-child p {
                           text-align: center; }
+                    .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .container-transcript-of-footnotes {
+                      margin: .5rem; }
+                      .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .container-transcript-of-footnotes h4 {
+                        font-size: 0.6rem;
+                        text-transform: lowercase; }
+                        .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--overflow-container .card-carousel-cards .card-carousel--card .container-transcript-of-footnotes h4 a {
+                          color: inherit;
+                          text-decoration: none; }
               .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__left, .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__right {
                 display: inline-block;
                 width: 15px;

@@ -1865,7 +1865,7 @@ $time: 300ms;
                     background: #2b2a2b;
                     color: white;
                     z-index: 3;
-                    padding: 2rem;
+                    padding: 1rem 2rem;
                     width: 100%;
                     height: 100%;
 									 	@include flex();
@@ -1989,6 +1989,17 @@ $time: 300ms;
 													}
 												}
 											}
+                    }
+                    .container-transcript-of-footnotes{
+                      margin: .5rem;
+                      h4 {
+                        font-size: 0.6rem;
+                        text-transform: lowercase;
+                        a {
+                          color: inherit;
+                          text-decoration: none;
+                        }
+                      }
                     }
                   }
                 }
