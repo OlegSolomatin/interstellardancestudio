@@ -43,7 +43,7 @@ $bgPics: (
         url('../img/images/testbg5.jpg') center center no-repeat,
         url('../img/images/bg3.jpg') center center no-repeat,
         url('../img/images/testbg2.jpg') center center no-repeat,
-        url('../img/images/testbg1.jpg') center center no-repeat
+        #2b2a2b
 );
 $events: (
     url('https://sun9-69.userapi.com/c858236/v858236971/166d10/ABbU9LnU70k.jpg') no-repeat,
@@ -1783,15 +1783,9 @@ $time: 300ms;
 
       $border: 1px solid #4d4d4d;
       $header-font: 'Poppins', sans-serif;
-      $vue-navy: #2c3e50;
-      $vue-navy-light: #3a5169;
-      $gray: #666a73;
-      $light-gray: #f8f8f8;
-      $san-juan: #2d4e68;
       $white: #fff;
       $black: #000;
-      $open-sans: 'Open Sans',
-      sans-serif;
+      $open-sans: 'Open Sans', sans-serif;
 		  @include flex();
 		  @include justify-content-center();
 
@@ -2063,7 +2057,80 @@ $time: 300ms;
     /**********************************************************************************End content fourth slide*/
     /**/
     /**/
+    .container-main-five{
+      width: 100%;
+      @include flex();
+      @include justify-content-center();
 
+      &-content {
+        @include flex();
+        @include justify-content-center();
+        @include flex-rowdirection();
+        width: 100%;
+        z-index: 1;
+        .about-us{
+          width: 50%;
+          .box__title {
+            margin-left: 12vw;
+            margin-top: 2vw;
+            margin-bottom: 2vw;
+
+            &-heading {
+              position: relative;
+              color: $cellHvrClr;
+              letter-spacing: 3px;
+              line-height: clamp(35px, 7vw, 65px);
+              text-transform: uppercase;
+              margin: 0px;
+              font: {
+                size: clamp(35px, 7vw, 65px);
+              }
+              @include mediaMaxW(997.1px){
+              }
+              span {
+                letter-spacing: 6px;
+                color: #fff;
+              }
+            }
+            &-par {
+              text-transform: uppercase;
+              margin-top: 35%;
+              color: #7b2222;
+              font: {
+                size: 13px;
+                weight: bold;
+              }
+            }
+          }
+          .box__contact{
+            margin: 2vw;
+            .box__location{
+              color: white;
+              font-size: 14px;
+              @include flex();
+              @include flex-rowdirection();
+              a {
+                color: white;
+                text-decoration: none;
+              }
+            }
+            .box__phones{
+              @include flex();
+              @include flex-rowdirection();
+              color: white;
+              font-size: 14px;
+              a{
+                color: white;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+        iframe{
+          width: 50%;
+        }
+      }
+    }
     /*************************************************COOMING SOON**********************************************************************************/
     .comming-soon{
       display:flex;

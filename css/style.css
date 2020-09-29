@@ -1563,6 +1563,80 @@ html {
                     transform: rotate(135deg); }
                     .slide__container-content .container-main-fourth-content #appcarouselCalendar .card-carousel-wrapper .card-carousel--nav__right:active {
                       transform: rotate(135deg) scale(0.9); } }
+    .slide__container-content .container-main-five {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .slide__container-content .container-main-five-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        width: 100%;
+        z-index: 1; }
+        .slide__container-content .container-main-five-content .about-us {
+          width: 50%; }
+          .slide__container-content .container-main-five-content .about-us .box__title {
+            margin-left: 12vw;
+            margin-top: 2vw;
+            margin-bottom: 2vw; }
+            .slide__container-content .container-main-five-content .about-us .box__title-heading {
+              position: relative;
+              color: #F25555;
+              letter-spacing: 3px;
+              line-height: clamp(35px, 7vw, 65px);
+              text-transform: uppercase;
+              margin: 0px;
+              font-size: clamp(35px, 7vw, 65px); }
+              .slide__container-content .container-main-five-content .about-us .box__title-heading span {
+                letter-spacing: 6px;
+                color: #fff; }
+            .slide__container-content .container-main-five-content .about-us .box__title-par {
+              text-transform: uppercase;
+              margin-top: 35%;
+              color: #7b2222;
+              font-size: 13px;
+              font-weight: bold; }
+          .slide__container-content .container-main-five-content .about-us .box__contact {
+            margin: 2vw; }
+            .slide__container-content .container-main-five-content .about-us .box__contact .box__location {
+              color: white;
+              font-size: 14px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: row;
+              flex-direction: row; }
+              .slide__container-content .container-main-five-content .about-us .box__contact .box__location a {
+                color: white;
+                text-decoration: none; }
+            .slide__container-content .container-main-five-content .about-us .box__contact .box__phones {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: row;
+              flex-direction: row;
+              color: white;
+              font-size: 14px; }
+              .slide__container-content .container-main-five-content .about-us .box__contact .box__phones a {
+                color: white;
+                text-decoration: none; }
+        .slide__container-content .container-main-five-content iframe {
+          width: 50%; }
     .slide__container-content .comming-soon {
       display: flex;
       justify-content: center;
@@ -1671,7 +1745,7 @@ html {
 
 .slide--5 {
   z-index: 4;
-  background: url("../img/images/testbg1.jpg") center center no-repeat;
+  background: #2b2a2b;
   background-size: cover; }
 
 .icon-show {
